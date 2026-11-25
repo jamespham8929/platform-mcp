@@ -53,6 +53,12 @@ type Result struct {
 	Steps     []Step        `json:"steps,omitempty"`
 	// Seen holds every evidence ID a tool returned during the run.
 	Seen map[string]bool `json:"-"`
+	// Evidence says what each seen item was, where the tool said so.
+	Evidence map[string]Evidence `json:"-"`
+}
+
+func newResult(investigator string) *Result {
+	return &Result{Investigator: investigator, Seen: map[string]bool{}, Evidence: map[string]Evidence{}}
 }
 
 // Investigator investigates one incident through an MCP session.
@@ -172,7 +178,8 @@ func userPrompt(inc Incident) string {
 func (c *Claude) Investigate(ctx context.Context, session *mcp.ClientSession, inc Incident) (*Result, error) {
 	start := time.Now()
 	cfg := c.Cfg
-	res := &Result{Investigator: c.Name(), Model: cfg.Model, Seen: map[string]bool{}}
+	res := newResult(c.Name())
+	res.Model = cfg.Model
 	defer func() { res.Duration = time.Since(start) }()
 
 	tools, err := c.tools(ctx, session)
@@ -302,7 +309,7 @@ func (c *Claude) callTool(ctx context.Context, session *mcp.ClientSession, name,
 		// Round trip through JSON so typed values become maps and slices.
 		var generic any
 		if b, err := json.Marshal(out.StructuredContent); err == nil && json.Unmarshal(b, &generic) == nil {
-			collectEvidenceIDs(generic, res.Seen)
+			collectEvidence(generic, res.Seen, res.Evidence)
 		}
 	}
 	return text, out.IsError

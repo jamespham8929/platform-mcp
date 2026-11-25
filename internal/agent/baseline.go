@@ -18,7 +18,7 @@ func (Baseline) Name() string { return "baseline" }
 
 func (Baseline) Investigate(ctx context.Context, session *mcp.ClientSession, inc Incident) (*Result, error) {
 	start := time.Now()
-	res := &Result{Investigator: "baseline", Seen: map[string]bool{}}
+	res := newResult("baseline")
 	defer func() { res.Duration = time.Since(start) }()
 
 	args := map[string]any{
@@ -39,9 +39,11 @@ func (Baseline) Investigate(ctx context.Context, session *mcp.ClientSession, inc
 	if err != nil {
 		return nil, err
 	}
+	input, _ := json.Marshal(args)
+	res.Steps = append(res.Steps, Step{Tool: "investigate", Input: input, Output: b})
 	var generic any
 	_ = json.Unmarshal(b, &generic)
-	collectEvidenceIDs(generic, res.Seen)
+	collectEvidence(generic, res.Seen, res.Evidence)
 
 	var parsed struct {
 		Causes []struct {

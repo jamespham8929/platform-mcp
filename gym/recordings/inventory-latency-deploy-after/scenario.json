@@ -1,0 +1,61 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "inventory-latency-deploy-after",
+    "description": "inventory gets 400ms of network latency. checkout deploys one minute after the latency starts and before the page. The deploy is closer to the page, but it came after the symptoms.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "network-latency",
+      "service": "inventory",
+      "spec": {
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "checkout-deploy",
+        "at_seconds": 60,
+        "kind": "deploy",
+        "service": "checkout",
+        "title": "checkout v3.1.0: retry inventory calls once"
+      }
+    ],
+    "truth": {
+      "service": "inventory",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "inventory"
+        }
+      ]
+    }
+  },
+  "namespace": "gym-inventory-latency-deploy-after",
+  "shop_started": "2026-11-25T10:35:38Z",
+  "fault_at": "2026-11-25T12:10:43Z",
+  "detected_at": "2026-11-25T12:14:18Z",
+  "alert": "GymPageLatency",
+  "series_from": "2026-11-25T10:35:38Z",
+  "series_to": "2026-11-25T04:15:18-08:00",
+  "series": 236,
+  "samples": 68750,
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "inventory"
+      }
+    ],
+    "distractors": [
+      "event:deploy-checkout-bcd511"
+    ],
+    "chaos_runs": [
+      "gym-inventory-latency-deploy-after/fault/20261125T121043Z"
+    ]
+  }
+}

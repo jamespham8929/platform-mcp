@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-recommendations-6d8e2a",
+    "source": "deploy",
+    "service": "recommendations",
+    "title": "recommendations v2.4.0: new ranking weights",
+    "timestamp": "2026-11-25T12:10:43Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "6d8e2a"
+    }
+  }
+]

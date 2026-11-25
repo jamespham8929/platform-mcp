@@ -1,0 +1,19 @@
+{
+  "name": "inventory-pod-kill-frontend-deploy",
+  "description": "Every inventory pod is killed once a minute. frontend itself deployed four minutes before, which is the classic red herring.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "pod-failure",
+    "service": "inventory",
+    "schedule": "* * * * *",
+    "spec": {"podFailure": {"percentage": 100, "gracePeriodSeconds": 0}}
+  },
+  "changes": [
+    {"name": "frontend-deploy", "at_seconds": -240, "kind": "deploy", "service": "frontend",
+     "title": "frontend v5.2.0: move the cart to a drawer"}
+  ],
+  "truth": {
+    "service": "inventory",
+    "accept": [{"source": "metric_anomaly", "service": "inventory"}]
+  }
+}

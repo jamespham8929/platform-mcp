@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-checkout-bcd511",
+    "source": "deploy",
+    "service": "checkout",
+    "title": "checkout v3.1.0: retry inventory calls once",
+    "timestamp": "2026-11-25T12:11:42Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "bcd511"
+    }
+  }
+]

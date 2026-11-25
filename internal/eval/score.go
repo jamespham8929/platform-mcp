@@ -26,7 +26,9 @@ type Score struct {
 	CitationValidity float64 `json:"citation_validity"`
 	// BadCauseRate is how often an answer blamed a symptom, like an SLO,
 	// instead of an event.
-	BadCauseRate     float64        `json:"bad_cause_rate"`
+	BadCauseRate float64 `json:"bad_cause_rate"`
+	// DistractedRate is how often the top cause was a planted distraction.
+	DistractedRate   float64        `json:"distracted_rate"`
 	UpstreamTop1     float64        `json:"upstream_top1"`
 	SameServiceTop1  float64        `json:"same_service_top1"`
 	CostUSD          float64        `json:"cost_usd"`
@@ -47,7 +49,7 @@ func share(n, d int) float64 {
 // Summarize scores graded scenarios for one setup.
 func Summarize(setup, model string, graded []Graded) Score {
 	s := Score{Setup: setup, Model: model, Scenarios: len(graded), StopReasons: map[string]int{}}
-	var top1, top3, abstain, bad, agree, upN, upHit, sameN, sameHit, cited, valid, calls int
+	var top1, top3, abstain, bad, distracted, agree, upN, upHit, sameN, sameHit, cited, valid, calls int
 	var mrr float64
 	var durations []time.Duration
 	for _, g := range graded {
@@ -66,6 +68,9 @@ func Summarize(setup, model string, graded []Graded) Score {
 		}
 		if len(g.Citations.BadCauses) > 0 {
 			bad++
+		}
+		if g.Distracted {
+			distracted++
 		}
 		cr := g.CorrelatorRank
 		if cr > 3 {
@@ -101,6 +106,7 @@ func Summarize(setup, model string, graded []Graded) Score {
 	}
 	s.AbstainRate = share(abstain, n)
 	s.BadCauseRate = share(bad, n)
+	s.DistractedRate = share(distracted, n)
 	s.AgreesCorrelator = share(agree, n)
 	s.UpstreamTop1 = share(upHit, upN)
 	s.SameServiceTop1 = share(sameHit, sameN)

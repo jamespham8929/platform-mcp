@@ -1,0 +1,31 @@
+[
+  {
+    "name": "error_ratio",
+    "query": "(sum by (service) (rate(http_requests_total{route=\"/api/v1/orders\",code=~\"5..\"}[2m])) or sum by (service) (rate(http_requests_total{route=\"/api/v1/orders\"}[2m])) * 0) / sum by (service) (rate(http_requests_total{route=\"/api/v1/orders\"}[2m]))"
+  },
+  {
+    "name": "p99_latency",
+    "query": "histogram_quantile(0.99, sum by (service, le) (rate(http_request_duration_seconds_bucket{route=\"/api/v1/orders\"}[2m])))"
+  },
+  {
+    "name": "upstream_error_ratio",
+    "query": "(sum by (upstream) (rate(upstream_requests_total{code!~\"2..\"}[2m])) or sum by (upstream) (rate(upstream_requests_total[2m])) * 0) / sum by (upstream) (rate(upstream_requests_total[2m]))",
+    "service_label": "upstream"
+  },
+  {
+    "name": "upstream_p99_latency",
+    "query": "histogram_quantile(0.99, sum by (upstream, le) (rate(upstream_request_duration_seconds_bucket[2m])))",
+    "service_label": "upstream"
+  },
+  {
+    "name": "request_throughput",
+    "query": "sum by (service) (rate(http_requests_total{route=\"/api/v1/orders\"}[2m]))",
+    "direction": "down"
+  },
+  {
+    "name": "available_replicas",
+    "query": "sum by (deployment) (kube_deployment_status_replicas_available)",
+    "service_label": "deployment",
+    "direction": "down"
+  }
+]

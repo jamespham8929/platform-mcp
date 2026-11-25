@@ -111,9 +111,12 @@ type Graded struct {
 	Abstained bool            `json:"abstained"`
 	Citations agent.Citations `json:"citations"`
 	// CorrelatorRank is the benchmark's own rank, for a per-scenario diff.
-	CorrelatorRank int           `json:"correlator_rank"`
-	Result         *agent.Result `json:"result,omitempty"`
-	Error          string        `json:"error,omitempty"`
+	CorrelatorRank int `json:"correlator_rank"`
+	// Distracted is true when the top cause was a change the scenario
+	// planted as a distraction. Only the gym plants them.
+	Distracted bool          `json:"distracted,omitempty"`
+	Result     *agent.Result `json:"result,omitempty"`
+	Error      string        `json:"error,omitempty"`
 }
 
 // Run investigates every scenario with one setup and grades each answer.
@@ -165,29 +168,11 @@ func runOne(ctx context.Context, suite *Suite, sc Scenario, setup Setup, opts Op
 		sources.Graph = filepath.Join(suite.Dir, suite.Manifest.Graph)
 	}
 
-	server := tools.NewServer(tools.Config{
+	res, err := Investigate(ctx, tools.Config{
 		Investigator: &incidentcli.Runner{Binary: opts.IncidentCLI, Sources: sources},
 		// The server clock is the incident time, so "now" means then.
 		Now: func() time.Time { return sc.DetectedAt },
-	}, "eval")
-	st, ct := mcp.NewInMemoryTransports()
-	ss, err := server.Connect(ctx, st, nil)
-	if err != nil {
-		g.Error = err.Error()
-		return g
-	}
-	defer ss.Close()
-	client := mcp.NewClient(&mcp.Implementation{Name: "eval", Version: "eval"}, nil)
-	cs, err := client.Connect(ctx, ct, nil)
-	if err != nil {
-		g.Error = err.Error()
-		return g
-	}
-	defer cs.Close()
-
-	res, err := setup.Investigator.Investigate(ctx, cs, agent.Incident{
-		Service: sc.Service, DetectedAt: sc.DetectedAt,
-	})
+	}, setup.Investigator, agent.Incident{Service: sc.Service, DetectedAt: sc.DetectedAt})
 	g.Result = res
 	if err != nil {
 		g.Error = err.Error()
@@ -195,6 +180,25 @@ func runOne(ctx context.Context, suite *Suite, sc Scenario, setup Setup, opts Op
 	}
 	grade(&g, sc, res)
 	return g
+}
+
+// Investigate serves the tools in cfg over an in-memory MCP session and lets
+// the investigator use them, the same way a real MCP client would.
+func Investigate(ctx context.Context, cfg tools.Config, inv agent.Investigator, inc agent.Incident) (*agent.Result, error) {
+	server := tools.NewServer(cfg, "eval")
+	st, ct := mcp.NewInMemoryTransports()
+	ss, err := server.Connect(ctx, st, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer func() { _ = ss.Close() }()
+	client := mcp.NewClient(&mcp.Implementation{Name: "eval", Version: "eval"}, nil)
+	cs, err := client.Connect(ctx, ct, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer func() { _ = cs.Close() }()
+	return inv.Investigate(ctx, cs, inc)
 }
 
 func grade(g *Graded, sc Scenario, res *agent.Result) {

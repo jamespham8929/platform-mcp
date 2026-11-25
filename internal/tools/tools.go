@@ -10,6 +10,7 @@ import (
 	"log/slog"
 	"time"
 
+	"github.com/google/jsonschema-go/jsonschema"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 
 	"github.com/jamespham8929/platform-mcp/internal/chaos"
@@ -26,6 +27,10 @@ type Config struct {
 	// Now is the server clock. Replays set it to the incident time.
 	Now    func() time.Time
 	Logger *slog.Logger
+	// DefaultWindowMinutes is the investigate window when the agent does not
+	// pick one. Zero means 120. The incident gym sets a shorter one, because
+	// its clusters only have a couple of hours of history.
+	DefaultWindowMinutes int
 }
 
 const (
@@ -53,12 +58,16 @@ func NewServer(cfg Config, version string) *mcp.Server {
 		Instructions: "Read-only tools over one Kubernetes platform. Each result item has an " +
 			"evidence_id. Cite those IDs for every claim. No tool changes anything.",
 	})
+	if cfg.DefaultWindowMinutes == 0 {
+		cfg.DefaultWindowMinutes = defaultWindow
+	}
 	h := handlers{cfg}
 	if cfg.Investigator != nil {
 		mcp.AddTool(s, &mcp.Tool{
 			Name:        "investigate",
 			Title:       "Rank likely causes of an incident",
 			Annotations: readOnly,
+			InputSchema: investigateSchema(cfg.DefaultWindowMinutes),
 			Description: "Runs incident-cli on the events this server is configured to read " +
 				"(deploys, config changes, flags, scaling, alerts, metric anomalies, chaos runs) " +
 				"and ranks which events most likely caused an incident on a service. Each cause " +
@@ -136,7 +145,7 @@ func clamp(v, def, lo, hi int) (int, error) {
 type InvestigateInput struct {
 	Service       string `json:"service" jsonschema:"The service that paged, as alerts and deploys name it."`
 	At            string `json:"at,omitempty" jsonschema:"When the incident was detected, in RFC 3339. Empty means now."`
-	WindowMinutes int    `json:"window_minutes,omitempty" jsonschema:"How far back to look for causes, 10 to 360 minutes. Default 120."`
+	WindowMinutes int    `json:"window_minutes,omitempty" jsonschema:"How far back to look for causes, in minutes."`
 	Top           int    `json:"top,omitempty" jsonschema:"How many ranked causes to return, 1 to 50. Default 10."`
 }
 
@@ -180,7 +189,7 @@ func (h handlers) investigate(ctx context.Context, _ *mcp.CallToolRequest, in In
 	if err != nil {
 		return nil, out, err
 	}
-	window, err := clamp(in.WindowMinutes, defaultWindow, minWindow, maxWindow)
+	window, err := clamp(in.WindowMinutes, h.cfg.DefaultWindowMinutes, minWindow, maxWindow)
 	if err != nil {
 		return nil, out, fmt.Errorf("window_minutes %w", err)
 	}
@@ -316,4 +325,18 @@ func (h handlers) sloState(ctx context.Context, _ *mcp.CallToolRequest, in SLOSt
 		out.Note = "slo-tracker exports no SLOs for this service. That means no data, not healthy."
 	}
 	return nil, out, nil
+}
+
+// investigateSchema is the inferred input schema with the window's range and
+// default written into its description, because the default is configurable.
+func investigateSchema(defaultWindowMinutes int) *jsonschema.Schema {
+	schema, err := jsonschema.For[InvestigateInput](nil)
+	if err != nil {
+		panic(err) // the input type is fixed, so this is a programming error
+	}
+	if p := schema.Properties["window_minutes"]; p != nil {
+		p.Description = fmt.Sprintf("How far back to look for causes, %d to %d minutes. Default %d.",
+			minWindow, maxWindow, defaultWindowMinutes)
+	}
+	return schema
 }

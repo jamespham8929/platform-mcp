@@ -1,0 +1,110 @@
+name: Gym
+
+# Records the incident gym from scratch on kind: the stack, chaos-operator,
+# one shop per scenario, a long warmup, then the faults and the pages. It
+# takes about two and a half hours, so it runs weekly and on demand instead
+# of on every push. CI replays the committed recordings on every push.
+#
+# The new recordings are an artifact. Commit them when the shop, the faults
+# or the queries change, after reading the scorecard below.
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+    inputs:
+      warmup:
+        description: How long each shop runs before its scenario starts
+        default: 95m
+
+permissions:
+  contents: read
+
+env:
+  PROMETHEUS_VERSION: "3.14.0"
+
+jobs:
+  record:
+    name: Record on kind
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: platform-mcp
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/gitops-platform-demo
+          path: gitops-platform-demo
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/chaos-operator
+          path: chaos-operator
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/observability-bootstrap
+          path: observability-bootstrap
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/incident-cli
+          path: incident-cli
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+          cache-dependency-path: platform-mcp/go.sum
+      - uses: azure/setup-helm@v5
+        with:
+          version: v3.19.5
+      - uses: helm/kind-action@v1
+        with:
+          install_only: true
+      - name: Build incident-cli and platform-mcp
+        run: |
+          (cd incident-cli && go build -o "$RUNNER_TEMP/incident" .)
+          (cd platform-mcp && go build -o "$RUNNER_TEMP/platform-mcp" ./cmd/platform-mcp)
+      - name: Install Prometheus and promtool
+        run: |
+          v="$PROMETHEUS_VERSION"
+          curl -sSL "https://github.com/prometheus/prometheus/releases/download/v${v}/prometheus-${v}.linux-amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/bin"
+          cp "$RUNNER_TEMP/prometheus-${v}.linux-amd64/prometheus" "$RUNNER_TEMP/prometheus-${v}.linux-amd64/promtool" "$RUNNER_TEMP/bin/"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - name: Set up the gym
+        env:
+          REPOS: ${{ github.workspace }}
+        run: platform-mcp/gym/up.sh
+      - name: Forward Prometheus
+        run: |
+          (while true; do
+            kubectl --context kind-gym -n monitoring port-forward svc/kube-prometheus-stack-prometheus 19090:9090 > /dev/null 2>&1
+            sleep 1
+          done) &
+          until curl -sf http://127.0.0.1:19090/-/ready > /dev/null; do sleep 2; done
+      - name: Record the scenarios
+        working-directory: platform-mcp
+        run: |
+          rm -rf "$RUNNER_TEMP/recordings"
+          "$RUNNER_TEMP/platform-mcp" gym record \
+            --out "$RUNNER_TEMP/recordings" \
+            --chart ../gitops-platform-demo/charts/sample-service \
+            --warmup "${{ inputs.warmup || '95m' }}"
+      - name: Replay the new recordings
+        working-directory: platform-mcp
+        run: |
+          {
+            echo '```'
+            "$RUNNER_TEMP/platform-mcp" gym replay --recordings "$RUNNER_TEMP/recordings" --incident-cli "$RUNNER_TEMP/incident"
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: gym-recordings
+          path: ${{ runner.temp }}/recordings
+          if-no-files-found: ignore
+      - name: Dump the cluster on failure
+        if: failure()
+        run: |
+          kubectl --context kind-gym get pods -A
+          kubectl --context kind-gym -n chaos-system logs deployment/chaos-operator --tail=200

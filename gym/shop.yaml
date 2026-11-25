@@ -1,0 +1,76 @@
+# The load generator and the page rule for one shop. gym/up.sh replaces
+# __NAMESPACE__ with the shop's namespace.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: loadgen}
+  template:
+    metadata:
+      labels: {app: loadgen}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: loadgen
+          image: curlimages/curl:8.17.0
+          command: ["sh", "-c"]
+          # About 13 orders a second to frontend and 4 to recommendations. The
+          # requests in one round run in parallel, so a slow service slows
+          # the round down, the way real clients back off.
+          args:
+            - |
+              order='{"customer_id":"gym","items":[{"sku":"widget","quantity":1,"unit_cents":500}]}'
+              while true; do
+                for target in frontend frontend frontend recommendations; do
+                  curl -s -o /dev/null -m 5 -X POST -H 'Content-Type: application/json' \
+                    -d "$order" "http://$target/api/v1/orders" &
+                done
+                wait
+                sleep 0.2
+              done
+          resources:
+            requests: {cpu: 20m, memory: 16Mi}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}
+---
+# The page. It watches what customers see, which is frontend. The sum drops
+# the namespace label, so gym_namespace says which shop paged. It waits three
+# minutes before it fires, because incident-cli's anomaly detector needs three
+# one-minute points in a row before it calls a change real.
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: gym-page
+spec:
+  groups:
+    - name: gym-page
+      rules:
+        # Errors use a 5m window. A crash loop fails in bursts, and a 1m ratio
+        # drops under 5% just before each kill, which restarts the wait.
+        - alert: GymPageErrors
+          expr: |
+            (
+              sum(rate(http_requests_total{namespace="__NAMESPACE__", service="frontend", route="/api/v1/orders", code=~"5.."}[5m]))
+              /
+              sum(rate(http_requests_total{namespace="__NAMESPACE__", service="frontend", route="/api/v1/orders"}[5m]))
+            ) > 0.05
+          for: 3m
+          labels: {severity: page, gym: "true", gym_namespace: "__NAMESPACE__"}
+          annotations:
+            summary: More than 5% of frontend orders fail.
+        - alert: GymPageLatency
+          expr: |
+            histogram_quantile(0.99,
+              sum by (le) (rate(http_request_duration_seconds_bucket{namespace="__NAMESPACE__", service="frontend", route="/api/v1/orders"}[1m]))
+            ) > 0.3
+          for: 3m
+          labels: {severity: page, gym: "true", gym_namespace: "__NAMESPACE__"}
+          annotations:
+            summary: frontend p99 order latency is above 300ms.

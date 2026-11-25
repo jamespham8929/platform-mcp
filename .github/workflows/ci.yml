@@ -9,6 +9,11 @@ on:
 permissions:
   contents: read
 
+env:
+  # Gym replays load the recorded samples into this Prometheus. Keep it in
+  # step with .github/workflows/gym.yml.
+  PROMETHEUS_VERSION: "3.14.0"
+
 jobs:
   test:
     name: Test
@@ -28,6 +33,14 @@ jobs:
           cache: true
       - name: Build incident-cli
         run: cd incident-cli && go build -o "$RUNNER_TEMP/incident" .
+      - name: Install Prometheus and promtool
+        run: |
+          v="$PROMETHEUS_VERSION"
+          curl -sSL "https://github.com/prometheus/prometheus/releases/download/v${v}/prometheus-${v}.linux-amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/bin"
+          cp "$RUNNER_TEMP/prometheus-${v}.linux-amd64/prometheus" "$RUNNER_TEMP/prometheus-${v}.linux-amd64/promtool" "$RUNNER_TEMP/bin/"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
       - name: Vet
         run: go vet ./...
       - name: Test
@@ -54,6 +67,17 @@ jobs:
         run: |
           go run ./cmd/platform-mcp eval --incident-cli "$RUNNER_TEMP/incident" | tee -a "$GITHUB_STEP_SUMMARY"
           go run ./cmd/platform-mcp eval --incident-cli "$RUNNER_TEMP/incident" --no-graph | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Gym replay scorecard
+        run: |
+          # Replays every gym recording through a fresh Prometheus and the
+          # real incident-cli. No cluster, a few seconds per incident.
+          {
+            echo '```'
+            go run ./cmd/platform-mcp gym replay --incident-cli "$RUNNER_TEMP/incident"
+            echo
+            go run ./cmd/platform-mcp gym replay --incident-cli "$RUNNER_TEMP/incident" --no-graph
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
 
   lint:
     name: Lint

@@ -1,0 +1,15 @@
+{
+  "name": "checkout-bad-deploy",
+  "description": "A control with no chaos. checkout deploys a build that fails 30% of orders. A flag was turned on in inventory a minute before. Here the deploy is the right answer.",
+  "paged_service": "frontend",
+  "changes": [
+    {"name": "inventory-flag", "at_seconds": -60, "kind": "feature_flag", "service": "inventory",
+     "flag": "reserve-stock-early", "title": "inventory: flag reserve-stock-early turned on"},
+    {"name": "bad-deploy", "at_seconds": 0, "kind": "deploy", "service": "checkout",
+     "title": "checkout v3.2.0: round tax per line item", "set": {"failureRate": "0.3"}}
+  ],
+  "truth": {
+    "service": "checkout",
+    "accept": [{"change": "bad-deploy"}]
+  }
+}

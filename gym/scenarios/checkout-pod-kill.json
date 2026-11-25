@@ -1,0 +1,19 @@
+{
+  "name": "checkout-pod-kill",
+  "description": "Every checkout pod is killed once a minute, like a crash loop. frontend pages on errors. A feature flag was turned on in frontend two minutes before.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "pod-failure",
+    "service": "checkout",
+    "schedule": "* * * * *",
+    "spec": {"podFailure": {"percentage": 100, "gracePeriodSeconds": 0}}
+  },
+  "changes": [
+    {"name": "frontend-flag", "at_seconds": -120, "kind": "feature_flag", "service": "frontend",
+     "flag": "new-checkout-button", "title": "frontend: flag new-checkout-button turned on"}
+  ],
+  "truth": {
+    "service": "checkout",
+    "accept": [{"source": "metric_anomaly", "service": "checkout"}]
+  }
+}

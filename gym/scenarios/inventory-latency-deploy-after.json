@@ -1,0 +1,18 @@
+{
+  "name": "inventory-latency-deploy-after",
+  "description": "inventory gets 400ms of network latency. checkout deploys one minute after the latency starts and before the page. The deploy is closer to the page, but it came after the symptoms.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "inventory",
+    "spec": {"networkLatency": {"latencyMs": 400, "jitterMs": 20, "durationSeconds": 480}}
+  },
+  "changes": [
+    {"name": "checkout-deploy", "at_seconds": 60, "kind": "deploy", "service": "checkout",
+     "title": "checkout v3.1.0: retry inventory calls once"}
+  ],
+  "truth": {
+    "service": "inventory",
+    "accept": [{"source": "metric_anomaly", "service": "inventory"}]
+  }
+}

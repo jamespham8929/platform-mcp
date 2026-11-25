@@ -41,8 +41,10 @@ func main() {
 }
 
 const usage = `usage:
-  platform-mcp serve [flags]   serve the tools over MCP on stdin and stdout
-  platform-mcp eval [flags]    score an investigator on labeled scenarios
+  platform-mcp serve [flags]          serve the tools over MCP on stdin and stdout
+  platform-mcp eval [flags]           score an investigator on labeled scenarios
+  platform-mcp gym record [flags]     run the gym scenarios on kind and record them
+  platform-mcp gym replay [flags]     score an investigator on the gym recordings
   platform-mcp version
 run a subcommand with -h for its flags`
 
@@ -55,6 +57,8 @@ func run(ctx context.Context, args []string, stdout, stderr io.Writer) error {
 		return serve(ctx, args[1:], stderr)
 	case "eval":
 		return runEval(ctx, args[1:], stdout, stderr)
+	case "gym":
+		return runGym(ctx, args[1:], stdout, stderr)
 	case "version":
 		fmt.Fprintln(stdout, version)
 		return nil
@@ -184,22 +188,14 @@ func runEval(ctx context.Context, args []string, stdout, stderr io.Writer) error
 	}
 
 	setup := eval.Setup{UseGraph: !*noGraph}
-	modelID := ""
-	switch *investigator {
-	case "baseline":
-		setup.Investigator = agent.Baseline{}
-	case "claude":
-		// The client reads ANTHROPIC_API_KEY or an `ant auth login` profile.
-		client := anthropic.NewClient()
-		cfg := agent.Config{
-			Model: *model, Effort: *effort, MaxTurns: *maxTurns,
-			MaxCostUSD: *maxCost, MaxTokens: defaults.MaxTokens,
-		}
-		setup.Investigator = &agent.Claude{Msgs: &client.Beta.Messages, Cfg: cfg}
-		modelID = *model
-	default:
-		return fmt.Errorf("unknown investigator %q", *investigator)
+	inv, modelID, err := newInvestigator(*investigator, agent.Config{
+		Model: *model, Effort: *effort, MaxTurns: *maxTurns,
+		MaxCostUSD: *maxCost, MaxTokens: defaults.MaxTokens,
+	})
+	if err != nil {
+		return err
 	}
+	setup.Investigator = inv
 	setup.Name = *investigator
 	if !setup.UseGraph {
 		setup.Name += " (no graph)"
@@ -218,16 +214,7 @@ func runEval(ctx context.Context, args []string, stdout, stderr io.Writer) error
 	eval.Print(stdout, []eval.Score{score})
 
 	if *out != "" {
-		doc := struct {
-			Score  eval.Score    `json:"score"`
-			Seed   int64         `json:"seed"`
-			Graded []eval.Graded `json:"graded"`
-		}{score, suite.Manifest.Seed, graded}
-		b, err := json.MarshalIndent(doc, "", "  ")
-		if err != nil {
-			return err
-		}
-		if err := os.WriteFile(*out, append(b, '\n'), 0o644); err != nil {
+		if err := writeResults(*out, score, suite.Manifest.Seed, graded); err != nil {
 			return err
 		}
 	}
@@ -238,4 +225,32 @@ func runEval(ctx context.Context, args []string, stdout, stderr io.Writer) error
 		return fmt.Errorf("%d of %d scenarios failed", score.Errors, score.Scenarios)
 	}
 	return nil
+}
+
+// newInvestigator builds the investigator a flag names. It returns the model
+// ID too, which is empty for the baseline.
+func newInvestigator(kind string, cfg agent.Config) (agent.Investigator, string, error) {
+	switch kind {
+	case "baseline":
+		return agent.Baseline{}, "", nil
+	case "claude":
+		// The client reads ANTHROPIC_API_KEY or an `ant auth login` profile.
+		client := anthropic.NewClient()
+		return &agent.Claude{Msgs: &client.Beta.Messages, Cfg: cfg}, cfg.Model, nil
+	default:
+		return nil, "", fmt.Errorf("unknown investigator %q", kind)
+	}
+}
+
+func writeResults(path string, score eval.Score, seed int64, graded []eval.Graded) error {
+	doc := struct {
+		Score  eval.Score    `json:"score"`
+		Seed   int64         `json:"seed,omitempty"`
+		Graded []eval.Graded `json:"graded"`
+	}{score, seed, graded}
+	b, err := json.MarshalIndent(doc, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(path, append(b, '\n'), 0o644)
 }

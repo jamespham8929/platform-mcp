@@ -48,16 +48,26 @@ func TestUnderlyingID(t *testing.T) {
 	assert.Equal(t, "plain", UnderlyingID("plain"))
 }
 
-func TestCollectEvidenceIDs(t *testing.T) {
+func TestCollectEvidence(t *testing.T) {
 	var v any
 	require.NoError(t, json.Unmarshal([]byte(`{
 		"causes": [{"evidence_id": "event:a"}],
-		"events": [{"evidence_id": "event:a"}, {"evidence_id": "event:b", "metadata": {"evidence_id": "event:c"}}],
+		"events": [
+			{"evidence_id": "event:a", "source": "metric_anomaly", "service": "inventory",
+			 "metadata": {"query": "upstream_p99_latency"}},
+			{"evidence_id": "event:b", "source": "deploy", "service": "checkout", "metadata": {"evidence_id": "event:c"}}
+		],
 		"note": "evidence_id"
 	}`), &v))
-	seen := map[string]bool{}
-	collectEvidenceIDs(v, seen)
+	seen, info := map[string]bool{}, map[string]Evidence{}
+	collectEvidence(v, seen, info)
 	assert.Equal(t, map[string]bool{"event:a": true, "event:b": true, "event:c": true}, seen)
+	assert.Equal(t, map[string]Evidence{
+		// The bare cause entry has no attributes and must not wipe out the
+		// event entry that has them.
+		"event:a": {Source: "metric_anomaly", Service: "inventory", Query: "upstream_p99_latency"},
+		"event:b": {Source: "deploy", Service: "checkout"},
+	}, info)
 }
 
 func TestCost(t *testing.T) {

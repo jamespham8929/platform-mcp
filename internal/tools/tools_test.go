@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -329,4 +330,26 @@ func mustRead(t *testing.T, path string) []byte {
 	b, err := os.ReadFile(path)
 	require.NoError(t, err)
 	return b
+}
+
+func TestTheWindowDefaultIsConfigurable(t *testing.T) {
+	for _, tc := range []struct {
+		configured, want int
+	}{{0, 120}, {30, 30}} {
+		var args []string
+		cs := connect(t, Config{
+			Investigator:         replay(t, "investigate-v1.json", &args),
+			DefaultWindowMinutes: tc.configured,
+		})
+		list, err := cs.ListTools(context.Background(), nil)
+		require.NoError(t, err)
+		schema, _ := json.Marshal(list.Tools[0].InputSchema)
+		assert.Contains(t, string(schema), fmt.Sprintf("10 to 360 minutes. Default %d.", tc.want),
+			"the agent must be told the default it gets")
+
+		var out InvestigateOutput
+		call(t, cs, "investigate", map[string]any{"service": "checkout"}, &out)
+		assert.Equal(t, tc.want, out.WindowMinutes)
+		assert.Contains(t, args, "--window="+(time.Duration(tc.want)*time.Minute).String())
+	}
 }

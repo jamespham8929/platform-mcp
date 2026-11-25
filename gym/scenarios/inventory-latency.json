@@ -1,0 +1,18 @@
+{
+  "name": "inventory-latency",
+  "description": "inventory gets 400ms of network latency. frontend pages on latency. An unrelated service deployed three minutes before.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "inventory",
+    "spec": {"networkLatency": {"latencyMs": 400, "jitterMs": 20, "durationSeconds": 480}}
+  },
+  "changes": [
+    {"name": "recs-deploy", "at_seconds": -180, "kind": "deploy", "service": "recommendations",
+     "title": "recommendations v2.4.0: new ranking weights"}
+  ],
+  "truth": {
+    "service": "inventory",
+    "accept": [{"source": "metric_anomaly", "service": "inventory"}]
+  }
+}

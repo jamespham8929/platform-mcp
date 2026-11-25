@@ -146,20 +146,42 @@ func UnderlyingID(evidenceID string) string {
 	return evidenceID
 }
 
-// collectEvidenceIDs finds every evidence_id value anywhere in a tool result.
-func collectEvidenceIDs(v any, into map[string]bool) {
+// Evidence is what a tool said about one evidence ID. The incident gym grades
+// a cause by these fields. An anomaly's ID carries its onset time, and that
+// can move with the window an investigator picks, so the ID alone is not
+// enough.
+type Evidence struct {
+	Source  string `json:"source,omitempty"`
+	Service string `json:"service,omitempty"`
+	// Query names the anomaly query that found a metric anomaly.
+	Query string `json:"query,omitempty"`
+}
+
+// collectEvidence finds every evidence_id anywhere in a tool result. When the
+// same object also says what the item is, that goes into info.
+func collectEvidence(v any, seen map[string]bool, info map[string]Evidence) {
 	switch x := v.(type) {
 	case map[string]any:
-		for k, val := range x {
-			if s, ok := val.(string); ok && k == "evidence_id" {
-				into[s] = true
-				continue
+		if id, ok := x["evidence_id"].(string); ok {
+			seen[id] = true
+			source, _ := x["source"].(string)
+			service, _ := x["service"].(string)
+			if source != "" || service != "" {
+				e := Evidence{Source: source, Service: service}
+				if meta, ok := x["metadata"].(map[string]any); ok {
+					e.Query, _ = meta["query"].(string)
+				}
+				info[id] = e
 			}
-			collectEvidenceIDs(val, into)
+		}
+		for k, val := range x {
+			if k != "evidence_id" {
+				collectEvidence(val, seen, info)
+			}
 		}
 	case []any:
 		for _, val := range x {
-			collectEvidenceIDs(val, into)
+			collectEvidence(val, seen, info)
 		}
 	}
 }
