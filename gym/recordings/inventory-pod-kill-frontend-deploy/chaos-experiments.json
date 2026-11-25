@@ -1,0 +1,173 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "chaos.jamespham.io/v1alpha1",
+      "kind": "ChaosExperiment",
+      "metadata": {
+        "annotations": {
+          "kopf.zalando.org/last-handled-configuration": "{\"spec\":{\"podFailure\":{\"gracePeriodSeconds\":0,\"percentage\":100},\"schedule\":\"* * * * *\",\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"inventory\"}},\"service\":\"inventory\",\"startingDeadlineSeconds\":300,\"suspend\":false,\"type\":\"pod-failure\"}}\n",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos.jamespham.io/v1alpha1\",\"kind\":\"ChaosExperiment\",\"metadata\":{\"annotations\":{},\"name\":\"fault\",\"namespace\":\"gym-inventory-pod-kill-frontend-deploy\"},\"spec\":{\"podFailure\":{\"gracePeriodSeconds\":0,\"percentage\":100},\"schedule\":\"* * * * *\",\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"inventory\"}},\"service\":\"inventory\",\"type\":\"pod-failure\"}}\n"
+        },
+        "creationTimestamp": "2026-11-25T14:06:42Z",
+        "finalizers": [
+          "kopf.zalando.org/KopfFinalizerMarker"
+        ],
+        "generation": 1,
+        "name": "fault",
+        "namespace": "gym-inventory-pod-kill-frontend-deploy",
+        "resourceVersion": "29990",
+        "uid": "3437daba-f97a-4f58-96cd-6b2c5ae17006"
+      },
+      "spec": {
+        "podFailure": {
+          "gracePeriodSeconds": 0,
+          "percentage": 100
+        },
+        "schedule": "* * * * *",
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "inventory"
+          }
+        },
+        "service": "inventory",
+        "startingDeadlineSeconds": 300,
+        "suspend": false,
+        "type": "pod-failure"
+      },
+      "status": {
+        "handle_experiment": {
+          "nextRunTime": "2026-11-25T14:07:00Z",
+          "schedule": "* * * * *",
+          "status": "scheduled"
+        },
+        "runs": [
+          {
+            "finishedAt": "2026-11-25T14:07:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140712Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:07:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:08:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140812Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:08:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:09:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140912Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:09:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:10:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141012Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:10:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:11:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141112Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:11:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:12:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141212Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:12:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:13:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141312Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:13:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:14:12Z",
+            "id": "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141412Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "inventory"
+            },
+            "service": "inventory",
+            "startedAt": "2026-11-25T14:14:12Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          }
+        ],
+        "schedule": {
+          "handledThrough": "2026-11-25T14:14:00Z",
+          "lastResult": "completed",
+          "lastRunTime": "2026-11-25T14:14:12.419269Z",
+          "lastScheduleTime": "2026-11-25T14:14:00Z",
+          "nextRunTime": "2026-11-25T14:15:00Z"
+        }
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
+

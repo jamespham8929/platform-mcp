@@ -1,0 +1,159 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "chaos.jamespham.io/v1alpha1",
+      "kind": "ChaosExperiment",
+      "metadata": {
+        "annotations": {
+          "kopf.zalando.org/last-handled-configuration": "{\"spec\":{\"podFailure\":{\"gracePeriodSeconds\":0,\"percentage\":100},\"schedule\":\"* * * * *\",\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"checkout\"}},\"service\":\"checkout\",\"startingDeadlineSeconds\":300,\"suspend\":false,\"type\":\"pod-failure\"}}\n",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos.jamespham.io/v1alpha1\",\"kind\":\"ChaosExperiment\",\"metadata\":{\"annotations\":{},\"name\":\"fault\",\"namespace\":\"gym-checkout-pod-kill\"},\"spec\":{\"podFailure\":{\"gracePeriodSeconds\":0,\"percentage\":100},\"schedule\":\"* * * * *\",\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"checkout\"}},\"service\":\"checkout\",\"type\":\"pod-failure\"}}\n"
+        },
+        "creationTimestamp": "2026-11-25T14:04:41Z",
+        "finalizers": [
+          "kopf.zalando.org/KopfFinalizerMarker"
+        ],
+        "generation": 1,
+        "name": "fault",
+        "namespace": "gym-checkout-pod-kill",
+        "resourceVersion": "29485",
+        "uid": "9fec882c-2b39-4f50-8b0f-adc7bf4fba2f"
+      },
+      "spec": {
+        "podFailure": {
+          "gracePeriodSeconds": 0,
+          "percentage": 100
+        },
+        "schedule": "* * * * *",
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "checkout"
+          }
+        },
+        "service": "checkout",
+        "startingDeadlineSeconds": 300,
+        "suspend": false,
+        "type": "pod-failure"
+      },
+      "status": {
+        "handle_experiment": {
+          "nextRunTime": "2026-11-25T14:05:00Z",
+          "schedule": "* * * * *",
+          "status": "scheduled"
+        },
+        "runs": [
+          {
+            "finishedAt": "2026-11-25T14:05:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T140511Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:05:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:06:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T140611Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:06:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:07:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T140711Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:07:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:08:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T140811Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:08:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:09:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T140911Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:09:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:10:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T141011Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:10:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          },
+          {
+            "finishedAt": "2026-11-25T14:11:11Z",
+            "id": "gym-checkout-pod-kill/fault/20261125T141111Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T14:11:11Z",
+            "trigger": "schedule",
+            "type": "pod-failure"
+          }
+        ],
+        "schedule": {
+          "handledThrough": "2026-11-25T14:11:00Z",
+          "lastResult": "completed",
+          "lastRunTime": "2026-11-25T14:11:11.447371Z",
+          "lastScheduleTime": "2026-11-25T14:11:00Z",
+          "nextRunTime": "2026-11-25T14:12:00Z"
+        }
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
+

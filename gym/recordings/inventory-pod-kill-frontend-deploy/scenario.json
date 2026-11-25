@@ -1,0 +1,67 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "inventory-pod-kill-frontend-deploy",
+    "description": "Every inventory pod is killed once a minute. frontend itself deployed four minutes before, which is the classic red herring.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "pod-failure",
+      "service": "inventory",
+      "schedule": "* * * * *",
+      "spec": {
+        "podFailure": {
+          "gracePeriodSeconds": 0,
+          "percentage": 100
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "frontend-deploy",
+        "at_seconds": -240,
+        "kind": "deploy",
+        "service": "frontend",
+        "title": "frontend v5.2.0: move the cart to a drawer"
+      }
+    ],
+    "truth": {
+      "service": "inventory",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "inventory"
+        }
+      ]
+    }
+  },
+  "namespace": "gym-inventory-pod-kill-frontend-deploy",
+  "shop_started": "2026-11-25T12:27:37Z",
+  "fault_at": "2026-11-25T14:07:12Z",
+  "detected_at": "2026-11-25T14:13:32Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T12:27:37Z",
+  "series_to": "2026-11-25T06:14:32-08:00",
+  "series": 440,
+  "samples": 73707,
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "inventory"
+      }
+    ],
+    "distractors": [
+      "event:deploy-frontend-02377d"
+    ],
+    "chaos_runs": [
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140712Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140812Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T140912Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141012Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141112Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141212Z",
+      "gym-inventory-pod-kill-frontend-deploy/fault/20261125T141312Z"
+    ]
+  }
+}

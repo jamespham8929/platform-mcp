@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-frontend-02377d",
+    "source": "deploy",
+    "service": "frontend",
+    "title": "frontend v5.2.0: move the cart to a drawer",
+    "timestamp": "2026-11-25T14:02:42Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "02377d"
+    }
+  }
+]

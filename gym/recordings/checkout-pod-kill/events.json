@@ -1,0 +1,13 @@
+[
+  {
+    "id": "flag-frontend-e4adea",
+    "source": "feature_flag",
+    "service": "frontend",
+    "title": "frontend: flag new-checkout-button turned on",
+    "timestamp": "2026-11-25T14:02:41Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "flag": "new-checkout-button"
+    }
+  }
+]

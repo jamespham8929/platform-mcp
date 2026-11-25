@@ -1,0 +1,24 @@
+[
+  {
+    "id": "flag-inventory-fdaaf8",
+    "source": "feature_flag",
+    "service": "inventory",
+    "title": "inventory: flag reserve-stock-early turned on",
+    "timestamp": "2026-11-25T14:02:41Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "flag": "reserve-stock-early"
+    }
+  },
+  {
+    "id": "deploy-checkout-7e4a74",
+    "source": "deploy",
+    "service": "checkout",
+    "title": "checkout v3.2.0: round tax per line item",
+    "timestamp": "2026-11-25T14:03:41Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "7e4a74"
+    }
+  }
+]

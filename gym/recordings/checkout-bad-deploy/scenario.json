@@ -1,0 +1,56 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "checkout-bad-deploy",
+    "description": "A control with no chaos. checkout deploys a build that fails 30% of orders. A flag was turned on in inventory a minute before. Here the deploy is the right answer.",
+    "paged_service": "frontend",
+    "changes": [
+      {
+        "name": "inventory-flag",
+        "at_seconds": -60,
+        "kind": "feature_flag",
+        "service": "inventory",
+        "title": "inventory: flag reserve-stock-early turned on",
+        "flag": "reserve-stock-early"
+      },
+      {
+        "name": "bad-deploy",
+        "at_seconds": 0,
+        "kind": "deploy",
+        "service": "checkout",
+        "title": "checkout v3.2.0: round tax per line item",
+        "set": {
+          "failureRate": "0.3"
+        }
+      }
+    ],
+    "truth": {
+      "service": "checkout",
+      "accept": [
+        {
+          "change": "bad-deploy"
+        }
+      ]
+    }
+  },
+  "namespace": "gym-checkout-bad-deploy",
+  "shop_started": "2026-11-25T12:27:36Z",
+  "detected_at": "2026-11-25T14:08:21Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T12:27:36Z",
+  "series_to": "2026-11-25T06:09:21-08:00",
+  "series": 242,
+  "samples": 71074,
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "change": "bad-deploy",
+        "evidence_id": "event:deploy-checkout-7e4a74"
+      }
+    ],
+    "distractors": [
+      "event:flag-inventory-fdaaf8"
+    ]
+  }
+}

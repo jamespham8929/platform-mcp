@@ -14,8 +14,11 @@ in a known way at a known time, and it records the run. incident-cli already
 ranks candidate causes with a simple model. So an agent can be measured
 against that model, on incidents where the right answer is known.
 
-This repo is phase 1 of that plan. It has the tools, an investigator on
-Claude, a baseline, and an offline eval on synthetic incidents.
+This repo holds phases 1 and 2 of that plan. Phase 1 is the tools, an
+investigator on Claude, a baseline, and an offline eval on synthetic
+incidents. Phase 2 is the incident gym. chaos-operator breaks a real service
+on kind, Prometheus pages, and the gym records it. CI replays the recordings
+without a cluster.
 
 ## Tools
 
@@ -131,10 +134,97 @@ the best possible ranking. An agent will have a hard time beating it here,
 and that is fine. Phase 2 moves to real incidents on kind, where the signals
 are messier. See [ADR 0002](docs/adr/0002-grading-investigators.md).
 
+## The incident gym
+
+The synthetic incidents favor the correlator, because they were planted with
+the same assumptions it scores with. The gym uses real faults instead. It
+runs on kind, records what happened, and replays it later without the
+cluster. See [ADR 0003](docs/adr/0003-incident-gym.md).
+
+Every scenario gets its own copy of this shop, built from four copies of
+gitops-platform-demo's sample service:
+
+```
+loadgen -> frontend -> checkout -> inventory
+loadgen -> recommendations
+```
+
+chaos-operator injects the fault. The gym also makes the changes a real
+incident has around it, and Prometheus pages on frontend.
+
+| scenario | fault | distraction |
+|----------|-------|-------------|
+| inventory-latency | 400ms latency on inventory | recommendations deploys 3 minutes before |
+| inventory-latency-deploy-after | 400ms latency on inventory | checkout deploys 1 minute after the latency starts |
+| checkout-pod-kill | checkout pods killed every minute | a frontend flag turns on 2 minutes before |
+| inventory-pod-kill-frontend-deploy | inventory pods killed every minute | frontend deploys 4 minutes before |
+| checkout-bad-deploy | none | an inventory flag turns on 1 minute before |
+
+The last one is a control. A checkout deploy that fails 30% of orders is the
+cause, so an investigator that never blames a deploy gets caught.
+
+```bash
+gym/up.sh        # kind, the stack, chaos-operator and five shops
+# let the shops warm up for about 95 minutes
+kubectl --context kind-gym -n monitoring port-forward svc/kube-prometheus-stack-prometheus 19090:9090 &
+go run ./cmd/platform-mcp gym record
+go run ./cmd/platform-mcp gym replay --incident-cli incident   # needs prometheus and promtool
+```
+
+A recording holds the shop's raw metric samples, the changes as incident-cli
+events, and chaos-operator's run records. A replay loads the samples into a
+fresh Prometheus with promtool. Then the real incident-cli and the real tools
+run on top, with the clock set to the page. So any query an investigator
+makes gets a real answer, and a replay takes about a second.
+
+The investigator never sees the chaos runs, because they are the answer key.
+A cause is right when it names the faulted service through a metric anomaly,
+or cites the change that caused it. A symptom on frontend does not count, and
+neither does a distraction.
+
+Scorecard from replaying the committed recordings:
+
+| setup | top-1 | top-3 | MRR | top answer was a distraction | citations ok |
+|-------|-------|-------|-----|------------------------------|--------------|
+| baseline | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+| baseline, no graph | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+| claude-opus-5-5 | not run yet | | | | |
+
+The baseline misses all five, even in its top three. Here is where
+incident-cli ranked the first right answer among every candidate:
+
+| scenario | rank with the graph | rank without it | ranked first |
+|----------|---------------------|-----------------|--------------|
+| inventory-latency | 6 of 9 | 5 of 9 | frontend p99 latency |
+| inventory-latency-deploy-after | 7 of 9 | 6 of 9 | frontend p99 latency |
+| checkout-pod-kill | 5 of 10 | 5 of 10 | frontend error ratio |
+| inventory-pod-kill-frontend-deploy | 10 of 14 | 9 of 14 | frontend p99 latency |
+| checkout-bad-deploy | 4 of 6 | 5 of 6 | frontend error ratio |
+
+Three things go wrong, and they add up.
+
+- The page's own symptoms rank first. frontend's error ratio is a metric
+  anomaly on the paged service, so it gets a full service score. It is the
+  incident, not its cause.
+- A fault spreads up the call chain within the same minute. Every anomaly
+  then has the same onset, so timing cannot tell the cause from its
+  symptoms.
+- The graph makes it worse. It scores a service lower the further it is from
+  the page, and the cause of a cascade is the furthest service that broke.
+  Without the graph, the cause ranks higher in three of five scenarios.
+
+A distraction also outranks the cause in three of five. Even with the chaos
+runs visible, which hands it the answer, the baseline still ranks frontend's
+symptoms first.
+
+On the synthetic incidents the same ranking scored 0.810 top-1. That gap is
+what the gym is for. It is the bar an agent has to clear, and it shows what
+incident-cli should fix first.
+
 ## Layout
 
 ```
-cmd/platform-mcp/       serve and eval
+cmd/platform-mcp/       serve, eval, and gym record and replay
 internal/tools/         the MCP tools and their evidence IDs
 internal/incidentcli/   runs incident-cli and reads its v1 JSON
 internal/chaos/         reads chaos-operator run records
@@ -142,6 +232,8 @@ internal/slo/           reads k8s-slo-tracker decisions from Prometheus
 internal/promapi/       instant queries with a time limit and a series cap
 internal/agent/         the Claude investigator, the baseline, citations, cost
 internal/eval/          scenarios, grading, the scorecard
+internal/gym/           records gym scenarios on kind, replays and grades them
+gym/                    the shop, the scenarios, the recordings, and up.sh
 testdata/               fixtures written by the other repos' own code
 docs/adr/               why the server looks like this, and how grading works
 ```
@@ -150,8 +242,13 @@ docs/adr/               why the server looks like this, and how grading works
 
 ```bash
 go test ./...
-INCIDENT_CLI=$(which incident) go test ./...   # adds the contract tests
+INCIDENT_CLI=$(which incident) go test ./...   # adds the contract tests and gym replays
 ```
+
+The gym replay tests also need `prometheus` and `promtool` on the PATH. CI
+pins Prometheus 3.14.0. The recorder's tests run against a fake cluster, a
+fake clock and a fake Prometheus that answers like the real one. A smoke run
+on kind found the one thing they missed: `/api/v1/alerts` refuses a POST.
 
 Every tool test goes through a real MCP client session. One test builds the
 binary and talks to `serve` over stdio, the way Claude Code would. The agent
@@ -169,11 +266,12 @@ The fixtures come from the other repos' code, not from copies of it.
 
 ## Limitations
 
-- The synthetic scenarios only exercise `investigate`. `chaos_runs` and
-  `slo_state` matter once incidents come from a real cluster in phase 2.
-- In the phase 2 gym, the investigator must not see chaos runs. They are the
-  answer key there. The gym will turn the chaos source and `chaos_runs` off
-  for the investigator, and use the run IDs only for grading.
+- The synthetic scenarios only exercise `investigate`.
+- The gym has five incidents. That is enough to read one by one, not enough
+  for a rate. Phase 3 grows it to 15.
+- In the gym, the evidence for a chaos fault is a metric anomaly. The
+  investigator gets no Kubernetes events or logs yet, and `slo_state` is not
+  used, because k8s-slo-tracker's daemon is not in the gym yet.
 - Cost is estimated from list prices in `internal/agent/pricing.go`. It is
   for comparing runs, not a bill.
 - `slo_state` reads the `service` label only. The ServiceMonitor renames the
