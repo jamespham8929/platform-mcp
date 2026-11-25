@@ -18,7 +18,7 @@
       "service": "auth",
       "title": "auth: lower request timeout to 2s",
       "timestamp": "2026-01-15T11:40:00Z",
-      "magnitude": 0.6588652700792043
+      "magnitude": 0.6588652700792041
     },
     {
       "id": "evt-7c9a3e",

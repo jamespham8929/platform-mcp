@@ -106,7 +106,7 @@
       "service": "billing",
       "title": "billing: change cache size to 4GiB",
       "timestamp": "2026-01-15T11:49:00Z",
-      "magnitude": 0.7710772119837813
+      "magnitude": 0.7710772119837814
     }
   ],
   "truth": {

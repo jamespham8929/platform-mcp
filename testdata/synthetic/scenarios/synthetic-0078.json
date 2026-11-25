@@ -90,7 +90,7 @@
       "service": "ledger",
       "title": "ledger v9093: tune cache TTL",
       "timestamp": "2026-01-15T11:52:00Z",
-      "magnitude": 0.7228352462605133
+      "magnitude": 0.7228352462605134
     },
     {
       "id": "evt-261452",

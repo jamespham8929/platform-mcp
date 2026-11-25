@@ -42,7 +42,7 @@
       "service": "auth",
       "title": "auth v4428: add request tracing",
       "timestamp": "2026-01-15T11:57:00Z",
-      "magnitude": 0.6119413158102708
+      "magnitude": 0.6119413158102709
     },
     {
       "id": "evt-d4699f",

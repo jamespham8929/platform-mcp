@@ -106,7 +106,7 @@
       "service": "search",
       "title": "search: lower request timeout to 2s",
       "timestamp": "2026-01-15T11:45:00Z",
-      "magnitude": 0.8254644183358949
+      "magnitude": 0.825464418335895
     }
   ],
   "truth": {
