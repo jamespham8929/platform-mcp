@@ -11,5 +11,6 @@
   "truth": {
     "service": "checkout",
     "accept": [{"change": "bad-deploy"}]
-  }
+  },
+  "group": "tuning"
 }

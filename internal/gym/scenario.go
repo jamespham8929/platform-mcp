@@ -32,6 +32,10 @@ type Definition struct {
 	Fault        *Fault   `json:"fault,omitempty"`
 	Changes      []Change `json:"changes,omitempty"`
 	Truth        TruthDef `json:"truth"`
+	// Group says how the scenario is used. "tuning" scenarios shaped
+	// incident-cli's rules. "held-out" scenarios were written and pushed
+	// before anyone saw how an investigator does on them.
+	Group string `json:"group,omitempty"`
 }
 
 // Fault is the chaos experiment that causes the incident. A control scenario
@@ -57,10 +61,14 @@ type Change struct {
 	Kind      string `json:"kind"`
 	Service   string `json:"service"`
 	Title     string `json:"title"`
-	// Flag is the flag a feature_flag change turns on.
+	// Flag is the flag a feature_flag or config_change turns on, in the
+	// shop's flags ConfigMap. It changes nothing the service reads.
 	Flag string `json:"flag,omitempty"`
-	// Set holds extra Helm values for a deploy, such as failureRate.
-	Set map[string]string `json:"set,omitempty"`
+	// Set and SetJSON are Helm values for a deploy or a config_change, such
+	// as failureRate, or env with a new UPSTREAM_TIMEOUT. The service reads
+	// these, so this kind of change can break it.
+	Set     map[string]string `json:"set,omitempty"`
+	SetJSON map[string]string `json:"set_json,omitempty"`
 }
 
 // TruthDef says what counts as naming the cause.
@@ -84,6 +92,9 @@ const (
 	KindDeploy       = "deploy"
 	KindFeatureFlag  = "feature_flag"
 	KindConfigChange = "config_change"
+
+	GroupTuning  = "tuning"
+	GroupHeldOut = "held-out"
 
 	FaultNetworkLatency = "network-latency"
 	FaultPodFailure     = "pod-failure"
@@ -131,11 +142,19 @@ func (d Definition) Validate() error {
 		if c.Title == "" {
 			bad("change %s has no title", c.Name)
 		}
+		helm := len(c.Set)+len(c.SetJSON) > 0
 		switch c.Kind {
 		case KindDeploy:
-		case KindFeatureFlag, KindConfigChange:
-			if c.Flag == "" {
-				bad("change %s: a %s needs a flag", c.Name, c.Kind)
+			if c.Flag != "" {
+				bad("change %s: a deploy has no flag", c.Name)
+			}
+		case KindFeatureFlag:
+			if c.Flag == "" || helm {
+				bad("change %s: a feature_flag needs a flag and no Helm values", c.Name)
+			}
+		case KindConfigChange:
+			if (c.Flag == "") == !helm {
+				bad("change %s: a config_change needs a flag or Helm values, not both", c.Name)
 			}
 		default:
 			bad("change %s: kind %q is not deploy, feature_flag or config_change", c.Name, c.Kind)
@@ -143,6 +162,11 @@ func (d Definition) Validate() error {
 	}
 	if d.Fault == nil && len(d.Changes) == 0 {
 		bad("a scenario needs a fault or a change")
+	}
+	switch d.Group {
+	case "", GroupTuning, GroupHeldOut:
+	default:
+		bad("group %q is not tuning or held-out", d.Group)
 	}
 	if !shopServices[d.Truth.Service] {
 		bad("truth service %q is not a shop service", d.Truth.Service)

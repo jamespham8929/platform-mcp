@@ -118,3 +118,29 @@ func PrintScore(w io.Writer, s eval.Score) {
 		s.CitationValidity, s.CostPerIncident, s.MedianDuration.Round(time.Millisecond))
 	_ = tw.Flush()
 }
+
+// ScoreByGroup scores each scenario group on its own, in a fixed order. A
+// recording with no group counts as tuning.
+func ScoreByGroup(setup, model string, recs []Loaded, graded []eval.Graded) []eval.Score {
+	group := map[string]string{}
+	for _, r := range recs {
+		g := r.Definition.Group
+		if g == "" {
+			g = GroupTuning
+		}
+		group[r.Definition.Name] = g
+	}
+	var out []eval.Score
+	for _, name := range []string{GroupTuning, GroupHeldOut} {
+		var in []eval.Graded
+		for _, g := range graded {
+			if group[g.Scenario] == name {
+				in = append(in, g)
+			}
+		}
+		if len(in) > 0 {
+			out = append(out, eval.Summarize(setup+", "+name, model, in))
+		}
+	}
+	return out
+}

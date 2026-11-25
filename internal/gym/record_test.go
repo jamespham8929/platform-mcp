@@ -301,7 +301,11 @@ func TestRecordRefusesAShopThatIsAlreadyPaging(t *testing.T) {
 func TestScenarioFilesAreValid(t *testing.T) {
 	defs, err := LoadDefinitions("../../gym/scenarios")
 	require.NoError(t, err)
-	assert.Len(t, defs, 5)
+	groups := map[string]int{}
+	for _, d := range defs {
+		groups[d.Group]++
+	}
+	assert.Equal(t, map[string]int{GroupTuning: 5, GroupHeldOut: 10}, groups)
 	for _, d := range defs {
 		// Every scenario must page on frontend, the only service the page
 		// rule in gym/shop.yaml watches.
@@ -365,4 +369,65 @@ func TestRecordGivesUpWaitingForARunRecord(t *testing.T) {
 		Truth: TruthDef{Service: "inventory", Accept: []Rule{{Service: "inventory"}}}}
 	_, err := newRecorder(f, srv.URL, t.TempDir()).Record(context.Background(), d)
 	require.ErrorContains(t, err, "no chaos run record within 15m0s")
+}
+
+func TestAConfigChangeGoesThroughHelm(t *testing.T) {
+	f := newFake(time.Date(2026, 11, 25, 10, 0, 0, 0, time.UTC))
+	f.created = f.now.Add(-2 * time.Hour)
+	f.pageAfter = 0
+	srv := f.prometheus(t, "gym-x")
+	defer srv.Close()
+	env := `[{"name":"UPSTREAM_URL","value":"http://inventory"},{"name":"UPSTREAM_TIMEOUT","value":"1ms"}]`
+	d := Definition{
+		Name: "x", PagedService: "frontend", Group: GroupHeldOut,
+		Changes: []Change{{Name: "timeout", Kind: KindConfigChange, Service: "checkout",
+			Title: "checkout: upstream timeout set to 1ms", SetJSON: map[string]string{"env": env}}},
+		Truth: TruthDef{Service: "checkout", Accept: []Rule{{Change: "timeout"}}},
+	}
+	require.NoError(t, d.Validate())
+	rec, err := newRecorder(f, srv.URL, t.TempDir()).Record(context.Background(), d)
+	require.NoError(t, err)
+
+	var helm string
+	for _, c := range f.calls {
+		if strings.HasPrefix(c, "helm upgrade") {
+			helm = c
+		}
+	}
+	assert.Contains(t, helm, "--set podAnnotations.gym-release=000001 --set-json env="+env)
+	assert.Equal(t, []Rule{{Change: "timeout", EvidenceID: "event:config-checkout-000001"}}, rec.Truth.Accept)
+	assert.Equal(t, GroupHeldOut, rec.Definition.Group)
+}
+
+func TestValidateChangeMechanisms(t *testing.T) {
+	base := func(c Change) Definition {
+		c.Name, c.Service, c.Title = "c", "checkout", "t"
+		return Definition{Name: "x", PagedService: "frontend", Changes: []Change{c},
+			Truth: TruthDef{Service: "checkout", Accept: []Rule{{Change: "c"}}}}
+	}
+	cases := map[string]struct {
+		change Change
+		want   string
+	}{
+		"deploy with a flag":    {Change{Kind: KindDeploy, Flag: "f"}, "a deploy has no flag"},
+		"flag with helm values": {Change{Kind: KindFeatureFlag, Flag: "f", Set: map[string]string{"a": "1"}}, "no Helm values"},
+		"config with nothing":   {Change{Kind: KindConfigChange}, "not both"},
+		"config with both":      {Change{Kind: KindConfigChange, Flag: "f", SetJSON: map[string]string{"env": "[]"}}, "not both"},
+		"config through a flag": {Change{Kind: KindConfigChange, Flag: "f"}, ""},
+		"config through helm":   {Change{Kind: KindConfigChange, Set: map[string]string{"a": "1"}}, ""},
+		"plain deploy":          {Change{Kind: KindDeploy}, ""},
+	}
+	for name, tc := range cases {
+		t.Run(name, func(t *testing.T) {
+			err := base(tc.change).Validate()
+			if tc.want == "" {
+				assert.NoError(t, err)
+			} else {
+				assert.ErrorContains(t, err, tc.want)
+			}
+		})
+	}
+	d := base(Change{Kind: KindDeploy})
+	d.Group = "training"
+	assert.ErrorContains(t, d.Validate(), `group "training"`)
 }

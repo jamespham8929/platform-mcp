@@ -216,3 +216,20 @@ func TestPrintScenarios(t *testing.T) {
 	PrintScore(&buf, eval.Summarize("baseline", "", graded))
 	assert.Contains(t, buf.String(), "distracted")
 }
+
+func TestScoreByGroup(t *testing.T) {
+	recs := []Loaded{
+		{Recording: Recording{Definition: Definition{Name: "a"}}},
+		{Recording: Recording{Definition: Definition{Name: "b", Group: GroupHeldOut}}},
+		{Recording: Recording{Definition: Definition{Name: "c", Group: GroupHeldOut}}},
+	}
+	graded := []eval.Graded{{Scenario: "a", Rank: 1}, {Scenario: "b", Rank: 1}, {Scenario: "c", Rank: 0}}
+	scores := ScoreByGroup("baseline", "", recs, graded)
+	require.Len(t, scores, 2)
+	assert.Equal(t, "baseline, tuning", scores[0].Setup)
+	assert.Equal(t, 1, scores[0].Scenarios)
+	assert.Equal(t, 1.0, scores[0].Top1)
+	assert.Equal(t, "baseline, held-out", scores[1].Setup)
+	assert.Equal(t, 0.5, scores[1].Top1)
+	assert.Len(t, ScoreByGroup("baseline", "", recs[:1], graded[:1]), 1)
+}

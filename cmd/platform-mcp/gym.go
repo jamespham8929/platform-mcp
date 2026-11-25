@@ -85,6 +85,7 @@ func gymReplay(ctx context.Context, args []string, stdout, stderr io.Writer) err
 	promtool := fs.String("promtool", "promtool", "promtool binary")
 	investigator := fs.String("investigator", "baseline", "baseline or claude")
 	noGraph := fs.Bool("no-graph", false, "do not give incident-cli the dependency graph")
+	graph := fs.String("graph", "", "dependency graph to give incident-cli (default: graph.json in --gym)")
 	showChaos := fs.Bool("show-chaos", false, "give the investigator the chaos runs, which are the answer key; for checking the pipe only")
 	window := fs.Int("window", gym.DefaultWindowMinutes, "default investigate window in minutes")
 	out := fs.String("out", "", "write every graded result, with transcripts, to this JSON file")
@@ -116,10 +117,14 @@ func gymReplay(ctx context.Context, args []string, stdout, stderr io.Writer) err
 		Log:                  slog.New(slog.NewTextHandler(stderr, nil)),
 	}
 	name := *investigator
-	if !*noGraph {
-		r.Graph = filepath.Join(*gymDir, "graph.json")
-	} else {
+	switch {
+	case *noGraph:
 		name += " (no graph)"
+	case *graph != "":
+		r.Graph = *graph
+		name += " (" + filepath.Base(*graph) + ")"
+	default:
+		r.Graph = filepath.Join(*gymDir, "graph.json")
 	}
 	if *showChaos {
 		name += " (chaos visible)"
@@ -127,6 +132,14 @@ func gymReplay(ctx context.Context, args []string, stdout, stderr io.Writer) err
 	graded, runErr := r.Run(ctx, recs, inv)
 	score := eval.Summarize(name, modelID, graded)
 	gym.PrintScore(stdout, score)
+	// The tuning scenarios shaped incident-cli's rules, so their score says
+	// less than the held-out one. Print both when both are there.
+	if groups := gym.ScoreByGroup(name, modelID, recs, graded); len(groups) > 1 {
+		for _, g := range groups {
+			fmt.Fprintln(stdout)
+			gym.PrintScore(stdout, g)
+		}
+	}
 	fmt.Fprintln(stdout)
 	gym.PrintScenarios(stdout, recs, graded)
 	if *out != "" {

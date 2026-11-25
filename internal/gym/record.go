@@ -354,25 +354,26 @@ func (r *Recorder) applyChange(ctx context.Context, ns string, c Change) (Event,
 		// about which change is the cause.
 		Magnitude: 0.6,
 	}
-	switch c.Kind {
-	case KindDeploy:
-		ev.ID, ev.Source = "deploy-"+c.Service+"-"+id, KindDeploy
+	ev.Source = c.Kind
+	switch c.Flag {
+	case "":
+		prefix := "deploy-"
+		if c.Kind == KindConfigChange {
+			prefix = "config-"
+		}
+		ev.ID = prefix + c.Service + "-" + id
 		ev.Metadata = map[string]string{"release": id}
+		// A new release always rolls the pods, the way a real deploy or
+		// config rollout does.
 		args := []string{"upgrade", c.Service, r.Chart, "--kube-context", r.KubeContext, "--namespace", ns,
 			"--reuse-values", "--set", "podAnnotations.gym-release=" + id}
-		keys := make([]string, 0, len(c.Set))
-		for k := range c.Set {
-			keys = append(keys, k)
-		}
-		sort.Strings(keys)
-		for _, k := range keys {
-			args = append(args, "--set", k+"="+c.Set[k])
-		}
+		args = append(args, helmValues("--set", c.Set)...)
+		args = append(args, helmValues("--set-json", c.SetJSON)...)
 		if _, err := r.Kube.Run(ctx, nil, "helm", args...); err != nil {
 			return ev, err
 		}
 	default:
-		ev.ID, ev.Source = "flag-"+c.Service+"-"+id, c.Kind
+		ev.ID = "flag-" + c.Service + "-" + id
 		ev.Metadata = map[string]string{"flag": c.Flag}
 		patch, _ := json.Marshal(map[string]any{"data": map[string]string{c.Flag: "on"}})
 		if _, err := r.Kube.Run(ctx, nil, "kubectl", "--context", r.KubeContext, "-n", ns,
@@ -381,6 +382,20 @@ func (r *Recorder) applyChange(ctx context.Context, ns string, c Change) (Event,
 		}
 	}
 	return ev, nil
+}
+
+// helmValues turns a map into flag pairs, in a fixed order.
+func helmValues(flag string, values map[string]string) []string {
+	keys := make([]string, 0, len(values))
+	for k := range values {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	var out []string
+	for _, k := range keys {
+		out = append(out, flag, k+"="+values[k])
+	}
+	return out
 }
 
 func (r *Recorder) firingPage(ctx context.Context, ns string) (bool, string, error) {

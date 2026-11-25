@@ -58,7 +58,7 @@ k() { kubectl --context "$CONTEXT" "$@"; }
 
 step "Creating kind cluster $CLUSTER"
 if ! kind get clusters | grep -qx "$CLUSTER"; then
-  kind create cluster --name "$CLUSTER" --wait 120s
+  kind create cluster --name "$CLUSTER" --config "$GYM/kind.yaml" --wait 120s
 fi
 
 step "Building and loading images"

@@ -15,5 +15,6 @@
   "truth": {
     "service": "inventory",
     "accept": [{"source": "metric_anomaly", "service": "inventory"}]
-  }
+  },
+  "group": "tuning"
 }

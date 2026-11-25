@@ -15,5 +15,6 @@
   "truth": {
     "service": "checkout",
     "accept": [{"source": "metric_anomaly", "service": "checkout"}]
-  }
+  },
+  "group": "tuning"
 }

@@ -31,7 +31,8 @@
           "change": "bad-deploy"
         }
       ]
-    }
+    },
+    "group": "tuning"
   },
   "namespace": "gym-checkout-bad-deploy",
   "shop_started": "2026-11-25T12:27:36Z",
