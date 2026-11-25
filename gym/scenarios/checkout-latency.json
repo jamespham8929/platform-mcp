@@ -1,0 +1,35 @@
+{
+  "name": "checkout-latency",
+  "description": "checkout gets 400ms of network latency, in the middle of the chain. tc on checkout also delays its own calls to inventory. An unrelated service deployed two minutes before.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "checkout",
+    "spec": {
+      "networkLatency": {
+        "latencyMs": 400,
+        "jitterMs": 20,
+        "durationSeconds": 480
+      }
+    }
+  },
+  "changes": [
+    {
+      "name": "recs-deploy",
+      "at_seconds": -120,
+      "kind": "deploy",
+      "service": "recommendations",
+      "title": "recommendations v2.5.0: trim the response"
+    }
+  ],
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "checkout"
+      }
+    ]
+  },
+  "group": "held-out"
+}

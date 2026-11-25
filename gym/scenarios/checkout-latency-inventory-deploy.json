@@ -1,0 +1,35 @@
+{
+  "name": "checkout-latency-inventory-deploy",
+  "description": "checkout gets 400ms of network latency. inventory, which checkout calls, deployed four minutes before.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "checkout",
+    "spec": {
+      "networkLatency": {
+        "latencyMs": 400,
+        "jitterMs": 20,
+        "durationSeconds": 480
+      }
+    }
+  },
+  "changes": [
+    {
+      "name": "inventory-deploy",
+      "at_seconds": -240,
+      "kind": "deploy",
+      "service": "inventory",
+      "title": "inventory v1.9.0: new stock cache"
+    }
+  ],
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "checkout"
+      }
+    ]
+  },
+  "group": "held-out"
+}

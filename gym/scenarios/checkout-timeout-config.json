@@ -1,0 +1,34 @@
+{
+  "name": "checkout-timeout-config",
+  "description": "No chaos. A config change sets checkout's upstream timeout to 1ms, so its calls to inventory fail. inventory itself stays healthy. An inventory flag was turned on two minutes before.",
+  "paged_service": "frontend",
+  "changes": [
+    {
+      "name": "inventory-flag",
+      "at_seconds": -120,
+      "kind": "feature_flag",
+      "service": "inventory",
+      "flag": "warehouse-sync",
+      "title": "inventory: flag warehouse-sync turned on"
+    },
+    {
+      "name": "timeout-config",
+      "at_seconds": 0,
+      "kind": "config_change",
+      "service": "checkout",
+      "title": "checkout: upstream timeout lowered to 1ms",
+      "set_json": {
+        "env": "[{\"name\":\"UPSTREAM_URL\",\"value\":\"http://inventory\"},{\"name\":\"UPSTREAM_TIMEOUT\",\"value\":\"1ms\"}]"
+      }
+    }
+  ],
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "change": "timeout-config"
+      }
+    ]
+  },
+  "group": "held-out"
+}

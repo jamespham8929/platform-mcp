@@ -1,0 +1,36 @@
+{
+  "name": "inventory-latency-inventory-flag",
+  "description": "inventory gets 400ms of network latency. A flag was turned on in inventory itself a minute before, and it changed nothing.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "inventory",
+    "spec": {
+      "networkLatency": {
+        "latencyMs": 400,
+        "jitterMs": 20,
+        "durationSeconds": 480
+      }
+    }
+  },
+  "changes": [
+    {
+      "name": "inventory-flag",
+      "at_seconds": -60,
+      "kind": "feature_flag",
+      "service": "inventory",
+      "flag": "bulk-reservations",
+      "title": "inventory: flag bulk-reservations turned on"
+    }
+  ],
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "inventory"
+      }
+    ]
+  },
+  "group": "held-out"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "frontend-bad-deploy",
+  "description": "No chaos. frontend, the paged service, deploys a build that fails 30% of orders. inventory deployed three minutes before, and that deploy was fine.",
+  "paged_service": "frontend",
+  "changes": [
+    {
+      "name": "inventory-deploy",
+      "at_seconds": -180,
+      "kind": "deploy",
+      "service": "inventory",
+      "title": "inventory v1.9.1: log reservation latency"
+    },
+    {
+      "name": "bad-deploy",
+      "at_seconds": 0,
+      "kind": "deploy",
+      "service": "frontend",
+      "title": "frontend v5.4.0: new order form",
+      "set": {
+        "failureRate": "0.3"
+      }
+    }
+  ],
+  "truth": {
+    "service": "frontend",
+    "accept": [
+      {
+        "change": "bad-deploy"
+      }
+    ]
+  },
+  "group": "held-out"
+}

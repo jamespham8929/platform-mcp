@@ -1,0 +1,35 @@
+{
+  "name": "frontend-latency",
+  "description": "frontend itself gets 400ms of network latency. The fault is on the paged service. checkout deployed three minutes before.",
+  "paged_service": "frontend",
+  "fault": {
+    "type": "network-latency",
+    "service": "frontend",
+    "spec": {
+      "networkLatency": {
+        "latencyMs": 400,
+        "jitterMs": 20,
+        "durationSeconds": 480
+      }
+    }
+  },
+  "changes": [
+    {
+      "name": "checkout-deploy",
+      "at_seconds": -180,
+      "kind": "deploy",
+      "service": "checkout",
+      "title": "checkout v3.3.0: cache shipping quotes"
+    }
+  ],
+  "truth": {
+    "service": "frontend",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "frontend"
+      }
+    ]
+  },
+  "group": "held-out"
+}

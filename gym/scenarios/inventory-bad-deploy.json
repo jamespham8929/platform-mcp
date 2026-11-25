@@ -1,0 +1,34 @@
+{
+  "name": "inventory-bad-deploy",
+  "description": "No chaos. inventory deploys a build that fails 30% of orders, the deepest service in the chain. A frontend flag was turned on two minutes before.",
+  "paged_service": "frontend",
+  "changes": [
+    {
+      "name": "frontend-flag",
+      "at_seconds": -120,
+      "kind": "feature_flag",
+      "service": "frontend",
+      "flag": "express-checkout",
+      "title": "frontend: flag express-checkout turned on"
+    },
+    {
+      "name": "bad-deploy",
+      "at_seconds": 0,
+      "kind": "deploy",
+      "service": "inventory",
+      "title": "inventory v2.0.0: reserve stock per line item",
+      "set": {
+        "failureRate": "0.3"
+      }
+    }
+  ],
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "change": "bad-deploy"
+      }
+    ]
+  },
+  "group": "held-out"
+}
