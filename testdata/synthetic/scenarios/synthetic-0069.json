@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0069",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-a60dac",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.24752640509002793
+    },
+    {
+      "id": "evt-1d1bcc",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse error rate above 2%",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.7742873378412081
+    },
+    {
+      "id": "evt-5ea4f8",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.8477956365420982
+    },
+    {
+      "id": "evt-f0f183",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v9328: rewrite pagination",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.0795129019670902
+    },
+    {
+      "id": "evt-cf14e1",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 4 to 7 replicas",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.6926460354391673
+    },
+    {
+      "id": "evt-8c0a28",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 2 to 6 replicas",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.14512135954617536
+    },
+    {
+      "id": "evt-3461cc",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.4336196562996577
+    },
+    {
+      "id": "evt-6fdf9c",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.20426131412800172
+    },
+    {
+      "id": "evt-935e80",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v9796: tune cache TTL",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.4414004303651319
+    },
+    {
+      "id": "evt-87398e",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: enable connection reuse",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.22859667650636362
+    },
+    {
+      "id": "evt-99bb15",
+      "source": "infra",
+      "service": "search",
+      "title": "search: disk pressure on one node",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.2296363914030853
+    },
+    {
+      "id": "evt-19382f",
+      "source": "external",
+      "service": "web",
+      "title": "web: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.9944331169049649
+    },
+    {
+      "id": "evt-69b6dd",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v8881: raise worker count",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.7928552936211507
+    }
+  ],
+  "truth": {
+    "event_id": "evt-935e80",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

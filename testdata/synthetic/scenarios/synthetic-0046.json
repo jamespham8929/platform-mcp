@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0046",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-18ebee",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.02939639373947933
+    },
+    {
+      "id": "evt-4a8224",
+      "source": "infra",
+      "service": "web",
+      "title": "web: disk pressure on one node",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.9608557788053204
+    },
+    {
+      "id": "evt-629db5",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.6968591052020724
+    },
+    {
+      "id": "evt-4020ac",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.8200960061906347
+    },
+    {
+      "id": "evt-b92b67",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v9761: add request tracing",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.7819429589301831
+    },
+    {
+      "id": "evt-013327",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 8 to 12 replicas",
+      "timestamp": "2026-01-15T10:30:00Z",
+      "magnitude": 0.4564108387897859
+    },
+    {
+      "id": "evt-d4e724",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: node pool upgrade started",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.2796014383361651
+    },
+    {
+      "id": "evt-4189a7",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.20048127126711626
+    },
+    {
+      "id": "evt-cf877d",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.6775627111186932
+    },
+    {
+      "id": "evt-8074e7",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v7057: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.4289269616083168
+    },
+    {
+      "id": "evt-21338e",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v4196: tune cache TTL",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.6327560025941352
+    },
+    {
+      "id": "evt-3e9902",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.968814592690873
+    },
+    {
+      "id": "evt-0b6ed7",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.23587366376948943
+    }
+  ],
+  "truth": {
+    "event_id": "evt-3e9902",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

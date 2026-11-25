@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0008",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-3477f0",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v9862: update TLS settings",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.4419751931827742
+    },
+    {
+      "id": "evt-f3b370",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: disk pressure on one node",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.22678220281898628
+    },
+    {
+      "id": "evt-475057",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.5776281914502616
+    },
+    {
+      "id": "evt-5202d3",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.12882742698155378
+    },
+    {
+      "id": "evt-40b063",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.39990836404865476
+    },
+    {
+      "id": "evt-87389c",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.9930709880110372
+    },
+    {
+      "id": "evt-490bcc",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v1409: bump client library",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.6808438223851
+    },
+    {
+      "id": "evt-f3bd67",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.8792739933330374
+    },
+    {
+      "id": "evt-490dc0",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.2679922126843588
+    },
+    {
+      "id": "evt-aaef8d",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.4125687089006846
+    },
+    {
+      "id": "evt-d49324",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 9 to 10 replicas",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.39769149574813906
+    },
+    {
+      "id": "evt-6f2bcd",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v5373: tune cache TTL",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.04649728515225356
+    },
+    {
+      "id": "evt-b1ae98",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: node pool upgrade started",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.3104138384472586
+    }
+  ],
+  "truth": {
+    "event_id": "evt-3477f0",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

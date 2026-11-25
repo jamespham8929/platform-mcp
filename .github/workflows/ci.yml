@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # The contract tests run the real incident-cli, built from its main
+      # branch. A change to its JSON output then fails here, before it
+      # breaks an investigation.
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/incident-cli
+          path: incident-cli
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+          cache: true
+      - name: Build incident-cli
+        run: cd incident-cli && go build -o "$RUNNER_TEMP/incident" .
+      - name: Vet
+        run: go vet ./...
+      - name: Test
+        env:
+          INCIDENT_CLI: ${{ runner.temp }}/incident
+        run: go test ./... -race -coverprofile=coverage.out -covermode=atomic
+      - name: Enforce coverage threshold
+        env:
+          THRESHOLD: "80"
+        run: |
+          total=$(go tool cover -func=coverage.out | awk '/^total:/ {print $3}' | tr -d '%')
+          echo "Total coverage: ${total}% (threshold ${THRESHOLD}%)"
+          awk -v t="$total" -v min="$THRESHOLD" 'BEGIN { exit (t < min) ? 1 : 0 }' \
+            || { echo "Coverage ${total}% is below ${THRESHOLD}%"; exit 1; }
+      - name: Check the scenarios match a fresh export
+        run: |
+          # The committed scenarios must be exactly what incident-cli's
+          # benchmark exports for seed 7. Otherwise the recorded ranks no
+          # longer describe the current correlator.
+          (cd incident-cli && go run ./benchmarks/correlator -trials 100 -export "$RUNNER_TEMP/synthetic" > /dev/null)
+          diff -r "$RUNNER_TEMP/synthetic" testdata/synthetic \
+            || { echo "re-export with: go run ./benchmarks/correlator -trials 100 -export ../platform-mcp/testdata/synthetic"; exit 1; }
+      - name: Baseline scorecard
+        run: |
+          go run ./cmd/platform-mcp eval --incident-cli "$RUNNER_TEMP/incident" | tee -a "$GITHUB_STEP_SUMMARY"
+          go run ./cmd/platform-mcp eval --incident-cli "$RUNNER_TEMP/incident" --no-graph | tee -a "$GITHUB_STEP_SUMMARY"
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+      - uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.15.0

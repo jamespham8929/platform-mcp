@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0055",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-896fd4",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 8 to 10 replicas",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.06497651295107548
+    },
+    {
+      "id": "evt-081319",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.6562768662717192
+    },
+    {
+      "id": "evt-abc4ab",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.30158232520635675
+    },
+    {
+      "id": "evt-4ece14",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.3496465648175951
+    },
+    {
+      "id": "evt-a23ebe",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.22720135709581238
+    },
+    {
+      "id": "evt-ba4e8c",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:30:00Z",
+      "magnitude": 0.6701850409328222
+    },
+    {
+      "id": "evt-e5cd86",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 8 to 13 replicas",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.03709411438098931
+    },
+    {
+      "id": "evt-ced814",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.7988630845958719
+    },
+    {
+      "id": "evt-f5398c",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.2196746932714758
+    },
+    {
+      "id": "evt-125c41",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.44884795337100614
+    },
+    {
+      "id": "evt-01110c",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.3364411903040712
+    },
+    {
+      "id": "evt-1d91fa",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.9500751341040558
+    },
+    {
+      "id": "evt-76c1bb",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v2708: rewrite pagination",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.7060013872489835
+    }
+  ],
+  "truth": {
+    "event_id": "evt-1d91fa",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

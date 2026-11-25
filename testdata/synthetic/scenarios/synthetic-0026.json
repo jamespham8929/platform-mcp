@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0026",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-124ce4",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: disk pressure on one node",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.9857506143066995
+    },
+    {
+      "id": "evt-7c0c7d",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.5640791941647356
+    },
+    {
+      "id": "evt-4a5180",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 3 to 8 replicas",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.7310618380500334
+    },
+    {
+      "id": "evt-2e53f8",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v3558: add request tracing",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.8485748666984985
+    },
+    {
+      "id": "evt-216f9e",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.6347295763945299
+    },
+    {
+      "id": "evt-b0bb03",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.5942832693775213
+    },
+    {
+      "id": "evt-f96040",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.21722361145716204
+    },
+    {
+      "id": "evt-35fe31",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v7012: tune cache TTL",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.16523977121783165
+    },
+    {
+      "id": "evt-46474f",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.41822795297748544
+    },
+    {
+      "id": "evt-b2f227",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.9589731051754942
+    },
+    {
+      "id": "evt-51b9b9",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: load balancer target replaced",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.23997903348879682
+    },
+    {
+      "id": "evt-1a236d",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.2621182923859935
+    },
+    {
+      "id": "evt-cd6112",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.6062064536119633
+    }
+  ],
+  "truth": {
+    "event_id": "evt-2e53f8",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

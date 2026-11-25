@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0085",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-32e477",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.28159012288257734
+    },
+    {
+      "id": "evt-0c4489",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v7839: rewrite pagination",
+      "timestamp": "2026-01-15T10:06:00Z",
+      "magnitude": 0.6023649151203867
+    },
+    {
+      "id": "evt-0fc326",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.8355115432748651
+    },
+    {
+      "id": "evt-0fc7c9",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.5781693487352781
+    },
+    {
+      "id": "evt-666ae7",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.1976516176243198
+    },
+    {
+      "id": "evt-188062",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.19056810039678787
+    },
+    {
+      "id": "evt-37372d",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.10304118574605277
+    },
+    {
+      "id": "evt-a9c835",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.6970371214134118
+    },
+    {
+      "id": "evt-ca174c",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.019722657999146298
+    },
+    {
+      "id": "evt-5882bc",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.22879635756057753
+    },
+    {
+      "id": "evt-382880",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.7093171558311749
+    },
+    {
+      "id": "evt-727235",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: node pool upgrade started",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.7501477882947928
+    },
+    {
+      "id": "evt-e143c4",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.7816197043279154
+    }
+  ],
+  "truth": {
+    "event_id": "evt-382880",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

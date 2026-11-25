@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0094",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-6000cf",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.5147164847087936
+    },
+    {
+      "id": "evt-e23433",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments error rate above 2%",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.23406802520873538
+    },
+    {
+      "id": "evt-48fd24",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.6175523413017746
+    },
+    {
+      "id": "evt-46dd78",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: disk pressure on one node",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.6971566071771857
+    },
+    {
+      "id": "evt-617ab7",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.7095946829844668
+    },
+    {
+      "id": "evt-a81dc7",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.4450802133618447
+    },
+    {
+      "id": "evt-7884a7",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v3527: rewrite pagination",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.570020847477578
+    },
+    {
+      "id": "evt-d2431d",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.5788860245124363
+    },
+    {
+      "id": "evt-0a6d31",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v9291: rewrite pagination",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.8675068594677446
+    },
+    {
+      "id": "evt-193481",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.2856283733281295
+    },
+    {
+      "id": "evt-a81aa0",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.9758266596252909
+    },
+    {
+      "id": "evt-5a5425",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.4148603759398918
+    },
+    {
+      "id": "evt-d3c37b",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v4129: bump client library",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.46786852829706715
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d3c37b",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0030",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-0fd234",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.27267926076398186
+    },
+    {
+      "id": "evt-3d777e",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.15945392501777886
+    },
+    {
+      "id": "evt-476091",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.8458426137758435
+    },
+    {
+      "id": "evt-440d22",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.31719794659077055
+    },
+    {
+      "id": "evt-d0ad26",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.016259771248995362
+    },
+    {
+      "id": "evt-be7eae",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 3 to 9 replicas",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.8294014707122701
+    },
+    {
+      "id": "evt-3d9de4",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.15480665684009348
+    },
+    {
+      "id": "evt-7b3e5a",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.5068004468464479
+    },
+    {
+      "id": "evt-b8a53a",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.29123183736757574
+    },
+    {
+      "id": "evt-13e273",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.7406500515072373
+    },
+    {
+      "id": "evt-424218",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v4261: update TLS settings",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.607912124686038
+    },
+    {
+      "id": "evt-2bc09a",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.28499350007549445
+    },
+    {
+      "id": "evt-79d8e6",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v3209: raise worker count",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.40237671797280056
+    }
+  ],
+  "truth": {
+    "event_id": "evt-79d8e6",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

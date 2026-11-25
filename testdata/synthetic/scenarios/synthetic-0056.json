@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0056",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-aac9da",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.03493987017792386
+    },
+    {
+      "id": "evt-ccc174",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v7387: add request tracing",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.7013626331350749
+    },
+    {
+      "id": "evt-5336af",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v2370: add request tracing",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.21529871271198114
+    },
+    {
+      "id": "evt-f47b19",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v8383: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.43447616820129087
+    },
+    {
+      "id": "evt-90b129",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v6822: refactor retry logic",
+      "timestamp": "2026-01-15T10:05:00Z",
+      "magnitude": 0.28072839292716256
+    },
+    {
+      "id": "evt-cb0a63",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments error rate above 2%",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.35643037779988657
+    },
+    {
+      "id": "evt-857569",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.13057649364858498
+    },
+    {
+      "id": "evt-8cb05c",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: disk pressure on one node",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.7346602116012532
+    },
+    {
+      "id": "evt-7284e3",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.7363655731738824
+    },
+    {
+      "id": "evt-b6493e",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v6908: update TLS settings",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.48167486414149285
+    },
+    {
+      "id": "evt-f8f9eb",
+      "source": "infra",
+      "service": "search",
+      "title": "search: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.8470690080400375
+    },
+    {
+      "id": "evt-43d103",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory queue depth above 10k",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.508746050331563
+    },
+    {
+      "id": "evt-faf0cb",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.873251646333963
+    }
+  ],
+  "truth": {
+    "event_id": "evt-f47b19",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 2
+    }
+  }
+}

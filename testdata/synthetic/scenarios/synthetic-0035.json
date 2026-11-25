@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0035",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-20bc13",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory queue depth above 10k",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.5676960752121226
+    },
+    {
+      "id": "evt-5a111f",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v6954: add request tracing",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.9638976525263204
+    },
+    {
+      "id": "evt-2fb5d0",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.2995529304814578
+    },
+    {
+      "id": "evt-1d6203",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog queue depth above 10k",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.6488173570813082
+    },
+    {
+      "id": "evt-572d0b",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.6714535435295246
+    },
+    {
+      "id": "evt-1cb92c",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 8 to 9 replicas",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.1124859542111449
+    },
+    {
+      "id": "evt-9b80e7",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 2 to 7 replicas",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.14999163012824077
+    },
+    {
+      "id": "evt-c29741",
+      "source": "external",
+      "service": "search",
+      "title": "search: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.6181811811233227
+    },
+    {
+      "id": "evt-459721",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.7900787447721317
+    },
+    {
+      "id": "evt-7bbcc7",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v4838: update TLS settings",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.7013590656636334
+    },
+    {
+      "id": "evt-3b55f7",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.6915031957912473
+    },
+    {
+      "id": "evt-18c9ec",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: node pool upgrade started",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.023616425979068337
+    },
+    {
+      "id": "evt-e6cc5a",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.832078486291154
+    }
+  ],
+  "truth": {
+    "event_id": "evt-7bbcc7",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

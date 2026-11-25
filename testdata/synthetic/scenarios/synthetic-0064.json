@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0064",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-cc7162",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.8665162629381787
+    },
+    {
+      "id": "evt-88259b",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v2598: tune cache TTL",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.5423183358705006
+    },
+    {
+      "id": "evt-d49596",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.5452591868752504
+    },
+    {
+      "id": "evt-9f58e7",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v3757: update TLS settings",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.9280483890042153
+    },
+    {
+      "id": "evt-9de9ca",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.1092057180488445
+    },
+    {
+      "id": "evt-009159",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.6543998335237734
+    },
+    {
+      "id": "evt-bf9c14",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: load balancer target replaced",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.9845642685887016
+    },
+    {
+      "id": "evt-9e3d25",
+      "source": "infra",
+      "service": "search",
+      "title": "search: node pool upgrade started",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.46316303968609124
+    },
+    {
+      "id": "evt-da48e8",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.7615015927492804
+    },
+    {
+      "id": "evt-fb1a58",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: disk pressure on one node",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.8210840378267938
+    },
+    {
+      "id": "evt-1b93bf",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.15933981670131778
+    },
+    {
+      "id": "evt-2b4613",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v4658: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.6969780939874671
+    },
+    {
+      "id": "evt-20d674",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.6166869955824366
+    }
+  ],
+  "truth": {
+    "event_id": "evt-2b4613",
+    "service": "inventory",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0006",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-c3edac",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.43065923887300167
+    },
+    {
+      "id": "evt-f73748",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.3649888311842426
+    },
+    {
+      "id": "evt-5dc12f",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v4079: refactor retry logic",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.928125622466636
+    },
+    {
+      "id": "evt-819506",
+      "source": "alert",
+      "service": "web",
+      "title": "web queue depth above 10k",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.817016192283425
+    },
+    {
+      "id": "evt-b38051",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: load balancer target replaced",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.8838502579167319
+    },
+    {
+      "id": "evt-b994c5",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.6666347459397111
+    },
+    {
+      "id": "evt-77ca48",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.34945389451782105
+    },
+    {
+      "id": "evt-91a22f",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.7323922116003558
+    },
+    {
+      "id": "evt-e68d88",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.9918372900383661
+    },
+    {
+      "id": "evt-030daf",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.31143808044133525
+    },
+    {
+      "id": "evt-71b6f6",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v3971: update TLS settings",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.5836372731937431
+    },
+    {
+      "id": "evt-9b693d",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v5294: update TLS settings",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.3045807284497885
+    },
+    {
+      "id": "evt-affef8",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.5069148452369665
+    }
+  ],
+  "truth": {
+    "event_id": "evt-71b6f6",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

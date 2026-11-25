@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0010",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-1a58cc",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: enable connection reuse",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.6136130889012051
+    },
+    {
+      "id": "evt-39d0f2",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.8994681229976271
+    },
+    {
+      "id": "evt-295efe",
+      "source": "external",
+      "service": "search",
+      "title": "search: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.7185384406189297
+    },
+    {
+      "id": "evt-c406b0",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.7894121115895941
+    },
+    {
+      "id": "evt-8aa8d1",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v2064: refactor retry logic",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.9571450672886533
+    },
+    {
+      "id": "evt-08eef8",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.6130248113540528
+    },
+    {
+      "id": "evt-bfa886",
+      "source": "alert",
+      "service": "search",
+      "title": "search CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.8383454499830225
+    },
+    {
+      "id": "evt-e8956d",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: load balancer target replaced",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.23904122457301644
+    },
+    {
+      "id": "evt-80b5e5",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.7708423302034867
+    },
+    {
+      "id": "evt-68dd92",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.5295146907671372
+    },
+    {
+      "id": "evt-9b4283",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v6990: bump client library",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.6917876418797065
+    },
+    {
+      "id": "evt-099429",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: load balancer target replaced",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.09233555374282237
+    },
+    {
+      "id": "evt-4d9ea4",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 9 to 14 replicas",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.7153730373599257
+    }
+  ],
+  "truth": {
+    "event_id": "evt-9b4283",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

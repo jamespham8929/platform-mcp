@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0015",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-ae7ff1",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 7 to 11 replicas",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.0017635740016150943
+    },
+    {
+      "id": "evt-1413bc",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.10373932368547152
+    },
+    {
+      "id": "evt-71ea68",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.7649286624976013
+    },
+    {
+      "id": "evt-1dcf1c",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.2493594333578393
+    },
+    {
+      "id": "evt-93e995",
+      "source": "external",
+      "service": "search",
+      "title": "search: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.4209997074679798
+    },
+    {
+      "id": "evt-72b223",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:54:00Z",
+      "magnitude": 0.8438269973116019
+    },
+    {
+      "id": "evt-a8b9b0",
+      "source": "external",
+      "service": "web",
+      "title": "web: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.6085096704335421
+    },
+    {
+      "id": "evt-b61184",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.8146773637137411
+    },
+    {
+      "id": "evt-9efb2f",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T10:16:00Z",
+      "magnitude": 0.45091803173168815
+    },
+    {
+      "id": "evt-fcaef4",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v3531: refactor retry logic",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.5049939419360048
+    },
+    {
+      "id": "evt-3646b0",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.42033041563139056
+    },
+    {
+      "id": "evt-eebc58",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v5114: update TLS settings",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.6546092364280675
+    },
+    {
+      "id": "evt-3f06fa",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.2704756627272737
+    }
+  ],
+  "truth": {
+    "event_id": "evt-eebc58",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

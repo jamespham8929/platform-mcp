@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0021",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-806ce4",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v8501: bump client library",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.5541229547150607
+    },
+    {
+      "id": "evt-ef4d06",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 3 to 6 replicas",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.7890610017571086
+    },
+    {
+      "id": "evt-79044c",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.44744092867225244
+    },
+    {
+      "id": "evt-f3880a",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.30671311066992096
+    },
+    {
+      "id": "evt-d2506e",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.5607178109568893
+    },
+    {
+      "id": "evt-7fdfe4",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v7880: refactor retry logic",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.5744009556658836
+    },
+    {
+      "id": "evt-43bfd2",
+      "source": "external",
+      "service": "search",
+      "title": "search: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.3853701430366905
+    },
+    {
+      "id": "evt-d08951",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.8115394162452721
+    },
+    {
+      "id": "evt-eeab16",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v7676: raise worker count",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.059085252228730886
+    },
+    {
+      "id": "evt-fbc406",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v4251: refactor retry logic",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.8412777911143621
+    },
+    {
+      "id": "evt-71dc66",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 6 to 12 replicas",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.6063509888379477
+    },
+    {
+      "id": "evt-177bf9",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.11210979156704036
+    },
+    {
+      "id": "evt-16750a",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.8925726696643186
+    }
+  ],
+  "truth": {
+    "event_id": "evt-806ce4",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

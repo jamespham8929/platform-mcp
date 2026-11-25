@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0025",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d81d03",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.08217611841947284
+    },
+    {
+      "id": "evt-f3a275",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: enable connection reuse",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.5605554731998951
+    },
+    {
+      "id": "evt-a9f388",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 7 to 11 replicas",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.10988225014441587
+    },
+    {
+      "id": "evt-1ebb32",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.5084279006904445
+    },
+    {
+      "id": "evt-22f82a",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.7641282380364182
+    },
+    {
+      "id": "evt-4db832",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 7 to 8 replicas",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.985858044131868
+    },
+    {
+      "id": "evt-f92b21",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v5039: update TLS settings",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.7427689257559554
+    },
+    {
+      "id": "evt-c96d5e",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.2726689162269405
+    },
+    {
+      "id": "evt-b94a7e",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.19166107649339909
+    },
+    {
+      "id": "evt-7b7093",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.2687498278497279
+    },
+    {
+      "id": "evt-0bba7f",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.7928243289496116
+    },
+    {
+      "id": "evt-b7bb5b",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v4643: rewrite pagination",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.9367304977217082
+    },
+    {
+      "id": "evt-d210ac",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v8405: tune cache TTL",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.4627489303792817
+    }
+  ],
+  "truth": {
+    "event_id": "evt-b7bb5b",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

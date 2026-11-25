@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0084",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2c142e",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.3040113382373556
+    },
+    {
+      "id": "evt-542f25",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.9576339754189525
+    },
+    {
+      "id": "evt-82d641",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.6327444014353237
+    },
+    {
+      "id": "evt-9d7345",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v1502: bump client library",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.8357408532931754
+    },
+    {
+      "id": "evt-20f90d",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.12515348834186432
+    },
+    {
+      "id": "evt-6bfa91",
+      "source": "alert",
+      "service": "search",
+      "title": "search CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.4014333799563036
+    },
+    {
+      "id": "evt-a89ccd",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.7880696784465959
+    },
+    {
+      "id": "evt-4b2269",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v5192: bump client library",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.6615006344128318
+    },
+    {
+      "id": "evt-f7a166",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.3040135219830066
+    },
+    {
+      "id": "evt-3c2e58",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.9049802270953892
+    },
+    {
+      "id": "evt-62a4f1",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.03538506107539562
+    },
+    {
+      "id": "evt-333ccd",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 8 to 14 replicas",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.654867741065731
+    },
+    {
+      "id": "evt-a11a5c",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.49107386504751593
+    }
+  ],
+  "truth": {
+    "event_id": "evt-a89ccd",
+    "service": "search",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

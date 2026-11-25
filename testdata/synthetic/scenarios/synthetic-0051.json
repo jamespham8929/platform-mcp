@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0051",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d56dd6",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.21276702126424427
+    },
+    {
+      "id": "evt-0fd4bf",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.8915173822656551
+    },
+    {
+      "id": "evt-8c561f",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 9 to 10 replicas",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.7894957223916902
+    },
+    {
+      "id": "evt-52e429",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.7675457328490826
+    },
+    {
+      "id": "evt-c6dcfb",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.40136196896786946
+    },
+    {
+      "id": "evt-500abf",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 2 to 6 replicas",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.5353702836405467
+    },
+    {
+      "id": "evt-19859f",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.3287728365164497
+    },
+    {
+      "id": "evt-ac662c",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v3327: raise worker count",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.8829475453150716
+    },
+    {
+      "id": "evt-43f902",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v5070: tune cache TTL",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.47735768090263875
+    },
+    {
+      "id": "evt-f6c420",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v6233: update TLS settings",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.4703409417613955
+    },
+    {
+      "id": "evt-6207fb",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v6852: update TLS settings",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.04290122412666144
+    },
+    {
+      "id": "evt-6f62b8",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.5834184672452076
+    },
+    {
+      "id": "evt-e246a8",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.9758156188158619
+    }
+  ],
+  "truth": {
+    "event_id": "evt-f6c420",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

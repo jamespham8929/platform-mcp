@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0100",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-0fc3f2",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.6974628504192408
+    },
+    {
+      "id": "evt-52b104",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.3551894053325839
+    },
+    {
+      "id": "evt-377a43",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.3861128506798198
+    },
+    {
+      "id": "evt-255009",
+      "source": "alert",
+      "service": "web",
+      "title": "web error rate above 2%",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.04309917687836506
+    },
+    {
+      "id": "evt-f24205",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v4106: refactor retry logic",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.7182281182372844
+    },
+    {
+      "id": "evt-7bc3a0",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 6 to 8 replicas",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.8294956661498714
+    },
+    {
+      "id": "evt-742e2a",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.45940737406770044
+    },
+    {
+      "id": "evt-b27168",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 9 to 11 replicas",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.3041478921402177
+    },
+    {
+      "id": "evt-423cb9",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.7430074516306706
+    },
+    {
+      "id": "evt-dded96",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 6 to 12 replicas",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.9628301952795785
+    },
+    {
+      "id": "evt-1fab02",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.4562784309354306
+    },
+    {
+      "id": "evt-c76151",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.6247118483203878
+    },
+    {
+      "id": "evt-042c1b",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.505215713862264
+    }
+  ],
+  "truth": {
+    "event_id": "evt-423cb9",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

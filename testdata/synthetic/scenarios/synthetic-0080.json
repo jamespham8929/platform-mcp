@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0080",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-845be5",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.019510583766741675
+    },
+    {
+      "id": "evt-1e33d1",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 7 to 8 replicas",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.3582714182676105
+    },
+    {
+      "id": "evt-a2a20f",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 6 to 8 replicas",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.931084394030609
+    },
+    {
+      "id": "evt-10bc76",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.8777431243621878
+    },
+    {
+      "id": "evt-f73020",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 2 to 7 replicas",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.7985575271436394
+    },
+    {
+      "id": "evt-3e70b1",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.3818310797218259
+    },
+    {
+      "id": "evt-22b992",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 7 to 12 replicas",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.4168818849432762
+    },
+    {
+      "id": "evt-8c117b",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.7770162641542582
+    },
+    {
+      "id": "evt-d17944",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.657825051475198
+    },
+    {
+      "id": "evt-378c5f",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.026993250532373017
+    },
+    {
+      "id": "evt-fed3de",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.894080749222124
+    },
+    {
+      "id": "evt-1d9520",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.4415725808972942
+    },
+    {
+      "id": "evt-f5a43d",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v4396: update TLS settings",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.4046396808924341
+    }
+  ],
+  "truth": {
+    "event_id": "evt-10bc76",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

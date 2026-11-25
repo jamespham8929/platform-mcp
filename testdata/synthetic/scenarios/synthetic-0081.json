@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0081",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-3bc924",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: enable connection reuse",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.4442924854332641
+    },
+    {
+      "id": "evt-b8ee3b",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.6855528984998721
+    },
+    {
+      "id": "evt-496d10",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:05:00Z",
+      "magnitude": 0.7858304044646236
+    },
+    {
+      "id": "evt-484a6b",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.00852107939255185
+    },
+    {
+      "id": "evt-79ec29",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: load balancer target replaced",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.8565465616518485
+    },
+    {
+      "id": "evt-fadd27",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 5 to 7 replicas",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.7716835914115906
+    },
+    {
+      "id": "evt-6fb58f",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.9429328505407654
+    },
+    {
+      "id": "evt-ddf1fd",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.9303613628886588
+    },
+    {
+      "id": "evt-027f3c",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.8201244989165184
+    },
+    {
+      "id": "evt-261059",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.3377418543969119
+    },
+    {
+      "id": "evt-a6418b",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 6 to 8 replicas",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.10044097734076532
+    },
+    {
+      "id": "evt-71909b",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.6324974141670521
+    },
+    {
+      "id": "evt-fbbf60",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.9395096204529871
+    }
+  ],
+  "truth": {
+    "event_id": "evt-3bc924",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

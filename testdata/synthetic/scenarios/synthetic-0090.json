@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0090",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-cce482",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.3416121028976933
+    },
+    {
+      "id": "evt-59ebcd",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.7775119395116512
+    },
+    {
+      "id": "evt-5b9d26",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.7013421751505582
+    },
+    {
+      "id": "evt-dbd1a4",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v3990: tune cache TTL",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.8556042754577098
+    },
+    {
+      "id": "evt-da5d76",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.07487713597150583
+    },
+    {
+      "id": "evt-84bccd",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.42708459872735416
+    },
+    {
+      "id": "evt-8e7d3d",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.674473591695227
+    },
+    {
+      "id": "evt-8bfd5a",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 8 to 11 replicas",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.8632718642998248
+    },
+    {
+      "id": "evt-09a9f7",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.23745197617915847
+    },
+    {
+      "id": "evt-e79fed",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v4857: refactor retry logic",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.9878799511963935
+    },
+    {
+      "id": "evt-075fe3",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: disk pressure on one node",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.5990014025128478
+    },
+    {
+      "id": "evt-800a8e",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v6667: refactor retry logic",
+      "timestamp": "2026-01-15T11:20:00Z",
+      "magnitude": 0.5881321279822088
+    },
+    {
+      "id": "evt-346fd3",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 8 to 9 replicas",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.49943359716062663
+    }
+  ],
+  "truth": {
+    "event_id": "evt-84bccd",
+    "service": "ledger",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

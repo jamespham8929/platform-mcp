@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0044",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-81d320",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout queue depth above 10k",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.5113641692591009
+    },
+    {
+      "id": "evt-0a6c44",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.5190683193925133
+    },
+    {
+      "id": "evt-d3988d",
+      "source": "external",
+      "service": "web",
+      "title": "web: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.8956456958538459
+    },
+    {
+      "id": "evt-6e70d1",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 5 to 7 replicas",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.47991950075826273
+    },
+    {
+      "id": "evt-adec97",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 5 to 9 replicas",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.8754162284472015
+    },
+    {
+      "id": "evt-540829",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth error rate above 2%",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.9988847876238977
+    },
+    {
+      "id": "evt-4b4319",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 5 to 9 replicas",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.9437373568184579
+    },
+    {
+      "id": "evt-daa127",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.5681883225648726
+    },
+    {
+      "id": "evt-49233e",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.07126779590317023
+    },
+    {
+      "id": "evt-411f98",
+      "source": "infra",
+      "service": "web",
+      "title": "web: disk pressure on one node",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.2284493216183865
+    },
+    {
+      "id": "evt-6b307e",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.8757523851814234
+    },
+    {
+      "id": "evt-223292",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.4295839013598822
+    },
+    {
+      "id": "evt-8cfaab",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 4 to 8 replicas",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.93158038550221
+    }
+  ],
+  "truth": {
+    "event_id": "evt-6b307e",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

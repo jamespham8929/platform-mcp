@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0077",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-31546e",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.6727088040340505
+    },
+    {
+      "id": "evt-98a4a0",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.5167984038192146
+    },
+    {
+      "id": "evt-3e7bd6",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.6788423650121593
+    },
+    {
+      "id": "evt-496283",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: node pool upgrade started",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.1345280762833988
+    },
+    {
+      "id": "evt-34ed46",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.2922649758445073
+    },
+    {
+      "id": "evt-bdad58",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v7650: tune cache TTL",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.7621873855258271
+    },
+    {
+      "id": "evt-c7da64",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile error rate above 2%",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.23654041614056814
+    },
+    {
+      "id": "evt-4d3f73",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.5698090271778874
+    },
+    {
+      "id": "evt-62474c",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 9 to 14 replicas",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.31360635016972915
+    },
+    {
+      "id": "evt-7ab832",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.36598989146496475
+    },
+    {
+      "id": "evt-92f988",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: load balancer target replaced",
+      "timestamp": "2026-01-15T10:06:00Z",
+      "magnitude": 0.46464236668873155
+    },
+    {
+      "id": "evt-62242b",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.9922336650404338
+    },
+    {
+      "id": "evt-5b9f6b",
+      "source": "alert",
+      "service": "search",
+      "title": "search latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.767783661148088
+    }
+  ],
+  "truth": {
+    "event_id": "evt-bdad58",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

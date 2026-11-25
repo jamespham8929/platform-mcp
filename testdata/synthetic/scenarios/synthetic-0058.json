@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0058",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-34d071",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.7939096184147514
+    },
+    {
+      "id": "evt-e6c21b",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.6096708002026527
+    },
+    {
+      "id": "evt-ba1b7c",
+      "source": "infra",
+      "service": "web",
+      "title": "web: load balancer target replaced",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.19847879125653156
+    },
+    {
+      "id": "evt-9cb76b",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.456878471985807
+    },
+    {
+      "id": "evt-bba4ac",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v2658: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.6999755117841552
+    },
+    {
+      "id": "evt-869600",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v1579: add request tracing",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.4550920017610206
+    },
+    {
+      "id": "evt-3e6d2b",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.36875270382352465
+    },
+    {
+      "id": "evt-d2cbbb",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 4 to 5 replicas",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.6704564311598877
+    },
+    {
+      "id": "evt-547a16",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 5 to 11 replicas",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.07804235203131635
+    },
+    {
+      "id": "evt-1df5ac",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.08285453440775989
+    },
+    {
+      "id": "evt-0853bf",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.9429352308223498
+    },
+    {
+      "id": "evt-fc178b",
+      "source": "external",
+      "service": "web",
+      "title": "web: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.3151614055898093
+    },
+    {
+      "id": "evt-397cee",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 7 to 12 replicas",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.8121024694664544
+    }
+  ],
+  "truth": {
+    "event_id": "evt-869600",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

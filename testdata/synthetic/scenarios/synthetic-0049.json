@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0049",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d50c54",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: enable connection reuse",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.7010208307524483
+    },
+    {
+      "id": "evt-286b70",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse error rate above 2%",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.15448298329532945
+    },
+    {
+      "id": "evt-9e189f",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.33564075523739356
+    },
+    {
+      "id": "evt-20790d",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v2339: raise worker count",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.9715261624934248
+    },
+    {
+      "id": "evt-e0ca1a",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.008937674631083187
+    },
+    {
+      "id": "evt-577744",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 9 to 10 replicas",
+      "timestamp": "2026-01-15T11:05:00Z",
+      "magnitude": 0.9779985944409512
+    },
+    {
+      "id": "evt-82cb05",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v3024: tune cache TTL",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.4686607495815372
+    },
+    {
+      "id": "evt-16554a",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v7848: add request tracing",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.2219288613863918
+    },
+    {
+      "id": "evt-adac21",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.03081804607500533
+    },
+    {
+      "id": "evt-d5187c",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v1702: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.8448620200934255
+    },
+    {
+      "id": "evt-c61bc9",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 8 to 11 replicas",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.3017665738701719
+    },
+    {
+      "id": "evt-09b1a3",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.5909999710697745
+    },
+    {
+      "id": "evt-f6a329",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.9676196709022667
+    }
+  ],
+  "truth": {
+    "event_id": "evt-20790d",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

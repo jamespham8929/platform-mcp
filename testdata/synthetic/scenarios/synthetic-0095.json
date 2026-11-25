@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0095",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-3b9b7b",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.23762513645010458
+    },
+    {
+      "id": "evt-ad74a8",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.09718771115113467
+    },
+    {
+      "id": "evt-be631c",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.7093333070030147
+    },
+    {
+      "id": "evt-1e22c0",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.015343346860120042
+    },
+    {
+      "id": "evt-e08609",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.9967676404540396
+    },
+    {
+      "id": "evt-04e73e",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.3861443947496102
+    },
+    {
+      "id": "evt-4079c1",
+      "source": "infra",
+      "service": "search",
+      "title": "search: disk pressure on one node",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.7039127429945673
+    },
+    {
+      "id": "evt-2957e2",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.688695780624313
+    },
+    {
+      "id": "evt-bb5d39",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v2642: update TLS settings",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.5735573948962169
+    },
+    {
+      "id": "evt-fdb72c",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v6066: update TLS settings",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.04520317633163454
+    },
+    {
+      "id": "evt-1f7726",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.9993289382024584
+    },
+    {
+      "id": "evt-13bc2d",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.38675570502782186
+    },
+    {
+      "id": "evt-3b1eae",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.5151116275594481
+    }
+  ],
+  "truth": {
+    "event_id": "evt-bb5d39",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0019",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-b6882e",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.038796737924310785
+    },
+    {
+      "id": "evt-4ea364",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.39818113618436907
+    },
+    {
+      "id": "evt-d13e5b",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.9120892506346134
+    },
+    {
+      "id": "evt-71056b",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.29127062770361956
+    },
+    {
+      "id": "evt-5a2b56",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments error rate above 2%",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.6367428697869394
+    },
+    {
+      "id": "evt-49c872",
+      "source": "external",
+      "service": "web",
+      "title": "web: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.7541395944245108
+    },
+    {
+      "id": "evt-dc347f",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.6282223037942487
+    },
+    {
+      "id": "evt-964b53",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 9 to 14 replicas",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.38789281887370414
+    },
+    {
+      "id": "evt-77616e",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: node pool upgrade started",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.9381430589643684
+    },
+    {
+      "id": "evt-293bb4",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.10757732402474016
+    },
+    {
+      "id": "evt-bde5e8",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: disk pressure on one node",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.0015011473735366604
+    },
+    {
+      "id": "evt-02459c",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: disk pressure on one node",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.259490507043914
+    },
+    {
+      "id": "evt-839e8e",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v7210: refactor retry logic",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.5241043782122904
+    }
+  ],
+  "truth": {
+    "event_id": "evt-839e8e",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

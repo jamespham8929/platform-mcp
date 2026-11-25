@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0005",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-826dca",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.06279682841037926
+    },
+    {
+      "id": "evt-f41b3f",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 3 to 8 replicas",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.0672102906545874
+    },
+    {
+      "id": "evt-97915d",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.5072744149430783
+    },
+    {
+      "id": "evt-08502f",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.024645138564648755
+    },
+    {
+      "id": "evt-238a88",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.6934736592904377
+    },
+    {
+      "id": "evt-a4a132",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.3520318406614374
+    },
+    {
+      "id": "evt-088809",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.8092219699974433
+    },
+    {
+      "id": "evt-cfc2f5",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8393: add request tracing",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.5365720028808392
+    },
+    {
+      "id": "evt-3730f2",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.2365234473732697
+    },
+    {
+      "id": "evt-d92c0a",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.6123030818344448
+    },
+    {
+      "id": "evt-ce0fe5",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: disk pressure on one node",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.29441539046425547
+    },
+    {
+      "id": "evt-413978",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile error rate above 2%",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.8567881878782567
+    },
+    {
+      "id": "evt-546f7e",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v8241: refactor retry logic",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.5310525354375156
+    }
+  ],
+  "truth": {
+    "event_id": "evt-546f7e",
+    "service": "inventory",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

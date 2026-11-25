@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0078",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-43b886",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.19652209061054893
+    },
+    {
+      "id": "evt-f339a9",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.6364139882849621
+    },
+    {
+      "id": "evt-0ca9d1",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v7195: tune cache TTL",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.32075862060742844
+    },
+    {
+      "id": "evt-504842",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.33777990344441494
+    },
+    {
+      "id": "evt-6b4faa",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.9053574807513051
+    },
+    {
+      "id": "evt-1244e9",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.9568194522978346
+    },
+    {
+      "id": "evt-614219",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 4 to 10 replicas",
+      "timestamp": "2026-01-15T10:06:00Z",
+      "magnitude": 0.11654422687693082
+    },
+    {
+      "id": "evt-770edf",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.15134802059302455
+    },
+    {
+      "id": "evt-fd6c47",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v9530: rewrite pagination",
+      "timestamp": "2026-01-15T10:54:00Z",
+      "magnitude": 0.948896329607816
+    },
+    {
+      "id": "evt-56b890",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.5982290172344431
+    },
+    {
+      "id": "evt-d77e7a",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v9093: tune cache TTL",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.7228352462605133
+    },
+    {
+      "id": "evt-261452",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.6221854661065597
+    },
+    {
+      "id": "evt-5c425c",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v7410: raise worker count",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.9024830100512121
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d77e7a",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

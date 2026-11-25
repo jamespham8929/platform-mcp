@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0029",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-17dfaa",
+      "source": "alert",
+      "service": "search",
+      "title": "search CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.015626089270683135
+    },
+    {
+      "id": "evt-fd9d2a",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.03551832813671263
+    },
+    {
+      "id": "evt-dea3de",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v7378: refactor retry logic",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.2187874703610717
+    },
+    {
+      "id": "evt-37523d",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v1489: update TLS settings",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.8753341842356348
+    },
+    {
+      "id": "evt-013354",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger queue depth above 10k",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.30656712028694344
+    },
+    {
+      "id": "evt-dfafc5",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.44888147076480067
+    },
+    {
+      "id": "evt-4eae00",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.10258027295456441
+    },
+    {
+      "id": "evt-dd0851",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.34331857672479
+    },
+    {
+      "id": "evt-cdaf03",
+      "source": "external",
+      "service": "web",
+      "title": "web: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:06:00Z",
+      "magnitude": 0.6509701375394166
+    },
+    {
+      "id": "evt-eefafb",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 3 to 9 replicas",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.21240793328506544
+    },
+    {
+      "id": "evt-6b700a",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 3 to 5 replicas",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.6555996071990601
+    },
+    {
+      "id": "evt-df4aa5",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v4700: raise worker count",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.574707017070203
+    },
+    {
+      "id": "evt-d4475e",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.5131039713364258
+    }
+  ],
+  "truth": {
+    "event_id": "evt-df4aa5",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

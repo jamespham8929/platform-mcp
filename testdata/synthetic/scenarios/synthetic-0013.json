@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0013",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-cdf587",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v3444: add request tracing",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.31486434581294676
+    },
+    {
+      "id": "evt-e7e825",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 2 to 3 replicas",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.4590832991911718
+    },
+    {
+      "id": "evt-96f676",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v6724: bump client library",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.6105990823928251
+    },
+    {
+      "id": "evt-01ec60",
+      "source": "external",
+      "service": "search",
+      "title": "search: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.4981822217468809
+    },
+    {
+      "id": "evt-cbda89",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.8959493367031118
+    },
+    {
+      "id": "evt-3f2e08",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.046116380092537004
+    },
+    {
+      "id": "evt-786fa2",
+      "source": "external",
+      "service": "web",
+      "title": "web: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.6545662379446129
+    },
+    {
+      "id": "evt-aa776d",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 4 to 6 replicas",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.36666642103283176
+    },
+    {
+      "id": "evt-92afb1",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile queue depth above 10k",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.27090581210098363
+    },
+    {
+      "id": "evt-ca339e",
+      "source": "external",
+      "service": "web",
+      "title": "web: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.6268686005344581
+    },
+    {
+      "id": "evt-ab104b",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: node pool upgrade started",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.3985921018359227
+    },
+    {
+      "id": "evt-5dce3c",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 6 to 12 replicas",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.9996996591186386
+    },
+    {
+      "id": "evt-9c9fa0",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v3411: raise worker count",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.3728112835431506
+    }
+  ],
+  "truth": {
+    "event_id": "evt-96f676",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0072",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-5048bd",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth error rate above 2%",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.2882899139720004
+    },
+    {
+      "id": "evt-046fa2",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.9268686431232274
+    },
+    {
+      "id": "evt-4bcb71",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.8552898175426196
+    },
+    {
+      "id": "evt-2b4316",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.9254674721751722
+    },
+    {
+      "id": "evt-4ba053",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 2 to 6 replicas",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.4513077236919768
+    },
+    {
+      "id": "evt-88a509",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.967811687299533
+    },
+    {
+      "id": "evt-30a3ce",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v5606: refactor retry logic",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.7949625939568875
+    },
+    {
+      "id": "evt-d5b8f0",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v5300: refactor retry logic",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.28200346969613244
+    },
+    {
+      "id": "evt-564b41",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile error rate above 2%",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.400852836853056
+    },
+    {
+      "id": "evt-d7b3d7",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v7181: raise worker count",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.8670293619056251
+    },
+    {
+      "id": "evt-d1ba4d",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.23819371417510035
+    },
+    {
+      "id": "evt-484f2c",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v5010: tune cache TTL",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.8625031972741775
+    },
+    {
+      "id": "evt-858505",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v5427: raise worker count",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.3505122041760482
+    }
+  ],
+  "truth": {
+    "event_id": "evt-30a3ce",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

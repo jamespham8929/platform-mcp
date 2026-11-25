@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0002",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-c91c23",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.12065164515666023
+    },
+    {
+      "id": "evt-a4fa49",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: enable connection reuse",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.942038536997349
+    },
+    {
+      "id": "evt-50dd8e",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 5 to 8 replicas",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.23793079397373434
+    },
+    {
+      "id": "evt-e8f9bb",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth queue depth above 10k",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.7918082715421788
+    },
+    {
+      "id": "evt-9c04e6",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 8 to 14 replicas",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.9006503392846474
+    },
+    {
+      "id": "evt-77f08e",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout queue depth above 10k",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.5050741984210901
+    },
+    {
+      "id": "evt-03430f",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 8 to 12 replicas",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.04129972732338354
+    },
+    {
+      "id": "evt-6c79fd",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 9 to 12 replicas",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.956799139289976
+    },
+    {
+      "id": "evt-60e799",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.7132924829969122
+    },
+    {
+      "id": "evt-21f01d",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.38328930980298737
+    },
+    {
+      "id": "evt-da6957",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.5295390375177478
+    },
+    {
+      "id": "evt-536c64",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v3460: refactor retry logic",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.7710253017208241
+    },
+    {
+      "id": "evt-5064e7",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile queue depth above 10k",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.9433417881463428
+    }
+  ],
+  "truth": {
+    "event_id": "evt-536c64",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

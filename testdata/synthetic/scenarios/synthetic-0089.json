@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0089",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d0ed3e",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v5138: tune cache TTL",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.8062481661753597
+    },
+    {
+      "id": "evt-e162c3",
+      "source": "infra",
+      "service": "search",
+      "title": "search: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.8877906512169824
+    },
+    {
+      "id": "evt-dc7fd2",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v8125: update TLS settings",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.20730405574192814
+    },
+    {
+      "id": "evt-b97263",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.702703879314528
+    },
+    {
+      "id": "evt-048a6d",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.6600138285613766
+    },
+    {
+      "id": "evt-13f475",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 8 to 13 replicas",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.13792518597160253
+    },
+    {
+      "id": "evt-81e35a",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v9137: tune cache TTL",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.3218899278937412
+    },
+    {
+      "id": "evt-375640",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.7996932418479183
+    },
+    {
+      "id": "evt-46bca4",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v2228: rewrite pagination",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.8426453436675705
+    },
+    {
+      "id": "evt-411057",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:05:00Z",
+      "magnitude": 0.31061318116213027
+    },
+    {
+      "id": "evt-71ab84",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v1015: rewrite pagination",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.304585630744389
+    },
+    {
+      "id": "evt-bbe3e0",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: load balancer target replaced",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.07937719889430551
+    },
+    {
+      "id": "evt-8aa4a3",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.21794214202909037
+    }
+  ],
+  "truth": {
+    "event_id": "evt-46bca4",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

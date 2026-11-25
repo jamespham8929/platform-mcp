@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0079",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-e67792",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v6052: tune cache TTL",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.8377703187338585
+    },
+    {
+      "id": "evt-40fc16",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.27182532049617647
+    },
+    {
+      "id": "evt-4e2940",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse error rate above 2%",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.10199768669172753
+    },
+    {
+      "id": "evt-7d46e3",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse queue depth above 10k",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.8741425142790813
+    },
+    {
+      "id": "evt-b0215e",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.7354250903423588
+    },
+    {
+      "id": "evt-75ea87",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 5 to 10 replicas",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.15992130856778675
+    },
+    {
+      "id": "evt-6ca1e5",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v2189: refactor retry logic",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.8970057089278047
+    },
+    {
+      "id": "evt-547bcd",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v2724: update TLS settings",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.4311144120052636
+    },
+    {
+      "id": "evt-571662",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.8990757728727691
+    },
+    {
+      "id": "evt-e4719a",
+      "source": "external",
+      "service": "search",
+      "title": "search: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.23910007631912558
+    },
+    {
+      "id": "evt-21dc8a",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.7523514985356624
+    },
+    {
+      "id": "evt-8189b9",
+      "source": "external",
+      "service": "search",
+      "title": "search: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.5020967381567386
+    },
+    {
+      "id": "evt-a7c7ea",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.8761826781024885
+    }
+  ],
+  "truth": {
+    "event_id": "evt-e67792",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

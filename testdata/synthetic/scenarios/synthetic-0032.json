@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0032",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-989a8e",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v7872: rewrite pagination",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.015546422396908247
+    },
+    {
+      "id": "evt-2c41fa",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.3611099324447484
+    },
+    {
+      "id": "evt-6e09df",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.9989365104776965
+    },
+    {
+      "id": "evt-b40902",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.5030354410237374
+    },
+    {
+      "id": "evt-488ae9",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:16:00Z",
+      "magnitude": 0.2516038951964448
+    },
+    {
+      "id": "evt-8a6850",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v9806: update TLS settings",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.9394996666013651
+    },
+    {
+      "id": "evt-c18a69",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 6 to 8 replicas",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.3940116469559767
+    },
+    {
+      "id": "evt-2d4530",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.39008474054909265
+    },
+    {
+      "id": "evt-eba1df",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.6133757842585046
+    },
+    {
+      "id": "evt-4b6f83",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.5582788083038045
+    },
+    {
+      "id": "evt-cb9b52",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.43362298009883765
+    },
+    {
+      "id": "evt-cb7cc4",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 4 to 10 replicas",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.09175504469064773
+    },
+    {
+      "id": "evt-b2e4be",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: enable connection reuse",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.8425757635943367
+    }
+  ],
+  "truth": {
+    "event_id": "evt-8a6850",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

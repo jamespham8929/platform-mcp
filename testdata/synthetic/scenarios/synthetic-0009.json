@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0009",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2ac446",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8025: raise worker count",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.9393856799134336
+    },
+    {
+      "id": "evt-c3afb7",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v8808: add request tracing",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.6362840129156712
+    },
+    {
+      "id": "evt-0d41bc",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.20646441263980206
+    },
+    {
+      "id": "evt-61357e",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.40964926235533095
+    },
+    {
+      "id": "evt-b461d5",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 8 to 12 replicas",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.0700874350164505
+    },
+    {
+      "id": "evt-123669",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.47769264713321324
+    },
+    {
+      "id": "evt-6a7b03",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.003237680873891898
+    },
+    {
+      "id": "evt-a255ec",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v2863: refactor retry logic",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.7044898669491073
+    },
+    {
+      "id": "evt-dd4498",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 9 to 15 replicas",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.45131848994711704
+    },
+    {
+      "id": "evt-f10c7a",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.33696156177554193
+    },
+    {
+      "id": "evt-4a090d",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 3 to 6 replicas",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.8004905347829117
+    },
+    {
+      "id": "evt-f7c7ad",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.793110142749595
+    },
+    {
+      "id": "evt-44e2d0",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.9848801455578637
+    }
+  ],
+  "truth": {
+    "event_id": "evt-c3afb7",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

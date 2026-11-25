@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0082",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-44ae2e",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.9296516651977629
+    },
+    {
+      "id": "evt-29cbec",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.8775136360886745
+    },
+    {
+      "id": "evt-1c7459",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.6171523999018774
+    },
+    {
+      "id": "evt-f207e0",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.6156575652114653
+    },
+    {
+      "id": "evt-76cb9b",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.6077586895855416
+    },
+    {
+      "id": "evt-5d26f9",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.06946005890270684
+    },
+    {
+      "id": "evt-7829fb",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.6735178729252714
+    },
+    {
+      "id": "evt-0dde8c",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.9585159442502005
+    },
+    {
+      "id": "evt-d48ac7",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v6950: bump client library",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.5294987632361923
+    },
+    {
+      "id": "evt-89cd4d",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.35288868548856867
+    },
+    {
+      "id": "evt-f7d43c",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v8882: raise worker count",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.29412294428800845
+    },
+    {
+      "id": "evt-0581a6",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.5427816095496567
+    },
+    {
+      "id": "evt-47cd9b",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.5739557350245125
+    }
+  ],
+  "truth": {
+    "event_id": "evt-76cb9b",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

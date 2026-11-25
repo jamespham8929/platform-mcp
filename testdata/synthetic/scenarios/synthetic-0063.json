@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0063",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-bd97af",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout error rate above 2%",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.6065007839196043
+    },
+    {
+      "id": "evt-c917b7",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v2136: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.8107791252534113
+    },
+    {
+      "id": "evt-660b12",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:20:00Z",
+      "magnitude": 0.6542034815553013
+    },
+    {
+      "id": "evt-b49ba4",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 4 to 9 replicas",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.6711627498197342
+    },
+    {
+      "id": "evt-d00795",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.418593905774945
+    },
+    {
+      "id": "evt-98cece",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.9126829085771944
+    },
+    {
+      "id": "evt-91be06",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.3535680691755221
+    },
+    {
+      "id": "evt-3f11ee",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v3184: raise worker count",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.12582458799284962
+    },
+    {
+      "id": "evt-074a6c",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.8575840083619645
+    },
+    {
+      "id": "evt-438902",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.0991321500440014
+    },
+    {
+      "id": "evt-5801ff",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.383348464227609
+    },
+    {
+      "id": "evt-2419ee",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.9101768701431401
+    },
+    {
+      "id": "evt-fa4900",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 8 to 14 replicas",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.20880873444682693
+    }
+  ],
+  "truth": {
+    "event_id": "evt-c917b7",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0023",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-dae8ea",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.9236116319877715
+    },
+    {
+      "id": "evt-1bb221",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.9306472210008595
+    },
+    {
+      "id": "evt-a119cc",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 8 to 9 replicas",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.5085963048100473
+    },
+    {
+      "id": "evt-4913b9",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v7731: refactor retry logic",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.02084783169330881
+    },
+    {
+      "id": "evt-2ff1cc",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.3479972259220995
+    },
+    {
+      "id": "evt-f985a2",
+      "source": "infra",
+      "service": "web",
+      "title": "web: disk pressure on one node",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.052558090607255054
+    },
+    {
+      "id": "evt-d79869",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v6784: rewrite pagination",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.7046559551166075
+    },
+    {
+      "id": "evt-5afcdf",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.3824723013785709
+    },
+    {
+      "id": "evt-7efe71",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v1628: rewrite pagination",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.6148288374469556
+    },
+    {
+      "id": "evt-599430",
+      "source": "alert",
+      "service": "web",
+      "title": "web queue depth above 10k",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.9524415640096986
+    },
+    {
+      "id": "evt-aed3c1",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.7656080632035458
+    },
+    {
+      "id": "evt-4ec240",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.32498566119873556
+    },
+    {
+      "id": "evt-80b5b2",
+      "source": "alert",
+      "service": "web",
+      "title": "web queue depth above 10k",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.038968895133748765
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d79869",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

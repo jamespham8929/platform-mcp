@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0076",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-cd2771",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v6762: refactor retry logic",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.8728319437726679
+    },
+    {
+      "id": "evt-3398e6",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 8 to 14 replicas",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.3998594751814641
+    },
+    {
+      "id": "evt-4fe910",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: disk pressure on one node",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.5225831021216731
+    },
+    {
+      "id": "evt-e0b879",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 2 to 5 replicas",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.7723937070113146
+    },
+    {
+      "id": "evt-0a9944",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.16588602537419414
+    },
+    {
+      "id": "evt-86ce45",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse queue depth above 10k",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.5448320175003575
+    },
+    {
+      "id": "evt-a0d054",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v7213: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.4027353631654931
+    },
+    {
+      "id": "evt-a238ca",
+      "source": "external",
+      "service": "web",
+      "title": "web: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.8924343305807235
+    },
+    {
+      "id": "evt-8b8354",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.4804213041482015
+    },
+    {
+      "id": "evt-5efdfb",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.7599963439785862
+    },
+    {
+      "id": "evt-4eabc9",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.11504949425651637
+    },
+    {
+      "id": "evt-99ec5a",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.4617340520875734
+    },
+    {
+      "id": "evt-c30441",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.31040443412270224
+    }
+  ],
+  "truth": {
+    "event_id": "evt-cd2771",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

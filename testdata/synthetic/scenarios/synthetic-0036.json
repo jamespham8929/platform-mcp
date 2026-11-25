@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0036",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-6254ae",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.2605816874819526
+    },
+    {
+      "id": "evt-9fdbc8",
+      "source": "external",
+      "service": "web",
+      "title": "web: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.616813844520898
+    },
+    {
+      "id": "evt-4c3d38",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.6921802155549097
+    },
+    {
+      "id": "evt-9e2b77",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.6143381228665834
+    },
+    {
+      "id": "evt-ae8598",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: load balancer target replaced",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.6458078989480659
+    },
+    {
+      "id": "evt-789e71",
+      "source": "alert",
+      "service": "search",
+      "title": "search CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.066581521285988
+    },
+    {
+      "id": "evt-633dbd",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v6486: bump client library",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.7643481538289723
+    },
+    {
+      "id": "evt-1f688a",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 8 to 10 replicas",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.13431094747951075
+    },
+    {
+      "id": "evt-41c46c",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.6043591730066592
+    },
+    {
+      "id": "evt-107e7f",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 5 to 11 replicas",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.1796053251132181
+    },
+    {
+      "id": "evt-c7b4ea",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.05278221183868338
+    },
+    {
+      "id": "evt-b83964",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: load balancer target replaced",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.44184862167859457
+    },
+    {
+      "id": "evt-2edb87",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 7 to 8 replicas",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.9009878598668142
+    }
+  ],
+  "truth": {
+    "event_id": "evt-633dbd",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

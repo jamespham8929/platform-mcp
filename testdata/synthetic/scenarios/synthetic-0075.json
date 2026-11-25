@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0075",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-86ae5f",
+      "source": "infra",
+      "service": "search",
+      "title": "search: disk pressure on one node",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.04216355847716614
+    },
+    {
+      "id": "evt-7c7926",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile queue depth above 10k",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.1900041657558649
+    },
+    {
+      "id": "evt-b2f49f",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.8848430685583671
+    },
+    {
+      "id": "evt-d70380",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.26800464675796304
+    },
+    {
+      "id": "evt-b49f9f",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v5390: refactor retry logic",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.46703688305472657
+    },
+    {
+      "id": "evt-056956",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.8157853171193052
+    },
+    {
+      "id": "evt-7eba64",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.9162635205865041
+    },
+    {
+      "id": "evt-7dda3f",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.8629506735042421
+    },
+    {
+      "id": "evt-fccec1",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.30469042894735654
+    },
+    {
+      "id": "evt-336bd9",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v4030: rewrite pagination",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.19768507813150582
+    },
+    {
+      "id": "evt-2ec1f8",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.8543216348948274
+    },
+    {
+      "id": "evt-b58490",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.958910522324423
+    },
+    {
+      "id": "evt-beacab",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.05757440197108287
+    }
+  ],
+  "truth": {
+    "event_id": "evt-b49f9f",
+    "service": "inventory",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0047",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d9d71f",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: disk pressure on one node",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.3121891031430573
+    },
+    {
+      "id": "evt-14a09c",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.756578679560288
+    },
+    {
+      "id": "evt-31e57b",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.26012671087790035
+    },
+    {
+      "id": "evt-2d7b8f",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.6091551339916451
+    },
+    {
+      "id": "evt-fd7461",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.6418007082392914
+    },
+    {
+      "id": "evt-339afa",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: enable connection reuse",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.6640048417062558
+    },
+    {
+      "id": "evt-9d61ca",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 5 to 9 replicas",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.16495795722854642
+    },
+    {
+      "id": "evt-fe05f2",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.3353705180896575
+    },
+    {
+      "id": "evt-438ed4",
+      "source": "alert",
+      "service": "search",
+      "title": "search error rate above 2%",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.014059669579962993
+    },
+    {
+      "id": "evt-160d57",
+      "source": "external",
+      "service": "web",
+      "title": "web: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.7791296056985333
+    },
+    {
+      "id": "evt-eddcd6",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.27015459968131894
+    },
+    {
+      "id": "evt-4ba1dd",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v8554: refactor retry logic",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.6993021607394247
+    },
+    {
+      "id": "evt-e4a8f0",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.9008783703884907
+    }
+  ],
+  "truth": {
+    "event_id": "evt-4ba1dd",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

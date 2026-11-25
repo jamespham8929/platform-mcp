@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0068",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-9bfc59",
+      "source": "feature_flag",
+      "service": "checkout",
+      "title": "checkout: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.514659834745614
+    },
+    {
+      "id": "evt-f8226e",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.4938886251550582
+    },
+    {
+      "id": "evt-7276c7",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.27405332338828964
+    },
+    {
+      "id": "evt-1ba7e5",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.6878809117100616
+    },
+    {
+      "id": "evt-bdc270",
+      "source": "external",
+      "service": "search",
+      "title": "search: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.7088589155883308
+    },
+    {
+      "id": "evt-c632bd",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.8846469146446567
+    },
+    {
+      "id": "evt-d33adb",
+      "source": "alert",
+      "service": "search",
+      "title": "search queue depth above 10k",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.4349401830795234
+    },
+    {
+      "id": "evt-0630a5",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v5103: rewrite pagination",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.4071637960107105
+    },
+    {
+      "id": "evt-8b6410",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v2203: tune cache TTL",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.9710808334351211
+    },
+    {
+      "id": "evt-56fc92",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 8 to 13 replicas",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.5842958109925689
+    },
+    {
+      "id": "evt-602b4a",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v8123: update TLS settings",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.28234644115430657
+    },
+    {
+      "id": "evt-10b8d8",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.6308111117182659
+    },
+    {
+      "id": "evt-b93f8a",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.1508167727058672
+    }
+  ],
+  "truth": {
+    "event_id": "evt-0630a5",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

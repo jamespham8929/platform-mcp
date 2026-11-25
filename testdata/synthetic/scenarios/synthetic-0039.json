@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0039",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-32f8fb",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.01615607043386889
+    },
+    {
+      "id": "evt-5d13a3",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.2521694939672521
+    },
+    {
+      "id": "evt-3934f2",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v8821: bump client library",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.7450432774666621
+    },
+    {
+      "id": "evt-9a1f94",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v2670: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.0892375271267398
+    },
+    {
+      "id": "evt-06dcfc",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v4339: bump client library",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.40817585597311334
+    },
+    {
+      "id": "evt-3fef71",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.7801477021329344
+    },
+    {
+      "id": "evt-aa6e5a",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.5625902622072868
+    },
+    {
+      "id": "evt-64eb77",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.18527046409109654
+    },
+    {
+      "id": "evt-5d97ce",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: load balancer target replaced",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.9142477385144016
+    },
+    {
+      "id": "evt-bdc5cd",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: load balancer target replaced",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.7704190309558961
+    },
+    {
+      "id": "evt-33c8d1",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.7913756123195141
+    },
+    {
+      "id": "evt-b4ee37",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth queue depth above 10k",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.49210978238224606
+    },
+    {
+      "id": "evt-464046",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.17620969538175
+    }
+  ],
+  "truth": {
+    "event_id": "evt-3934f2",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

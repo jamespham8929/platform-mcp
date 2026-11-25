@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0050",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-5233e3",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.5005692953501031
+    },
+    {
+      "id": "evt-ae4e70",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 7 to 13 replicas",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.43977322745659453
+    },
+    {
+      "id": "evt-0ae560",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.988880897617381
+    },
+    {
+      "id": "evt-b31a2b",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.7705962962380727
+    },
+    {
+      "id": "evt-90665b",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 5 to 6 replicas",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.8144783383216775
+    },
+    {
+      "id": "evt-a78c31",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.3532983515547087
+    },
+    {
+      "id": "evt-26b04c",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v4541: tune cache TTL",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.8681900161068603
+    },
+    {
+      "id": "evt-91d9a3",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.7778860178171813
+    },
+    {
+      "id": "evt-90010b",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 8 to 9 replicas",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.6917099137690413
+    },
+    {
+      "id": "evt-f41a0e",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 3 to 7 replicas",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.2704207470202822
+    },
+    {
+      "id": "evt-a0cbf4",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.5460961110763839
+    },
+    {
+      "id": "evt-1882b4",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v4261: tune cache TTL",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.8316835939463263
+    },
+    {
+      "id": "evt-f5657c",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.9464313764079878
+    }
+  ],
+  "truth": {
+    "event_id": "evt-26b04c",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

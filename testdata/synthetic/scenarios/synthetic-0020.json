@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0020",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-3e2f1d",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.40496366296516584
+    },
+    {
+      "id": "evt-501c9a",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.8149740830733442
+    },
+    {
+      "id": "evt-336c77",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.0050012548755069925
+    },
+    {
+      "id": "evt-045fd2",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v1819: update TLS settings",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.8082291906345788
+    },
+    {
+      "id": "evt-d1bc36",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.06358580547686866
+    },
+    {
+      "id": "evt-b95869",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.3214074694094516
+    },
+    {
+      "id": "evt-9ea4f6",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.2536868397128289
+    },
+    {
+      "id": "evt-890224",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.5152583702270199
+    },
+    {
+      "id": "evt-66704c",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.24262130963081457
+    },
+    {
+      "id": "evt-3b4624",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 4 to 9 replicas",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.295145487258719
+    },
+    {
+      "id": "evt-8a660f",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.8447247199244734
+    },
+    {
+      "id": "evt-09fcc5",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.6971548013720636
+    },
+    {
+      "id": "evt-20eb1a",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.548585558893364
+    }
+  ],
+  "truth": {
+    "event_id": "evt-890224",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

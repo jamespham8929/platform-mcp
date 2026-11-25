@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0004",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-78e764",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.7704384749404068
+    },
+    {
+      "id": "evt-a87433",
+      "source": "infra",
+      "service": "search",
+      "title": "search: disk pressure on one node",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.6315607340040106
+    },
+    {
+      "id": "evt-d02e91",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing queue depth above 10k",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.16229800387598234
+    },
+    {
+      "id": "evt-0f1b05",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.8285632157626821
+    },
+    {
+      "id": "evt-a474ca",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.8445350424705077
+    },
+    {
+      "id": "evt-13a79e",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v7409: bump client library",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.7370693536720475
+    },
+    {
+      "id": "evt-9b1ccd",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 4 to 6 replicas",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.7430046494987996
+    },
+    {
+      "id": "evt-fe869b",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.023337160479311947
+    },
+    {
+      "id": "evt-e5e435",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 2 to 3 replicas",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.515111366946374
+    },
+    {
+      "id": "evt-8e0391",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: disk pressure on one node",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.6892583673483974
+    },
+    {
+      "id": "evt-11fd4a",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.13189246879835312
+    },
+    {
+      "id": "evt-e7851e",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.80462723038221
+    },
+    {
+      "id": "evt-428693",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog queue depth above 10k",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.9727948671313938
+    }
+  ],
+  "truth": {
+    "event_id": "evt-13a79e",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

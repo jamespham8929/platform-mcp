@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0083",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-b20100",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T10:16:00Z",
+      "magnitude": 0.15952508674772853
+    },
+    {
+      "id": "evt-ca85fe",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.5721699751206089
+    },
+    {
+      "id": "evt-55bcb8",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v2303: rewrite pagination",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.6789161483320084
+    },
+    {
+      "id": "evt-8461a1",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: disk pressure on one node",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.3699993958253888
+    },
+    {
+      "id": "evt-85d008",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.11626721676383013
+    },
+    {
+      "id": "evt-2531e1",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v4362: add request tracing",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.17634723440791963
+    },
+    {
+      "id": "evt-6a7c26",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.10937684839965303
+    },
+    {
+      "id": "evt-4d0102",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory queue depth above 10k",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.46276181194247823
+    },
+    {
+      "id": "evt-f377d7",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 6 to 8 replicas",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.07571792632262271
+    },
+    {
+      "id": "evt-ff3aec",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.22647238109264223
+    },
+    {
+      "id": "evt-510bd9",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.7504985625949825
+    },
+    {
+      "id": "evt-5f54d6",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v2624: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.8582661720246589
+    },
+    {
+      "id": "evt-498c22",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.2509052907390579
+    }
+  ],
+  "truth": {
+    "event_id": "evt-55bcb8",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

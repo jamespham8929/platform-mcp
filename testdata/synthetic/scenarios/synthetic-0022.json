@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0022",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2ab632",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.11732480054459699
+    },
+    {
+      "id": "evt-984077",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.2846547267305723
+    },
+    {
+      "id": "evt-729c57",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: load balancer target replaced",
+      "timestamp": "2026-01-15T11:20:00Z",
+      "magnitude": 0.0897209702800595
+    },
+    {
+      "id": "evt-de9142",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 6 to 12 replicas",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.16509954525664344
+    },
+    {
+      "id": "evt-4e0358",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.33736608203941726
+    },
+    {
+      "id": "evt-8a6fd1",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v4756: add request tracing",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.6935680000907213
+    },
+    {
+      "id": "evt-9bb1d3",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.08064261033523018
+    },
+    {
+      "id": "evt-e8f018",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.8178073441383079
+    },
+    {
+      "id": "evt-7a6bb7",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.13093389576195952
+    },
+    {
+      "id": "evt-2dfe33",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.5340731914290843
+    },
+    {
+      "id": "evt-6e4e0c",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v7378: raise worker count",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.7275490198039252
+    },
+    {
+      "id": "evt-ebac8f",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.16640677843524448
+    },
+    {
+      "id": "evt-aa988d",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 7 to 13 replicas",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.4109421481636953
+    }
+  ],
+  "truth": {
+    "event_id": "evt-6e4e0c",
+    "service": "inventory",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

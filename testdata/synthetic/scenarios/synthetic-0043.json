@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0043",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-0e07fe",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.6558890370593823
+    },
+    {
+      "id": "evt-2462f1",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.5811511349360328
+    },
+    {
+      "id": "evt-fa75b2",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.3880537440457246
+    },
+    {
+      "id": "evt-fc1724",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse queue depth above 10k",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.012625124292745985
+    },
+    {
+      "id": "evt-51b8e7",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 6 to 10 replicas",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.05061755432693478
+    },
+    {
+      "id": "evt-46accf",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: disk pressure on one node",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.22738483594501713
+    },
+    {
+      "id": "evt-a65f0e",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v1509: refactor retry logic",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.5009147718355866
+    },
+    {
+      "id": "evt-5c0190",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v5008: bump client library",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.4335738854481726
+    },
+    {
+      "id": "evt-10d6ed",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.802448677577902
+    },
+    {
+      "id": "evt-4c5f43",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.1463070036811955
+    },
+    {
+      "id": "evt-e1192b",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v4383: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.11468384138975257
+    },
+    {
+      "id": "evt-cf137d",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory queue depth above 10k",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.6886204861785844
+    },
+    {
+      "id": "evt-138d84",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 2 to 5 replicas",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.1547510090783028
+    }
+  ],
+  "truth": {
+    "event_id": "evt-5c0190",
+    "service": "auth",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 4,
+      "graph": 3
+    }
+  }
+}

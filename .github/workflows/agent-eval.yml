@@ -1,0 +1,70 @@
+name: Agent eval
+
+# Runs the Claude investigator on the synthetic scenarios. It spends API
+# credits, so it only runs by hand, and it stops at the cost limit.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Claude model ID
+        default: claude-opus-5-5
+      effort:
+        description: low, medium, high, xhigh or max
+        default: high
+      limit:
+        description: Number of scenarios, 0 for all 100
+        default: "20"
+      max_total_cost_usd:
+        description: Stop when the estimated cost passes this
+        default: "3"
+      no_graph:
+        description: Hide the dependency graph from incident-cli
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for an API key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          [ -n "$ANTHROPIC_API_KEY" ] || { echo "::error::set the ANTHROPIC_API_KEY repository secret"; exit 1; }
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          repository: jamespham8929/incident-cli
+          path: incident-cli
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.26"
+          cache: true
+      - name: Build incident-cli
+        run: cd incident-cli && go build -o "$RUNNER_TEMP/incident" .
+      - name: Run the eval
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: ${{ inputs.model }}
+          EFFORT: ${{ inputs.effort }}
+          LIMIT: ${{ inputs.limit }}
+          MAX_TOTAL: ${{ inputs.max_total_cost_usd }}
+          NO_GRAPH: ${{ inputs.no_graph }}
+        run: |
+          mkdir -p results
+          extra=""
+          [ "$NO_GRAPH" = "true" ] && extra="--no-graph"
+          go run ./cmd/platform-mcp eval --investigator claude \
+            --incident-cli "$RUNNER_TEMP/incident" \
+            --model "$MODEL" --effort "$EFFORT" --limit "$LIMIT" \
+            --max-total-cost-usd "$MAX_TOTAL" $extra \
+            --out "results/claude-$MODEL.json" | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: agent-eval-results
+          path: results/

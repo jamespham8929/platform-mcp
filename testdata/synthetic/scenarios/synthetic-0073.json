@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0073",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-f6387c",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.8522677835953807
+    },
+    {
+      "id": "evt-c1d124",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v5685: refactor retry logic",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.21064148374349767
+    },
+    {
+      "id": "evt-c9ef42",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.25225731531381906
+    },
+    {
+      "id": "evt-6ccbd1",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.65763085439945
+    },
+    {
+      "id": "evt-921635",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: disk pressure on one node",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.7583031510931811
+    },
+    {
+      "id": "evt-f63b3d",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.4072177183378781
+    },
+    {
+      "id": "evt-63ad6b",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.6740996204599888
+    },
+    {
+      "id": "evt-2958f2",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v6251: refactor retry logic",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.802622179896191
+    },
+    {
+      "id": "evt-de6646",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v8527: bump client library",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.5825839520113121
+    },
+    {
+      "id": "evt-d5d0c7",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.1659351117412464
+    },
+    {
+      "id": "evt-17075a",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.040814011108212686
+    },
+    {
+      "id": "evt-882bb9",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.09069479867039258
+    },
+    {
+      "id": "evt-af5123",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.6277734473221342
+    }
+  ],
+  "truth": {
+    "event_id": "evt-de6646",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

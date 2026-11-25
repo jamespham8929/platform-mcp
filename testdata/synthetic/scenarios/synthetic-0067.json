@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0067",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-6daaae",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.45236234308424145
+    },
+    {
+      "id": "evt-30daf9",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.4501225378286051
+    },
+    {
+      "id": "evt-0d345a",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.2227933322546902
+    },
+    {
+      "id": "evt-62a604",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v6133: raise worker count",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.7578214068793664
+    },
+    {
+      "id": "evt-3c8350",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth queue depth above 10k",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.5071130870442296
+    },
+    {
+      "id": "evt-f2f6e3",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v9964: update TLS settings",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.8958053588882571
+    },
+    {
+      "id": "evt-a132fa",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile queue depth above 10k",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.3254322529382967
+    },
+    {
+      "id": "evt-eb31b0",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v8987: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.8085075576869609
+    },
+    {
+      "id": "evt-cde0ee",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.7951290847372129
+    },
+    {
+      "id": "evt-7e9474",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 9 to 10 replicas",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.37198008547187
+    },
+    {
+      "id": "evt-c9033f",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.4681233208549978
+    },
+    {
+      "id": "evt-6c6a2f",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.6626122978830604
+    },
+    {
+      "id": "evt-b81ef0",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.2166894073727246
+    }
+  ],
+  "truth": {
+    "event_id": "evt-eb31b0",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

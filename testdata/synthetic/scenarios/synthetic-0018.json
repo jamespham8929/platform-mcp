@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0018",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2505c0",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.555091681013817
+    },
+    {
+      "id": "evt-9237de",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.03442140578037966
+    },
+    {
+      "id": "evt-ac9587",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v9009: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.42535417654190233
+    },
+    {
+      "id": "evt-1ae04f",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: disk pressure on one node",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.719041023904408
+    },
+    {
+      "id": "evt-7c9e0e",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v7736: tune cache TTL",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.4427751695008543
+    },
+    {
+      "id": "evt-93a39d",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.7106501921369478
+    },
+    {
+      "id": "evt-90ead5",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.7132421437481706
+    },
+    {
+      "id": "evt-1ed263",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.10798875262116679
+    },
+    {
+      "id": "evt-72b9cd",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v4748: raise worker count",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.20728958564003913
+    },
+    {
+      "id": "evt-96fc89",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.1580362591858244
+    },
+    {
+      "id": "evt-8efe8e",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.2088385742324824
+    },
+    {
+      "id": "evt-0f5443",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.1213403951643119
+    },
+    {
+      "id": "evt-138117",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v2383: update TLS settings",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.9940487896619339
+    }
+  ],
+  "truth": {
+    "event_id": "evt-90ead5",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 2
+    }
+  }
+}

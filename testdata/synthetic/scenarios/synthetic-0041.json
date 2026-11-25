@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0041",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-500440",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T10:39:00Z",
+      "magnitude": 0.10680305941920286
+    },
+    {
+      "id": "evt-41361c",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.891685509893761
+    },
+    {
+      "id": "evt-2b4446",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.72201414146287
+    },
+    {
+      "id": "evt-cdfe98",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v7306: bump client library",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.7288628572073197
+    },
+    {
+      "id": "evt-0bc148",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.4082923248911682
+    },
+    {
+      "id": "evt-1f629d",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog error rate above 2%",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.5821211354158818
+    },
+    {
+      "id": "evt-6cb343",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing queue depth above 10k",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.9822265001855772
+    },
+    {
+      "id": "evt-03d0e0",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout queue depth above 10k",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.10310970599079879
+    },
+    {
+      "id": "evt-05808e",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.11282259451295212
+    },
+    {
+      "id": "evt-b671f7",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v1741: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.3910168399996803
+    },
+    {
+      "id": "evt-8b46e0",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v3681: update TLS settings",
+      "timestamp": "2026-01-15T10:32:00Z",
+      "magnitude": 0.631820594374297
+    },
+    {
+      "id": "evt-5248ee",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 5 to 11 replicas",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.6175730178938115
+    },
+    {
+      "id": "evt-ee6201",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.2886290013490824
+    }
+  ],
+  "truth": {
+    "event_id": "evt-cdfe98",
+    "service": "catalog",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

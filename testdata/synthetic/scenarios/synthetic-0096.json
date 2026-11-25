@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0096",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-680841",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: enable connection reuse",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.33664418492371856
+    },
+    {
+      "id": "evt-23e8cc",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v8018: rewrite pagination",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.0436554526999654
+    },
+    {
+      "id": "evt-d7aecd",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.28769131665309394
+    },
+    {
+      "id": "evt-597e57",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: node pool upgrade started",
+      "timestamp": "2026-01-15T10:54:00Z",
+      "magnitude": 0.9065569181417177
+    },
+    {
+      "id": "evt-880b12",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.6834110996630036
+    },
+    {
+      "id": "evt-72126f",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v9034: raise worker count",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.13831104170760267
+    },
+    {
+      "id": "evt-f6ed24",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.27601014582514555
+    },
+    {
+      "id": "evt-0c2ce5",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.04396314157863982
+    },
+    {
+      "id": "evt-28f01f",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: load balancer target replaced",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.8034869259421057
+    },
+    {
+      "id": "evt-b8dfa6",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.13840300433607555
+    },
+    {
+      "id": "evt-7adeed",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v4796: tune cache TTL",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.415011317109696
+    },
+    {
+      "id": "evt-1aaa00",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.3615242417532947
+    },
+    {
+      "id": "evt-59aa8f",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.3346666859825594
+    }
+  ],
+  "truth": {
+    "event_id": "evt-7adeed",
+    "service": "catalog",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

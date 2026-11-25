@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0003",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-660d73",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 7 to 13 replicas",
+      "timestamp": "2026-01-15T10:05:00Z",
+      "magnitude": 0.004985016496128182
+    },
+    {
+      "id": "evt-36a63b",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.013210901893912328
+    },
+    {
+      "id": "evt-d012da",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.21797319735499135
+    },
+    {
+      "id": "evt-464c87",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v7243: tune cache TTL",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.967430653774457
+    },
+    {
+      "id": "evt-9fe9ed",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.7001605640750826
+    },
+    {
+      "id": "evt-93d91d",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.9726918599975615
+    },
+    {
+      "id": "evt-ef535f",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.9194974758320111
+    },
+    {
+      "id": "evt-1f53e7",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v8613: add request tracing",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.9810666002422531
+    },
+    {
+      "id": "evt-562d51",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v1839: raise worker count",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.6153626151086175
+    },
+    {
+      "id": "evt-53bb52",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.5646560487027423
+    },
+    {
+      "id": "evt-147c9b",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.5608456929604295
+    },
+    {
+      "id": "evt-d601d8",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth error rate above 2%",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.9281235160600815
+    },
+    {
+      "id": "evt-39efdb",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.7710772119837813
+    }
+  ],
+  "truth": {
+    "event_id": "evt-39efdb",
+    "service": "billing",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0054",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d11b72",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.6944903629231829
+    },
+    {
+      "id": "evt-131a53",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.1754128121732121
+    },
+    {
+      "id": "evt-5f32b3",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 6 to 10 replicas",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.7648849393867705
+    },
+    {
+      "id": "evt-d1ca14",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: node pool upgrade started",
+      "timestamp": "2026-01-15T11:31:00Z",
+      "magnitude": 0.4011943135075249
+    },
+    {
+      "id": "evt-959a44",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 4 to 8 replicas",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.8141044612269176
+    },
+    {
+      "id": "evt-d3dc91",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: node pool upgrade started",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.7194992851719084
+    },
+    {
+      "id": "evt-954831",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.8074491229164529
+    },
+    {
+      "id": "evt-4567d4",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 8 to 13 replicas",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.05548780983030993
+    },
+    {
+      "id": "evt-4e6b12",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.881591772154825
+    },
+    {
+      "id": "evt-6cf6c3",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.7683840960285663
+    },
+    {
+      "id": "evt-faa443",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.6575738800985991
+    },
+    {
+      "id": "evt-8b190c",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.757683736197203
+    },
+    {
+      "id": "evt-7c687c",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v7792: rewrite pagination",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.9267755137963084
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d11b72",
+    "service": "ledger",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

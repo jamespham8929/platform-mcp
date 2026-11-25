@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0071",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-413b25",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.8875794447429678
+    },
+    {
+      "id": "evt-ee174a",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.5850523510729665
+    },
+    {
+      "id": "evt-9b85c2",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.38751011037762395
+    },
+    {
+      "id": "evt-87cab5",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.8678229174840238
+    },
+    {
+      "id": "evt-6ecabb",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v2836: bump client library",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.0566955464217018
+    },
+    {
+      "id": "evt-d24285",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 7 to 12 replicas",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.9941437349455952
+    },
+    {
+      "id": "evt-ebe0d7",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.702026231484417
+    },
+    {
+      "id": "evt-d95258",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: load balancer target replaced",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.14177527158693468
+    },
+    {
+      "id": "evt-ffc9fa",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v8127: add request tracing",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.709930113710271
+    },
+    {
+      "id": "evt-06bf6c",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.2613843485134367
+    },
+    {
+      "id": "evt-18669a",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v9155: refactor retry logic",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.7234454403525075
+    },
+    {
+      "id": "evt-00051e",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.2823630586002932
+    },
+    {
+      "id": "evt-cad5a3",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.5906272427735517
+    }
+  ],
+  "truth": {
+    "event_id": "evt-87cab5",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 3
+    }
+  }
+}

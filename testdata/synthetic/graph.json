@@ -1,0 +1,32 @@
+{
+  "billing": [
+    "ledger"
+  ],
+  "catalog": [
+    "inventory"
+  ],
+  "checkout": [
+    "auth",
+    "payments",
+    "inventory"
+  ],
+  "inventory": [
+    "warehouse"
+  ],
+  "mobile": [
+    "checkout",
+    "catalog"
+  ],
+  "payments": [
+    "ledger",
+    "auth"
+  ],
+  "search": [
+    "catalog"
+  ],
+  "web": [
+    "checkout",
+    "search",
+    "catalog"
+  ]
+}

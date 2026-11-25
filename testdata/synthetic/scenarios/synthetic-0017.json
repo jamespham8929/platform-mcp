@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0017",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-367dbe",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v6537: bump client library",
+      "timestamp": "2026-01-15T10:56:00Z",
+      "magnitude": 0.6193487803795432
+    },
+    {
+      "id": "evt-2aa5a7",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.31523042251141453
+    },
+    {
+      "id": "evt-f512ee",
+      "source": "alert",
+      "service": "web",
+      "title": "web error rate above 2%",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.19238448710367415
+    },
+    {
+      "id": "evt-fd9165",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v8086: rewrite pagination",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.717801870306802
+    },
+    {
+      "id": "evt-f37698",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v4428: add request tracing",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.6119413158102708
+    },
+    {
+      "id": "evt-d4699f",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger queue depth above 10k",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.8235844119727941
+    },
+    {
+      "id": "evt-97a150",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.4746815259133294
+    },
+    {
+      "id": "evt-e2a72b",
+      "source": "alert",
+      "service": "search",
+      "title": "search error rate above 2%",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.054927184694896894
+    },
+    {
+      "id": "evt-9f1f34",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v1983: raise worker count",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.7983665048135808
+    },
+    {
+      "id": "evt-36502e",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.6394041577538104
+    },
+    {
+      "id": "evt-be22c6",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 5 to 9 replicas",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.6391915378943953
+    },
+    {
+      "id": "evt-8e596f",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v7453: refactor retry logic",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.0245229585925185
+    },
+    {
+      "id": "evt-d1e904",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 2 to 5 replicas",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.4479968550723581
+    }
+  ],
+  "truth": {
+    "event_id": "evt-f37698",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

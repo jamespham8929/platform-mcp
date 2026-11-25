@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0024",
+  "service": "search",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-619c62",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: node pool upgrade started",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.263087721289322
+    },
+    {
+      "id": "evt-b1cb1c",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory queue depth above 10k",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.9446516205677815
+    },
+    {
+      "id": "evt-b276f7",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.2591901661625526
+    },
+    {
+      "id": "evt-8accf5",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.41058330022281764
+    },
+    {
+      "id": "evt-bc9bf1",
+      "source": "alert",
+      "service": "search",
+      "title": "search queue depth above 10k",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.7648475572172008
+    },
+    {
+      "id": "evt-fc79fc",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:36:00Z",
+      "magnitude": 0.6641341621054753
+    },
+    {
+      "id": "evt-0dc7ed",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 9 to 12 replicas",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.29130910773155216
+    },
+    {
+      "id": "evt-392b30",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 5 to 10 replicas",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.9430866496071955
+    },
+    {
+      "id": "evt-42e46d",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: enable connection reuse",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.7894528494505005
+    },
+    {
+      "id": "evt-3f6609",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.6587986309746878
+    },
+    {
+      "id": "evt-0048b7",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v2213: rewrite pagination",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.9609826855474494
+    },
+    {
+      "id": "evt-563fda",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 7 to 13 replicas",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.1511647188815647
+    },
+    {
+      "id": "evt-b6145d",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:21:00Z",
+      "magnitude": 0.7221339237850849
+    }
+  ],
+  "truth": {
+    "event_id": "evt-0048b7",
+    "service": "search",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 3,
+      "graph": 3
+    }
+  }
+}

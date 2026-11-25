@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0098",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-552eab",
+      "source": "infra",
+      "service": "web",
+      "title": "web: node pool upgrade started",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.751292881690264
+    },
+    {
+      "id": "evt-4586ab",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.9451452253323651
+    },
+    {
+      "id": "evt-9c9fc6",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.38113063315448653
+    },
+    {
+      "id": "evt-ecaf9f",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.4951019277761036
+    },
+    {
+      "id": "evt-c08b42",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: enable connection reuse",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.9357550439827107
+    },
+    {
+      "id": "evt-ae46ea",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.6143081415015753
+    },
+    {
+      "id": "evt-9a0364",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.8745065822340267
+    },
+    {
+      "id": "evt-fde29e",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.1579983471533202
+    },
+    {
+      "id": "evt-915e21",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.16721372514521896
+    },
+    {
+      "id": "evt-ec9c79",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: enable connection reuse",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.357831328515592
+    },
+    {
+      "id": "evt-bc6708",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v2869: add request tracing",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.13422364921019198
+    },
+    {
+      "id": "evt-552003",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v8766: bump client library",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.9860037027499192
+    },
+    {
+      "id": "evt-7aaa73",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 5 to 6 replicas",
+      "timestamp": "2026-01-15T10:16:00Z",
+      "magnitude": 0.6100018056194731
+    }
+  ],
+  "truth": {
+    "event_id": "evt-ecaf9f",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

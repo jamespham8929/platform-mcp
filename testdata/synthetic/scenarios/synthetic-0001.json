@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0001",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-9ea3a0",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v5548: bump client library",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.4876935689150718
+    },
+    {
+      "id": "evt-e91f58",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.8681355693769461
+    },
+    {
+      "id": "evt-8b4af1",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v4639: refactor retry logic",
+      "timestamp": "2026-01-15T10:11:00Z",
+      "magnitude": 0.42346583302911034
+    },
+    {
+      "id": "evt-336a10",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 7 to 8 replicas",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.9488464357641592
+    },
+    {
+      "id": "evt-3c34bc",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: node pool upgrade started",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.7157764868204868
+    },
+    {
+      "id": "evt-752721",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.3092275498600531
+    },
+    {
+      "id": "evt-76299f",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.8488736751596281
+    },
+    {
+      "id": "evt-c4dd5b",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 4 to 8 replicas",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.09611291857111359
+    },
+    {
+      "id": "evt-a32e3e",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v4718: drop legacy endpoint",
+      "timestamp": "2026-01-15T10:32:00Z",
+      "magnitude": 0.4471359674834756
+    },
+    {
+      "id": "evt-3d6045",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 9 to 10 replicas",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.8735789274964383
+    },
+    {
+      "id": "evt-ab0be4",
+      "source": "alert",
+      "service": "web",
+      "title": "web latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.6615675967626126
+    },
+    {
+      "id": "evt-841a42",
+      "source": "infra",
+      "service": "search",
+      "title": "search: disk pressure on one node",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.8487640557765344
+    },
+    {
+      "id": "evt-bd9ce1",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v9936: raise worker count",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.20735244698089628
+    }
+  ],
+  "truth": {
+    "event_id": "evt-9ea3a0",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 4,
+      "graph": 4
+    }
+  }
+}

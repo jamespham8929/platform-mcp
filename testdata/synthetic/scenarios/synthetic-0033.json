@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0033",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d9435c",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.2917934343952393
+    },
+    {
+      "id": "evt-26ec43",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: node pool upgrade started",
+      "timestamp": "2026-01-15T11:01:00Z",
+      "magnitude": 0.7380830510755977
+    },
+    {
+      "id": "evt-660fad",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth error rate above 2%",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.12077185324768105
+    },
+    {
+      "id": "evt-11fbe7",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.2723984632165853
+    },
+    {
+      "id": "evt-8cfba7",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.33866341440633496
+    },
+    {
+      "id": "evt-8861ad",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.7637236069470764
+    },
+    {
+      "id": "evt-2c0eeb",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: enable connection reuse",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.8532243003050897
+    },
+    {
+      "id": "evt-bb3e5c",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: enable connection reuse",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.5925183580953314
+    },
+    {
+      "id": "evt-7c35d6",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v3916: rewrite pagination",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.5804421517553874
+    },
+    {
+      "id": "evt-15838e",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 2 to 5 replicas",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.23681530565484923
+    },
+    {
+      "id": "evt-88e2ec",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 7 to 12 replicas",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.11724684112169129
+    },
+    {
+      "id": "evt-8806de",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.7692939888755068
+    },
+    {
+      "id": "evt-b3852c",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.10075218495825339
+    }
+  ],
+  "truth": {
+    "event_id": "evt-8806de",
+    "service": "auth",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

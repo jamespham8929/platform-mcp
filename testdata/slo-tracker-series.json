@@ -1,0 +1,578 @@
+{
+ "generated_by": "k8s-slo-tracker DecisionExporter, see platform-mcp/scripts/slo-fixture.py",
+ "evaluated_at": 1768478280.0,
+ "series": [
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "critical",
+    "slo": "availability",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "warning",
+    "slo": "availability",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "none",
+    "slo": "availability",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "insufficient_data",
+    "slo": "availability",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "critical",
+    "slo": "latency-p99",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "warning",
+    "slo": "latency-p99",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "none",
+    "slo": "latency-p99",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "payments",
+    "service": "checkout",
+    "severity": "insufficient_data",
+    "slo": "latency-p99",
+    "team": "payments",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "search",
+    "service": "search",
+    "severity": "critical",
+    "slo": "availability",
+    "team": "",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "search",
+    "service": "search",
+    "severity": "warning",
+    "slo": "availability",
+    "team": "",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "search",
+    "service": "search",
+    "severity": "none",
+    "slo": "availability",
+    "team": "",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_alert_state",
+    "namespace": "search",
+    "service": "search",
+    "severity": "insufficient_data",
+    "slo": "availability",
+    "team": "",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_lower_bound",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "16.1"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_lower_bound",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "15.3"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_lower_bound",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "6h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "3.6"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_lower_bound",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_lower_bound",
+    "service": "search",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_observed",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "19.2"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_observed",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "22.5"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_observed",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "6h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "4.1"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_observed",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "30.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_burn_rate_observed",
+    "service": "search",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.2"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_samples",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "41000.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_samples",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "3400.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_samples",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "6h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "250000.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_samples",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "12.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_samples",
+    "service": "search",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "9000.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_sufficient_data",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_sufficient_data",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_sufficient_data",
+    "service": "checkout",
+    "slo": "availability",
+    "window": "6h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_sufficient_data",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "window": "5m",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_window_sufficient_data",
+    "service": "search",
+    "slo": "availability",
+    "window": "1h",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_evaluation_errors_total",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_last_evaluation_timestamp_seconds",
+    "service": "checkout",
+    "slo": "availability",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1768478280.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_last_evaluation_timestamp_seconds",
+    "service": "checkout",
+    "slo": "latency-p99",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1768477380.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_last_evaluation_timestamp_seconds",
+    "service": "search",
+    "slo": "availability",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "1768478280.0"
+   ]
+  },
+  {
+   "metric": {
+    "__name__": "slo_tracker_evaluation_cycle_seconds",
+    "job": "slo-tracker",
+    "instance": "10.0.3.7:9105",
+    "pod": "slo-tracker-6d9f-abcde"
+   },
+   "value": [
+    1768478280.0,
+    "0.0"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0060",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-0b7edd",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: node pool upgrade started",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.19166267020495237
+    },
+    {
+      "id": "evt-581e80",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.4541546895942241
+    },
+    {
+      "id": "evt-ef50cb",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v5194: refactor retry logic",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.9393597650384885
+    },
+    {
+      "id": "evt-18a345",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: disk pressure on one node",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.31306376857823853
+    },
+    {
+      "id": "evt-c749d9",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.9349549594343286
+    },
+    {
+      "id": "evt-e25ba5",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.39673695600251085
+    },
+    {
+      "id": "evt-8f6b73",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.31914640718998316
+    },
+    {
+      "id": "evt-99f05e",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.3586311951788959
+    },
+    {
+      "id": "evt-786856",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v2648: bump client library",
+      "timestamp": "2026-01-15T10:50:00Z",
+      "magnitude": 0.5698303510461706
+    },
+    {
+      "id": "evt-8b9910",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v6066: bump client library",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.534500287349691
+    },
+    {
+      "id": "evt-222279",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.23250364839516063
+    },
+    {
+      "id": "evt-0e334f",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:20:00Z",
+      "magnitude": 0.07355679355316541
+    },
+    {
+      "id": "evt-7a6e0b",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.8571320453100211
+    }
+  ],
+  "truth": {
+    "event_id": "evt-ef50cb",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 2
+    }
+  }
+}

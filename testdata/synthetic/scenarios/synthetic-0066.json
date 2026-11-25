@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0066",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-21cf0e",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.4409312836718232
+    },
+    {
+      "id": "evt-b48c85",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.1339281308312098
+    },
+    {
+      "id": "evt-fb8a6d",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 9 to 11 replicas",
+      "timestamp": "2026-01-15T11:23:00Z",
+      "magnitude": 0.041081505936946955
+    },
+    {
+      "id": "evt-1bd9a2",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v5288: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.8185459688084257
+    },
+    {
+      "id": "evt-90bde1",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 5 to 9 replicas",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.04521925510651887
+    },
+    {
+      "id": "evt-b058d1",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v8331: raise worker count",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.5609117899582143
+    },
+    {
+      "id": "evt-a0e87e",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 2 to 5 replicas",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.14745063121832114
+    },
+    {
+      "id": "evt-8c11bb",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.06567425251712697
+    },
+    {
+      "id": "evt-53dba5",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.3785193161987811
+    },
+    {
+      "id": "evt-37c568",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 5 to 10 replicas",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.7616131722741666
+    },
+    {
+      "id": "evt-274951",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 8 to 10 replicas",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.9515292844705
+    },
+    {
+      "id": "evt-872ddf",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 6 to 10 replicas",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.43389782182325487
+    },
+    {
+      "id": "evt-9a90ef",
+      "source": "external",
+      "service": "search",
+      "title": "search: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:05:00Z",
+      "magnitude": 0.9887982185847023
+    }
+  ],
+  "truth": {
+    "event_id": "evt-1bd9a2",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

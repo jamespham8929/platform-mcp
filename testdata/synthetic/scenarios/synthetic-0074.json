@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0074",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-633a69",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.8123707085844886
+    },
+    {
+      "id": "evt-7e31ef",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.7965886511294447
+    },
+    {
+      "id": "evt-8b47a4",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:29:00Z",
+      "magnitude": 0.26274491825038077
+    },
+    {
+      "id": "evt-6924b5",
+      "source": "infra",
+      "service": "web",
+      "title": "web: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.8584745756540949
+    },
+    {
+      "id": "evt-d90e18",
+      "source": "infra",
+      "service": "web",
+      "title": "web: load balancer target replaced",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.9542791605565282
+    },
+    {
+      "id": "evt-73c644",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 5 to 8 replicas",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.8051475651332956
+    },
+    {
+      "id": "evt-db97f4",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.48261646616101067
+    },
+    {
+      "id": "evt-0b13ee",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.3578371919199216
+    },
+    {
+      "id": "evt-d40314",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.19378772997346047
+    },
+    {
+      "id": "evt-edda6e",
+      "source": "external",
+      "service": "web",
+      "title": "web: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.8733603917550913
+    },
+    {
+      "id": "evt-1fa8db",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.15561287767381382
+    },
+    {
+      "id": "evt-6d44c1",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v7686: raise worker count",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.5077269195943269
+    },
+    {
+      "id": "evt-61024d",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.10277860093320071
+    }
+  ],
+  "truth": {
+    "event_id": "evt-6d44c1",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

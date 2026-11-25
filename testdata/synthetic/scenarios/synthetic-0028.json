@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0028",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-a07b3c",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 2 to 4 replicas",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.7009517106261408
+    },
+    {
+      "id": "evt-a8508c",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v8950: tune cache TTL",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.38404511241977496
+    },
+    {
+      "id": "evt-bc631f",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.6034283178973151
+    },
+    {
+      "id": "evt-319896",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: node pool upgrade started",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.322988018852298
+    },
+    {
+      "id": "evt-768d95",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse queue depth above 10k",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.9149289981993892
+    },
+    {
+      "id": "evt-d19378",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.568899145646507
+    },
+    {
+      "id": "evt-86fcd9",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 7 to 12 replicas",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.8713518175189952
+    },
+    {
+      "id": "evt-536484",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.9219146384782015
+    },
+    {
+      "id": "evt-d4ff74",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.09671600310503574
+    },
+    {
+      "id": "evt-c5c39c",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.8776337314406244
+    },
+    {
+      "id": "evt-9772a0",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v8786: bump client library",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.9792005210396855
+    },
+    {
+      "id": "evt-506b60",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8018: raise worker count",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.9563449781680924
+    },
+    {
+      "id": "evt-b09aee",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.6583883163583694
+    }
+  ],
+  "truth": {
+    "event_id": "evt-9772a0",
+    "service": "auth",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

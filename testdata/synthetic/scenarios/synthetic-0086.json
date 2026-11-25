@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0086",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-008b25",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: load balancer target replaced",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.3676754645353831
+    },
+    {
+      "id": "evt-e90b37",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.3611442097652462
+    },
+    {
+      "id": "evt-06df37",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:22:00Z",
+      "magnitude": 0.5696176828222264
+    },
+    {
+      "id": "evt-8743ca",
+      "source": "alert",
+      "service": "web",
+      "title": "web error rate above 2%",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.03472918180362788
+    },
+    {
+      "id": "evt-c4cea9",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v7010: refactor retry logic",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.8333274491495947
+    },
+    {
+      "id": "evt-30689f",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.808233748827575
+    },
+    {
+      "id": "evt-d875c5",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:53:00Z",
+      "magnitude": 0.7442290388736962
+    },
+    {
+      "id": "evt-f3065c",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 7 to 9 replicas",
+      "timestamp": "2026-01-15T11:15:00Z",
+      "magnitude": 0.31634492816202003
+    },
+    {
+      "id": "evt-749c89",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing error rate above 2%",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.16876376553873185
+    },
+    {
+      "id": "evt-1dc624",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.2203483243774948
+    },
+    {
+      "id": "evt-c482ad",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.16088347285630353
+    },
+    {
+      "id": "evt-4e3587",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.5655125035660674
+    },
+    {
+      "id": "evt-55b7db",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.7020299812033405
+    }
+  ],
+  "truth": {
+    "event_id": "evt-4e3587",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

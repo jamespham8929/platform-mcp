@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0034",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-bdf61c",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.7452021796599997
+    },
+    {
+      "id": "evt-618121",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:13:00Z",
+      "magnitude": 0.7471977144520829
+    },
+    {
+      "id": "evt-1dff26",
+      "source": "external",
+      "service": "search",
+      "title": "search: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.962259715590458
+    },
+    {
+      "id": "evt-ea43f4",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.10267776194175741
+    },
+    {
+      "id": "evt-a16f65",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v3198: tune cache TTL",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.2228766984310478
+    },
+    {
+      "id": "evt-f85b5f",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 3 to 9 replicas",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.554349837340718
+    },
+    {
+      "id": "evt-8fa3b6",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.10082007175400166
+    },
+    {
+      "id": "evt-136ae1",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.008100893947171691
+    },
+    {
+      "id": "evt-481011",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.2686025958436631
+    },
+    {
+      "id": "evt-402067",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v1065: bump client library",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.4201155151828354
+    },
+    {
+      "id": "evt-17161c",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:17:00Z",
+      "magnitude": 0.04896904237555203
+    },
+    {
+      "id": "evt-8a180a",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v6174: add request tracing",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.6263761106523114
+    },
+    {
+      "id": "evt-5e422a",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.667236778836981
+    }
+  ],
+  "truth": {
+    "event_id": "evt-8a180a",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0062",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-ba56bb",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v4344: refactor retry logic",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.40236913974397576
+    },
+    {
+      "id": "evt-8e40c0",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth error rate above 2%",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.254313516089143
+    },
+    {
+      "id": "evt-f3732c",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.4661555272396221
+    },
+    {
+      "id": "evt-716a99",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.28278236103778287
+    },
+    {
+      "id": "evt-b56d33",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: enable connection reuse",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.7469359213302552
+    },
+    {
+      "id": "evt-ee500e",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v7323: rewrite pagination",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.8101154299343036
+    },
+    {
+      "id": "evt-058003",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag async-writes turned on",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.7281127563601477
+    },
+    {
+      "id": "evt-238eb0",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.147415131996397
+    },
+    {
+      "id": "evt-2a8723",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:58:00Z",
+      "magnitude": 0.2886862733524107
+    },
+    {
+      "id": "evt-046047",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.33964136014653157
+    },
+    {
+      "id": "evt-7849bd",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.11823244895476781
+    },
+    {
+      "id": "evt-b6a910",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.03754181037463177
+    },
+    {
+      "id": "evt-c649dc",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.1023084254964556
+    }
+  ],
+  "truth": {
+    "event_id": "evt-ee500e",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

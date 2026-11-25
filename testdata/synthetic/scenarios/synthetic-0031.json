@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0031",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-fbb726",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.4568667784226823
+    },
+    {
+      "id": "evt-a630a6",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.620158873915016
+    },
+    {
+      "id": "evt-205ec1",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.36734731303111506
+    },
+    {
+      "id": "evt-396553",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v3407: rewrite pagination",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.3390921053476677
+    },
+    {
+      "id": "evt-601ee1",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v3224: tune cache TTL",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.24178140003611048
+    },
+    {
+      "id": "evt-23d0c8",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.9415683090997202
+    },
+    {
+      "id": "evt-75de22",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 9 to 12 replicas",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.7048490368074832
+    },
+    {
+      "id": "evt-61b463",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 3 to 5 replicas",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.8506702976510094
+    },
+    {
+      "id": "evt-cd1499",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.2335858881089872
+    },
+    {
+      "id": "evt-bbcacd",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.3400824705429495
+    },
+    {
+      "id": "evt-c0b491",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.08513621137305291
+    },
+    {
+      "id": "evt-a81883",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:30:00Z",
+      "magnitude": 0.4538881610683495
+    },
+    {
+      "id": "evt-51759e",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v7762: bump client library",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.49377943421183496
+    }
+  ],
+  "truth": {
+    "event_id": "evt-51759e",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 2
+    }
+  }
+}

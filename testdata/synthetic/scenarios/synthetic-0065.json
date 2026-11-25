@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0065",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-d681d6",
+      "source": "external",
+      "service": "auth",
+      "title": "auth: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.941869025833843
+    },
+    {
+      "id": "evt-b1e156",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.6588652700792043
+    },
+    {
+      "id": "evt-7c9a3e",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag async-writes turned on",
+      "timestamp": "2026-01-15T10:49:00Z",
+      "magnitude": 0.39428103413202364
+    },
+    {
+      "id": "evt-bec1a1",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.7501069915626752
+    },
+    {
+      "id": "evt-cc0e38",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8877: refactor retry logic",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.2675957364050806
+    },
+    {
+      "id": "evt-ff19bb",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.22076584750555586
+    },
+    {
+      "id": "evt-18f862",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v5009: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.3331774611750871
+    },
+    {
+      "id": "evt-792589",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing error rate above 2%",
+      "timestamp": "2026-01-15T10:06:00Z",
+      "magnitude": 0.15588536693425883
+    },
+    {
+      "id": "evt-366a8b",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.6276995597785241
+    },
+    {
+      "id": "evt-f75a97",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.24337863179942426
+    },
+    {
+      "id": "evt-960285",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:19:00Z",
+      "magnitude": 0.9502658911330478
+    },
+    {
+      "id": "evt-68a50d",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.6947909107290516
+    },
+    {
+      "id": "evt-1b812e",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.8299197788363243
+    }
+  ],
+  "truth": {
+    "event_id": "evt-b1e156",
+    "service": "auth",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 3,
+      "graph": 3
+    }
+  }
+}

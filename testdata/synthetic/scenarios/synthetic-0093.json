@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0093",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-befaef",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 7 to 9 replicas",
+      "timestamp": "2026-01-15T11:05:00Z",
+      "magnitude": 0.09549375923306498
+    },
+    {
+      "id": "evt-8424e1",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing queue depth above 10k",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.9713262973768189
+    },
+    {
+      "id": "evt-53ea7c",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.30154100145943397
+    },
+    {
+      "id": "evt-82b4a1",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments error rate above 2%",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.715498901065331
+    },
+    {
+      "id": "evt-e53b98",
+      "source": "infra",
+      "service": "search",
+      "title": "search: node pool upgrade started",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.18406818914962703
+    },
+    {
+      "id": "evt-fc2e08",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 5 to 6 replicas",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.5744868576465905
+    },
+    {
+      "id": "evt-779544",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth queue depth above 10k",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.4591452346641515
+    },
+    {
+      "id": "evt-21fc69",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.5071158170250887
+    },
+    {
+      "id": "evt-2878a0",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.06130956516395441
+    },
+    {
+      "id": "evt-47bc0c",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.8565743055236782
+    },
+    {
+      "id": "evt-dd0fc9",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 8 to 11 replicas",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.12789070157708626
+    },
+    {
+      "id": "evt-3fd726",
+      "source": "external",
+      "service": "web",
+      "title": "web: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.7909071256440195
+    },
+    {
+      "id": "evt-4d6a06",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v3666: bump client library",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.7202311388353076
+    }
+  ],
+  "truth": {
+    "event_id": "evt-21fc69",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

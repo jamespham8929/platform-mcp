@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0088",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-4abdcf",
+      "source": "external",
+      "service": "search",
+      "title": "search: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:00:00Z",
+      "magnitude": 0.7700010192033957
+    },
+    {
+      "id": "evt-851995",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 2 to 7 replicas",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.9665243197997768
+    },
+    {
+      "id": "evt-88dae0",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8670: bump client library",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.8627204675235464
+    },
+    {
+      "id": "evt-3958fa",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.7701702194344712
+    },
+    {
+      "id": "evt-614c43",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.831917347836159
+    },
+    {
+      "id": "evt-7c851b",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.9523371952795517
+    },
+    {
+      "id": "evt-67cbd8",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.615154498348527
+    },
+    {
+      "id": "evt-44ae56",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.12267264817446909
+    },
+    {
+      "id": "evt-00e037",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v4569: raise worker count",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.9206466556632568
+    },
+    {
+      "id": "evt-f1f7dd",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 7 to 9 replicas",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.7998554411399935
+    },
+    {
+      "id": "evt-29b3a7",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse queue depth above 10k",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.5410506042875906
+    },
+    {
+      "id": "evt-5e37c9",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v8954: update TLS settings",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.8745500116253587
+    },
+    {
+      "id": "evt-ef9c2a",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.07915272529257161
+    }
+  ],
+  "truth": {
+    "event_id": "evt-00e037",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

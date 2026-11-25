@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0040",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-18f61b",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.05206373454754601
+    },
+    {
+      "id": "evt-2f5cd3",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.4038530255464106
+    },
+    {
+      "id": "evt-83784a",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.5314661212574585
+    },
+    {
+      "id": "evt-61375a",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.500300585033792
+    },
+    {
+      "id": "evt-d216cd",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:30:00Z",
+      "magnitude": 0.5777569882350791
+    },
+    {
+      "id": "evt-0646a8",
+      "source": "feature_flag",
+      "service": "billing",
+      "title": "billing: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.20522861521637822
+    },
+    {
+      "id": "evt-1fad2b",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v8869: raise worker count",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.10435869645454228
+    },
+    {
+      "id": "evt-25f5e8",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v8533: refactor retry logic",
+      "timestamp": "2026-01-15T10:18:00Z",
+      "magnitude": 0.8954875434755805
+    },
+    {
+      "id": "evt-c97449",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v1640: rewrite pagination",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.8708112384472336
+    },
+    {
+      "id": "evt-d9f537",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.2756190977552198
+    },
+    {
+      "id": "evt-b4aa61",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T10:53:00Z",
+      "magnitude": 0.3963001310750295
+    },
+    {
+      "id": "evt-f0db6a",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:05:00Z",
+      "magnitude": 0.537172476758395
+    },
+    {
+      "id": "evt-cbbc4e",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v2592: update TLS settings",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.578280396121805
+    }
+  ],
+  "truth": {
+    "event_id": "evt-61375a",
+    "service": "mobile",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

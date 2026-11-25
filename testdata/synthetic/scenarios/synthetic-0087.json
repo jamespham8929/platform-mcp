@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0087",
+  "service": "auth",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-b27227",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.6242684822641774
+    },
+    {
+      "id": "evt-a5a21b",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v2281: rewrite pagination",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.885731656577521
+    },
+    {
+      "id": "evt-f14928",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:20:00Z",
+      "magnitude": 0.8680889539479593
+    },
+    {
+      "id": "evt-aa77dc",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.5594977513246447
+    },
+    {
+      "id": "evt-0b67a8",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.9786132960728753
+    },
+    {
+      "id": "evt-497ad3",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v6462: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.3063495730236846
+    },
+    {
+      "id": "evt-7fd529",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 5 to 8 replicas",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.07033487970707543
+    },
+    {
+      "id": "evt-a98180",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:33:00Z",
+      "magnitude": 0.4126247508751127
+    },
+    {
+      "id": "evt-d862d9",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing error rate above 2%",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.30211644971134205
+    },
+    {
+      "id": "evt-b28e18",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.996657487153218
+    },
+    {
+      "id": "evt-d65a36",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v4900: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.9214206265650567
+    },
+    {
+      "id": "evt-4a9f4f",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.9311455359113417
+    },
+    {
+      "id": "evt-30b471",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:48:00Z",
+      "magnitude": 0.3588656913867547
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d65a36",
+    "service": "auth",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

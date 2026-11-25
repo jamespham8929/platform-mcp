@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0091",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-041fa9",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T11:35:00Z",
+      "magnitude": 0.16033154022058982
+    },
+    {
+      "id": "evt-2c9db0",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v8691: update TLS settings",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.49348518503844324
+    },
+    {
+      "id": "evt-587fb0",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 6 to 12 replicas",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.4356644811453011
+    },
+    {
+      "id": "evt-9e111b",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 5 to 10 replicas",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.9659880466025181
+    },
+    {
+      "id": "evt-d86ef9",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:03:00Z",
+      "magnitude": 0.8851235802567374
+    },
+    {
+      "id": "evt-345199",
+      "source": "alert",
+      "service": "search",
+      "title": "search queue depth above 10k",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.3329221058097337
+    },
+    {
+      "id": "evt-b9b5c0",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.4056871807043695
+    },
+    {
+      "id": "evt-9807ab",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 3 to 8 replicas",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.06299717019137786
+    },
+    {
+      "id": "evt-517979",
+      "source": "infra",
+      "service": "auth",
+      "title": "auth: load balancer target replaced",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.5522599188576104
+    },
+    {
+      "id": "evt-ae2536",
+      "source": "config_change",
+      "service": "search",
+      "title": "search: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.03763416260769912
+    },
+    {
+      "id": "evt-a945fa",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v5940: add request tracing",
+      "timestamp": "2026-01-15T11:55:00Z",
+      "magnitude": 0.6018047378596684
+    },
+    {
+      "id": "evt-1632ec",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.8170723229751353
+    },
+    {
+      "id": "evt-a216a5",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v9804: bump client library",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.7860062338181962
+    }
+  ],
+  "truth": {
+    "event_id": "evt-2c9db0",
+    "service": "auth",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}

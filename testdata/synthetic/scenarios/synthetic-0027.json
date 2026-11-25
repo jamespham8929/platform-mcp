@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0027",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-69065b",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.42988285226816597
+    },
+    {
+      "id": "evt-316a50",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.05647066876596801
+    },
+    {
+      "id": "evt-efc5f8",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.6003941704588216
+    },
+    {
+      "id": "evt-040b81",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.8581863717032026
+    },
+    {
+      "id": "evt-12e397",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T10:30:00Z",
+      "magnitude": 0.7716833150640773
+    },
+    {
+      "id": "evt-f09a4c",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:16:00Z",
+      "magnitude": 0.6546961922967962
+    },
+    {
+      "id": "evt-c823a4",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v5930: bump client library",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.2933609909476528
+    },
+    {
+      "id": "evt-e246d0",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 9 to 13 replicas",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.0694655022085161
+    },
+    {
+      "id": "evt-cb77c8",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 3 to 5 replicas",
+      "timestamp": "2026-01-15T10:14:00Z",
+      "magnitude": 0.6828882964989965
+    },
+    {
+      "id": "evt-131c96",
+      "source": "feature_flag",
+      "service": "catalog",
+      "title": "catalog: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.7083454920178075
+    },
+    {
+      "id": "evt-af877e",
+      "source": "alert",
+      "service": "web",
+      "title": "web error rate above 2%",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.7359843820229508
+    },
+    {
+      "id": "evt-3b0833",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:48:00Z",
+      "magnitude": 0.30049353011507696
+    },
+    {
+      "id": "evt-159a39",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.8001864643643593
+    }
+  ],
+  "truth": {
+    "event_id": "evt-159a39",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

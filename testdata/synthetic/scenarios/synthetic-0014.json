@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0014",
+  "service": "ledger",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-e3953e",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout error rate above 2%",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.980856789256361
+    },
+    {
+      "id": "evt-08af1c",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v7061: add request tracing",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.411389245908467
+    },
+    {
+      "id": "evt-4cdeef",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: load balancer target replaced",
+      "timestamp": "2026-01-15T11:59:00Z",
+      "magnitude": 0.663703180765971
+    },
+    {
+      "id": "evt-4d0eea",
+      "source": "scaling",
+      "service": "checkout",
+      "title": "checkout scaled 4 to 6 replicas",
+      "timestamp": "2026-01-15T11:07:00Z",
+      "magnitude": 0.31793416356908055
+    },
+    {
+      "id": "evt-32231b",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.9558990474018394
+    },
+    {
+      "id": "evt-da84ed",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.814736762885697
+    },
+    {
+      "id": "evt-4610dc",
+      "source": "deploy",
+      "service": "catalog",
+      "title": "catalog v8485: tune cache TTL",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.7610686064134736
+    },
+    {
+      "id": "evt-375d9e",
+      "source": "feature_flag",
+      "service": "payments",
+      "title": "payments: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:04:00Z",
+      "magnitude": 0.2305308080461097
+    },
+    {
+      "id": "evt-d870ab",
+      "source": "infra",
+      "service": "payments",
+      "title": "payments: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:34:00Z",
+      "magnitude": 0.057785267414115896
+    },
+    {
+      "id": "evt-98b6c4",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.29321659495226193
+    },
+    {
+      "id": "evt-fed39c",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:37:00Z",
+      "magnitude": 0.5299491325744786
+    },
+    {
+      "id": "evt-ee4d94",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: node pool upgrade started",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.3994540178059209
+    },
+    {
+      "id": "evt-436a62",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:49:00Z",
+      "magnitude": 0.8595821429952593
+    }
+  ],
+  "truth": {
+    "event_id": "evt-08af1c",
+    "service": "ledger",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 3,
+      "graph": 3
+    }
+  }
+}

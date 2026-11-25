@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0057",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-bffe20",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v5378: tune cache TTL",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.30809211894862365
+    },
+    {
+      "id": "evt-d96e74",
+      "source": "external",
+      "service": "warehouse",
+      "title": "warehouse: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.3492682282352992
+    },
+    {
+      "id": "evt-6b00c9",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v9927: update TLS settings",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.92430210808099
+    },
+    {
+      "id": "evt-41dad8",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v1795: drop legacy endpoint",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.012271896330824731
+    },
+    {
+      "id": "evt-827984",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: change cache size to 4GiB",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.11452535205874817
+    },
+    {
+      "id": "evt-e7abd2",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:40:00Z",
+      "magnitude": 0.383406954701398
+    },
+    {
+      "id": "evt-1b3a95",
+      "source": "alert",
+      "service": "web",
+      "title": "web error rate above 2%",
+      "timestamp": "2026-01-15T11:02:00Z",
+      "magnitude": 0.8415026440347662
+    },
+    {
+      "id": "evt-228076",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.8269846001472898
+    },
+    {
+      "id": "evt-f453cc",
+      "source": "scaling",
+      "service": "ledger",
+      "title": "ledger scaled 3 to 9 replicas",
+      "timestamp": "2026-01-15T11:58:00Z",
+      "magnitude": 0.775920496633018
+    },
+    {
+      "id": "evt-434fd3",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag new-ranking turned on",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.8294205650646186
+    },
+    {
+      "id": "evt-9990f8",
+      "source": "infra",
+      "service": "search",
+      "title": "search: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.40504760398817286
+    },
+    {
+      "id": "evt-159cc3",
+      "source": "infra",
+      "service": "mobile",
+      "title": "mobile: zone maintenance window opened",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.9370364046851685
+    },
+    {
+      "id": "evt-a1c3a6",
+      "source": "external",
+      "service": "catalog",
+      "title": "catalog: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:44:00Z",
+      "magnitude": 0.6294159730091529
+    }
+  ],
+  "truth": {
+    "event_id": "evt-228076",
+    "service": "warehouse",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

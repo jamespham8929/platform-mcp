@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0012",
+  "service": "web",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2b21b7",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 3 to 4 replicas",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.5193838810316853
+    },
+    {
+      "id": "evt-2ebc1c",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.4727406795857477
+    },
+    {
+      "id": "evt-1e1f0b",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 8 to 10 replicas",
+      "timestamp": "2026-01-15T11:27:00Z",
+      "magnitude": 0.8957878135425476
+    },
+    {
+      "id": "evt-2576bf",
+      "source": "feature_flag",
+      "service": "inventory",
+      "title": "inventory: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.3505600456242229
+    },
+    {
+      "id": "evt-196fd3",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.7094239614694787
+    },
+    {
+      "id": "evt-9f5146",
+      "source": "alert",
+      "service": "web",
+      "title": "web CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:24:00Z",
+      "magnitude": 0.26550818678601573
+    },
+    {
+      "id": "evt-e758ae",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.7218086467683771
+    },
+    {
+      "id": "evt-d853f0",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v7769: refactor retry logic",
+      "timestamp": "2026-01-15T10:57:00Z",
+      "magnitude": 0.8316793094937096
+    },
+    {
+      "id": "evt-2d704c",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v3860: add request tracing",
+      "timestamp": "2026-01-15T10:07:00Z",
+      "magnitude": 0.9180201582293189
+    },
+    {
+      "id": "evt-912149",
+      "source": "deploy",
+      "service": "ledger",
+      "title": "ledger v9046: update TLS settings",
+      "timestamp": "2026-01-15T11:11:00Z",
+      "magnitude": 0.20364526603442365
+    },
+    {
+      "id": "evt-1df43f",
+      "source": "deploy",
+      "service": "web",
+      "title": "web v3811: add request tracing",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.9577377053955026
+    },
+    {
+      "id": "evt-64a7d5",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v5257: add request tracing",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.3095014398480341
+    },
+    {
+      "id": "evt-c44e0c",
+      "source": "config_change",
+      "service": "billing",
+      "title": "billing: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.47539474274075044
+    }
+  ],
+  "truth": {
+    "event_id": "evt-1df43f",
+    "service": "web",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0092",
+  "service": "mobile",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-c8ed96",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v2559: raise worker count",
+      "timestamp": "2026-01-15T11:25:00Z",
+      "magnitude": 0.723210473085359
+    },
+    {
+      "id": "evt-27c583",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: enable connection reuse",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.34491834579537634
+    },
+    {
+      "id": "evt-ae16ba",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 8 to 11 replicas",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.27127192612108086
+    },
+    {
+      "id": "evt-c4544e",
+      "source": "deploy",
+      "service": "checkout",
+      "title": "checkout v8452: rewrite pagination",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.8870388363608347
+    },
+    {
+      "id": "evt-79d176",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.3434714887195882
+    },
+    {
+      "id": "evt-40fed1",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:06:00Z",
+      "magnitude": 0.7696597034223797
+    },
+    {
+      "id": "evt-afbfa2",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.3343175716101973
+    },
+    {
+      "id": "evt-cc2db0",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:55:00Z",
+      "magnitude": 0.9922184635307516
+    },
+    {
+      "id": "evt-044b7e",
+      "source": "deploy",
+      "service": "search",
+      "title": "search v3311: update TLS settings",
+      "timestamp": "2026-01-15T10:12:00Z",
+      "magnitude": 0.7803728125817768
+    },
+    {
+      "id": "evt-2dd233",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v6214: add request tracing",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.06691064729979125
+    },
+    {
+      "id": "evt-d296e1",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v4106: raise worker count",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.3050048772493828
+    },
+    {
+      "id": "evt-ea7bbd",
+      "source": "deploy",
+      "service": "auth",
+      "title": "auth v6655: refactor retry logic",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.39017531376154274
+    },
+    {
+      "id": "evt-9b6dfa",
+      "source": "deploy",
+      "service": "mobile",
+      "title": "mobile v8011: rewrite pagination",
+      "timestamp": "2026-01-15T10:51:00Z",
+      "magnitude": 0.7536751895319195
+    }
+  ],
+  "truth": {
+    "event_id": "evt-c4544e",
+    "service": "checkout",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

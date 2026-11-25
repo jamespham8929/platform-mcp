@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0037",
+  "service": "catalog",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-a78706",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 5 to 6 replicas",
+      "timestamp": "2026-01-15T11:12:00Z",
+      "magnitude": 0.3628039467316725
+    },
+    {
+      "id": "evt-8daed1",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag batch-checkout turned on",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.5501510199432968
+    },
+    {
+      "id": "evt-926b2b",
+      "source": "scaling",
+      "service": "warehouse",
+      "title": "warehouse scaled 2 to 7 replicas",
+      "timestamp": "2026-01-15T10:33:00Z",
+      "magnitude": 0.8178148775965965
+    },
+    {
+      "id": "evt-9a8957",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.9255105019974639
+    },
+    {
+      "id": "evt-f100bf",
+      "source": "config_change",
+      "service": "payments",
+      "title": "payments: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.431196142600683
+    },
+    {
+      "id": "evt-1e77b2",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v4192: bump client library",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.7552999696168408
+    },
+    {
+      "id": "evt-7ab597",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:13:00Z",
+      "magnitude": 0.32059324954629725
+    },
+    {
+      "id": "evt-8f0a2e",
+      "source": "scaling",
+      "service": "mobile",
+      "title": "mobile scaled 6 to 11 replicas",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.7678045116066562
+    },
+    {
+      "id": "evt-e397b9",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v3275: rewrite pagination",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.006216856081615
+    },
+    {
+      "id": "evt-788c1e",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 6 to 9 replicas",
+      "timestamp": "2026-01-15T11:26:00Z",
+      "magnitude": 0.24496861562387362
+    },
+    {
+      "id": "evt-ca9d36",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 6 to 11 replicas",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.746120440737762
+    },
+    {
+      "id": "evt-290c4f",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 9 to 15 replicas",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.9292692684457371
+    },
+    {
+      "id": "evt-776da6",
+      "source": "alert",
+      "service": "checkout",
+      "title": "checkout queue depth above 10k",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.4976408972387983
+    }
+  ],
+  "truth": {
+    "event_id": "evt-1e77b2",
+    "service": "inventory",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

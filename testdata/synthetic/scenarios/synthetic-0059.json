@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0059",
+  "service": "billing",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-3a3f5a",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: enable connection reuse",
+      "timestamp": "2026-01-15T10:28:00Z",
+      "magnitude": 0.7427654863035711
+    },
+    {
+      "id": "evt-ac76ea",
+      "source": "config_change",
+      "service": "catalog",
+      "title": "catalog: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:52:00Z",
+      "magnitude": 0.19709391970230425
+    },
+    {
+      "id": "evt-7ec80f",
+      "source": "infra",
+      "service": "catalog",
+      "title": "catalog: load balancer target replaced",
+      "timestamp": "2026-01-15T10:23:00Z",
+      "magnitude": 0.23020680112349257
+    },
+    {
+      "id": "evt-fd1695",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:41:00Z",
+      "magnitude": 0.5567853946988935
+    },
+    {
+      "id": "evt-b974eb",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 5 to 8 replicas",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.4895447889362247
+    },
+    {
+      "id": "evt-baf602",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T10:54:00Z",
+      "magnitude": 0.48660403195741664
+    },
+    {
+      "id": "evt-f00adb",
+      "source": "deploy",
+      "service": "billing",
+      "title": "billing v8749: update TLS settings",
+      "timestamp": "2026-01-15T10:29:00Z",
+      "magnitude": 0.0038130831416051006
+    },
+    {
+      "id": "evt-226282",
+      "source": "feature_flag",
+      "service": "search",
+      "title": "search: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.6787671240166397
+    },
+    {
+      "id": "evt-aa83b8",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory error rate above 2%",
+      "timestamp": "2026-01-15T10:26:00Z",
+      "magnitude": 0.240581786042686
+    },
+    {
+      "id": "evt-15c3c9",
+      "source": "config_change",
+      "service": "inventory",
+      "title": "inventory: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.23021877241253652
+    },
+    {
+      "id": "evt-04d204",
+      "source": "scaling",
+      "service": "inventory",
+      "title": "inventory scaled 5 to 11 replicas",
+      "timestamp": "2026-01-15T10:42:00Z",
+      "magnitude": 0.08359147990259412
+    },
+    {
+      "id": "evt-aa9d2a",
+      "source": "scaling",
+      "service": "payments",
+      "title": "payments scaled 5 to 7 replicas",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.7168533351865892
+    },
+    {
+      "id": "evt-567911",
+      "source": "external",
+      "service": "checkout",
+      "title": "checkout: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.556062901565977
+    }
+  ],
+  "truth": {
+    "event_id": "evt-fd1695",
+    "service": "ledger",
+    "upstream": true,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 1
+    }
+  }
+}

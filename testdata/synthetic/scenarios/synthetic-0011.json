@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0011",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-7c4106",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 4 to 9 replicas",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.6254228570346337
+    },
+    {
+      "id": "evt-4fd993",
+      "source": "config_change",
+      "service": "warehouse",
+      "title": "warehouse: point at the new upstream endpoint",
+      "timestamp": "2026-01-15T11:46:00Z",
+      "magnitude": 0.8897627926733693
+    },
+    {
+      "id": "evt-273539",
+      "source": "infra",
+      "service": "inventory",
+      "title": "inventory: disk pressure on one node",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.41524041883583196
+    },
+    {
+      "id": "evt-358d32",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.8990295876048146
+    },
+    {
+      "id": "evt-f41dd5",
+      "source": "infra",
+      "service": "search",
+      "title": "search: load balancer target replaced",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.46107031475777827
+    },
+    {
+      "id": "evt-28d9f4",
+      "source": "scaling",
+      "service": "auth",
+      "title": "auth scaled 3 to 5 replicas",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.6149968083511103
+    },
+    {
+      "id": "evt-a026a5",
+      "source": "config_change",
+      "service": "web",
+      "title": "web: lower request timeout to 2s",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.8275800563728755
+    },
+    {
+      "id": "evt-438371",
+      "source": "alert",
+      "service": "auth",
+      "title": "auth CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:45:00Z",
+      "magnitude": 0.420188557426954
+    },
+    {
+      "id": "evt-586573",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: load balancer target replaced",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.062397615849700085
+    },
+    {
+      "id": "evt-b2951c",
+      "source": "config_change",
+      "service": "mobile",
+      "title": "mobile: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:08:00Z",
+      "magnitude": 0.45031681252624906
+    },
+    {
+      "id": "evt-6db156",
+      "source": "alert",
+      "service": "search",
+      "title": "search error rate above 2%",
+      "timestamp": "2026-01-15T11:24:00Z",
+      "magnitude": 0.48111193964896465
+    },
+    {
+      "id": "evt-2654f9",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v5234: raise worker count",
+      "timestamp": "2026-01-15T10:43:00Z",
+      "magnitude": 0.632645755262872
+    },
+    {
+      "id": "evt-81f8b4",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.8952014952771404
+    }
+  ],
+  "truth": {
+    "event_id": "evt-4fd993",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

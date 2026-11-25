@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0045",
+  "service": "inventory",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-2b7b98",
+      "source": "external",
+      "service": "mobile",
+      "title": "mobile: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.8022391752646266
+    },
+    {
+      "id": "evt-6b8368",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v8937: refactor retry logic",
+      "timestamp": "2026-01-15T11:32:00Z",
+      "magnitude": 0.5824702298750494
+    },
+    {
+      "id": "evt-49325a",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v2040: add request tracing",
+      "timestamp": "2026-01-15T11:56:00Z",
+      "magnitude": 0.6515785568909344
+    },
+    {
+      "id": "evt-9d9226",
+      "source": "feature_flag",
+      "service": "ledger",
+      "title": "ledger: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:59:00Z",
+      "magnitude": 0.15921826652358698
+    },
+    {
+      "id": "evt-8b72b3",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 3 to 8 replicas",
+      "timestamp": "2026-01-15T10:16:00Z",
+      "magnitude": 0.24064304836207967
+    },
+    {
+      "id": "evt-1c5e5b",
+      "source": "external",
+      "service": "search",
+      "title": "search: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.936573061747604
+    },
+    {
+      "id": "evt-ce5d55",
+      "source": "alert",
+      "service": "billing",
+      "title": "billing CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:28:00Z",
+      "magnitude": 0.9190056644261558
+    },
+    {
+      "id": "evt-be153f",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog CPU saturation above 90%",
+      "timestamp": "2026-01-15T11:42:00Z",
+      "magnitude": 0.22297412864207578
+    },
+    {
+      "id": "evt-064315",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: load balancer target replaced",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.27154724747213227
+    },
+    {
+      "id": "evt-ee0889",
+      "source": "alert",
+      "service": "catalog",
+      "title": "catalog queue depth above 10k",
+      "timestamp": "2026-01-15T11:40:00Z",
+      "magnitude": 0.6677049311776492
+    },
+    {
+      "id": "evt-ddef04",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v8065: raise worker count",
+      "timestamp": "2026-01-15T11:21:00Z",
+      "magnitude": 0.6369284091165388
+    },
+    {
+      "id": "evt-b1198d",
+      "source": "infra",
+      "service": "web",
+      "title": "web: disk pressure on one node",
+      "timestamp": "2026-01-15T10:25:00Z",
+      "magnitude": 0.33006289048662024
+    },
+    {
+      "id": "evt-17aed9",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:39:00Z",
+      "magnitude": 0.5412330125989846
+    }
+  ],
+  "truth": {
+    "event_id": "evt-49325a",
+    "service": "inventory",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

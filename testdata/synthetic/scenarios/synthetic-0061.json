@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0061",
+  "service": "checkout",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-496799",
+      "source": "scaling",
+      "service": "catalog",
+      "title": "catalog scaled 5 to 11 replicas",
+      "timestamp": "2026-01-15T11:37:00Z",
+      "magnitude": 0.49817231777155696
+    },
+    {
+      "id": "evt-6298c7",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:34:00Z",
+      "magnitude": 0.030135379656710513
+    },
+    {
+      "id": "evt-d96414",
+      "source": "scaling",
+      "service": "search",
+      "title": "search scaled 7 to 11 replicas",
+      "timestamp": "2026-01-15T11:17:00Z",
+      "magnitude": 0.19373763246456352
+    },
+    {
+      "id": "evt-b7ee8c",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:41:00Z",
+      "magnitude": 0.5559959332585077
+    },
+    {
+      "id": "evt-0c59a7",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: enable connection reuse",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.7832173604603574
+    },
+    {
+      "id": "evt-578969",
+      "source": "infra",
+      "service": "warehouse",
+      "title": "warehouse: node pool upgrade started",
+      "timestamp": "2026-01-15T11:51:00Z",
+      "magnitude": 0.788111542827917
+    },
+    {
+      "id": "evt-fd649a",
+      "source": "feature_flag",
+      "service": "web",
+      "title": "web: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:09:00Z",
+      "magnitude": 0.45517286782386474
+    },
+    {
+      "id": "evt-0f9fd7",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: load balancer target replaced",
+      "timestamp": "2026-01-15T11:14:00Z",
+      "magnitude": 0.7099079786645105
+    },
+    {
+      "id": "evt-3446a2",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 9 to 12 replicas",
+      "timestamp": "2026-01-15T10:22:00Z",
+      "magnitude": 0.48203909496576497
+    },
+    {
+      "id": "evt-7bfa12",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v4893: bump client library",
+      "timestamp": "2026-01-15T10:32:00Z",
+      "magnitude": 0.7144049018162358
+    },
+    {
+      "id": "evt-e24065",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile latency p99 above 800ms",
+      "timestamp": "2026-01-15T10:47:00Z",
+      "magnitude": 0.052803292905465475
+    },
+    {
+      "id": "evt-b42c0a",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: disk pressure on one node",
+      "timestamp": "2026-01-15T10:27:00Z",
+      "magnitude": 0.057358936222046325
+    },
+    {
+      "id": "evt-3373bc",
+      "source": "config_change",
+      "service": "auth",
+      "title": "auth: lower request timeout to 2s",
+      "timestamp": "2026-01-15T11:38:00Z",
+      "magnitude": 0.1744097386680686
+    }
+  ],
+  "truth": {
+    "event_id": "evt-0c59a7",
+    "service": "checkout",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 1
+    }
+  }
+}

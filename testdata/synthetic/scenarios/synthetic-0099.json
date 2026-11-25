@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0099",
+  "service": "payments",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-0bb030",
+      "source": "feature_flag",
+      "service": "auth",
+      "title": "auth: flag new-ranking turned on",
+      "timestamp": "2026-01-15T11:54:00Z",
+      "magnitude": 0.3134022622368694
+    },
+    {
+      "id": "evt-fe2b15",
+      "source": "alert",
+      "service": "warehouse",
+      "title": "warehouse latency p99 above 800ms",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.08156470401375958
+    },
+    {
+      "id": "evt-402faf",
+      "source": "scaling",
+      "service": "web",
+      "title": "web scaled 6 to 10 replicas",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.6528198380286359
+    },
+    {
+      "id": "evt-3ebde0",
+      "source": "alert",
+      "service": "payments",
+      "title": "payments queue depth above 10k",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.7394880161617191
+    },
+    {
+      "id": "evt-9bbc60",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v9849: update TLS settings",
+      "timestamp": "2026-01-15T10:08:00Z",
+      "magnitude": 0.38877281763415544
+    },
+    {
+      "id": "evt-e0e32a",
+      "source": "infra",
+      "service": "billing",
+      "title": "billing: node pool upgrade started",
+      "timestamp": "2026-01-15T10:46:00Z",
+      "magnitude": 0.21874215059459454
+    },
+    {
+      "id": "evt-f02f2d",
+      "source": "external",
+      "service": "inventory",
+      "title": "inventory: DNS provider status is investigating",
+      "timestamp": "2026-01-15T11:52:00Z",
+      "magnitude": 0.14157509258206538
+    },
+    {
+      "id": "evt-780f3f",
+      "source": "scaling",
+      "service": "billing",
+      "title": "billing scaled 4 to 8 replicas",
+      "timestamp": "2026-01-15T11:47:00Z",
+      "magnitude": 0.9837282759452711
+    },
+    {
+      "id": "evt-192170",
+      "source": "infra",
+      "service": "search",
+      "title": "search: zone maintenance window opened",
+      "timestamp": "2026-01-15T11:18:00Z",
+      "magnitude": 0.5425813064541908
+    },
+    {
+      "id": "evt-d55485",
+      "source": "deploy",
+      "service": "payments",
+      "title": "payments v3059: bump client library",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.9959959188594372
+    },
+    {
+      "id": "evt-700d22",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: DNS provider status is investigating",
+      "timestamp": "2026-01-15T10:10:00Z",
+      "magnitude": 0.017024133151255075
+    },
+    {
+      "id": "evt-a90577",
+      "source": "infra",
+      "service": "checkout",
+      "title": "checkout: load balancer target replaced",
+      "timestamp": "2026-01-15T11:57:00Z",
+      "magnitude": 0.33614115812869055
+    },
+    {
+      "id": "evt-719a6f",
+      "source": "infra",
+      "service": "ledger",
+      "title": "ledger: load balancer target replaced",
+      "timestamp": "2026-01-15T10:45:00Z",
+      "magnitude": 0.30534708612201183
+    }
+  ],
+  "truth": {
+    "event_id": "evt-d55485",
+    "service": "payments",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 1,
+      "graph": 2
+    }
+  }
+}

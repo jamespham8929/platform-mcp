@@ -1,0 +1,121 @@
+{
+  "id": "synthetic-0048",
+  "service": "warehouse",
+  "detected_at": "2026-01-15T12:00:00Z",
+  "window_seconds": 7200,
+  "events": [
+    {
+      "id": "evt-8d1d9e",
+      "source": "config_change",
+      "service": "checkout",
+      "title": "checkout: change cache size to 4GiB",
+      "timestamp": "2026-01-15T10:38:00Z",
+      "magnitude": 0.22070021148927121
+    },
+    {
+      "id": "evt-d4098a",
+      "source": "external",
+      "service": "billing",
+      "title": "billing: cloud provider reports degraded networking",
+      "timestamp": "2026-01-15T11:19:00Z",
+      "magnitude": 0.8734924085541753
+    },
+    {
+      "id": "evt-563e19",
+      "source": "deploy",
+      "service": "inventory",
+      "title": "inventory v4783: raise worker count",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.2355618008601724
+    },
+    {
+      "id": "evt-322630",
+      "source": "alert",
+      "service": "ledger",
+      "title": "ledger error rate above 2%",
+      "timestamp": "2026-01-15T10:09:00Z",
+      "magnitude": 0.8587607180837226
+    },
+    {
+      "id": "evt-d50524",
+      "source": "external",
+      "service": "payments",
+      "title": "payments: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T11:10:00Z",
+      "magnitude": 0.08855362618746657
+    },
+    {
+      "id": "evt-617eb0",
+      "source": "external",
+      "service": "ledger",
+      "title": "ledger: CDN vendor opened an incident",
+      "timestamp": "2026-01-15T10:20:00Z",
+      "magnitude": 0.6221030963042136
+    },
+    {
+      "id": "evt-637261",
+      "source": "config_change",
+      "service": "ledger",
+      "title": "ledger: raise DB pool to 200",
+      "timestamp": "2026-01-15T11:43:00Z",
+      "magnitude": 0.7506661766878547
+    },
+    {
+      "id": "evt-e7a7c4",
+      "source": "alert",
+      "service": "mobile",
+      "title": "mobile CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:36:00Z",
+      "magnitude": 0.5059189993323777
+    },
+    {
+      "id": "evt-be6894",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v4836: add request tracing",
+      "timestamp": "2026-01-15T11:50:00Z",
+      "magnitude": 0.3535278768718187
+    },
+    {
+      "id": "evt-84b02d",
+      "source": "alert",
+      "service": "inventory",
+      "title": "inventory CPU saturation above 90%",
+      "timestamp": "2026-01-15T10:35:00Z",
+      "magnitude": 0.44010880251138035
+    },
+    {
+      "id": "evt-7c132b",
+      "source": "deploy",
+      "service": "warehouse",
+      "title": "warehouse v4594: bump client library",
+      "timestamp": "2026-01-15T11:44:00Z",
+      "magnitude": 0.7684367034344068
+    },
+    {
+      "id": "evt-2fe322",
+      "source": "feature_flag",
+      "service": "mobile",
+      "title": "mobile: flag fast-path-auth turned on",
+      "timestamp": "2026-01-15T10:31:00Z",
+      "magnitude": 0.9850816327765007
+    },
+    {
+      "id": "evt-d69683",
+      "source": "feature_flag",
+      "service": "warehouse",
+      "title": "warehouse: flag v2-pricing turned on",
+      "timestamp": "2026-01-15T10:15:00Z",
+      "magnitude": 0.002391866912308017
+    }
+  ],
+  "truth": {
+    "event_id": "evt-7c132b",
+    "service": "warehouse",
+    "upstream": false,
+    "correlator_rank": {
+      "exact": 2,
+      "graph": 2
+    }
+  }
+}
