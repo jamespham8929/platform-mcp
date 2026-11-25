@@ -182,44 +182,53 @@ A cause is right when it names the faulted service through a metric anomaly,
 or cites the change that caused it. A symptom on frontend does not count, and
 neither does a distraction.
 
-Scorecard from replaying the committed recordings:
+Scorecard from replaying the committed recordings, with incident-cli from
+main:
 
 | setup | top-1 | top-3 | MRR | top answer was a distraction | citations ok |
 |-------|-------|-------|-----|------------------------------|--------------|
-| baseline | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
+| baseline | 1.000 | 1.000 | 1.000 | 0.000 | 1.000 |
 | baseline, no graph | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
 | claude-opus-5-5 | not run yet | | | | |
 
-The baseline misses all five, even in its top three. Here is where
-incident-cli ranked the first right answer among every candidate:
+### What the gym found
 
-| scenario | rank with the graph | rank without it | ranked first |
-|----------|---------------------|-----------------|--------------|
-| inventory-latency | 6 of 9 | 5 of 9 | frontend p99 latency |
-| inventory-latency-deploy-after | 7 of 9 | 6 of 9 | frontend p99 latency |
-| checkout-pod-kill | 5 of 10 | 5 of 10 | frontend error ratio |
-| inventory-pod-kill-frontend-deploy | 10 of 14 | 9 of 14 | frontend p99 latency |
-| checkout-bad-deploy | 4 of 6 | 5 of 6 | frontend error ratio |
+The first replay scored 0 of 5, even in the top three. On the synthetic
+incidents the same ranking scored 0.810 top-1. Here is where incident-cli
+ranked the first right answer, before and after the fix:
 
-Three things go wrong, and they add up.
+| scenario | before | after |
+|----------|--------|-------|
+| inventory-latency | 6 of 9 | 1 |
+| inventory-latency-deploy-after | 7 of 9 | 1 |
+| checkout-pod-kill | 5 of 10 | 1 |
+| inventory-pod-kill-frontend-deploy | 10 of 14 | 1 |
+| checkout-bad-deploy | 4 of 6 | 1 |
 
-- The page's own symptoms rank first. frontend's error ratio is a metric
-  anomaly on the paged service, so it gets a full service score. It is the
-  incident, not its cause.
-- A fault spreads up the call chain within the same minute. Every anomaly
-  then has the same onset, so timing cannot tell the cause from its
-  symptoms.
-- The graph makes it worse. It scores a service lower the further it is from
-  the page, and the cause of a cascade is the furthest service that broke.
-  Without the graph, the cause ranks higher in three of five scenarios.
+Three things went wrong, and they added up.
 
-A distraction also outranks the cause in three of five. Even with the chaos
-runs visible, which hands it the answer, the baseline still ranks frontend's
-symptoms first.
+- The page's own symptoms ranked first. frontend's error ratio is an anomaly
+  on the paged service, so it got a full service score. incident-cli's docs
+  say not to watch the SLI that paged. But one query file watches every
+  service, and any of them can page, so the paged SLI is always in it.
+- A fault spreads up the call chain within one minute. Every anomaly then has
+  the same onset, so timing could not tell the cause from its symptoms.
+- The graph made it worse. It scored a service lower for each hop from the
+  page, and a cascade starts at the furthest service that broke.
 
-On the synthetic incidents the same ranking scored 0.810 top-1. That gap is
-what the gym is for. It is the bar an agent has to clear, and it shows what
-incident-cli should fix first.
+incident-cli now traces the cascade
+([its ADR 0006](https://github.com/jamespham8929/incident-cli/blob/main/docs/adr/0006-symptoms-and-cascades.md)).
+It walks from the paged service through dependencies that broke no later than
+their caller. The broken service whose own dependencies are fine is where the
+failure starts, and its events get full relevance. A symptom that a broken
+dependency explains is scaled down, and the tool output says why. The test
+for the committed recordings fails if the baseline drops below 5 of 5.
+
+Read that 5 of 5 with care. The rules were written after seeing these five
+incidents, so it shows the fix works on what the gym found, not that it
+generalizes. The next scenarios are the real test. Without the graph nothing
+changed, because the rules need edges to follow. The synthetic benchmark has
+no metric anomalies, so its numbers did not move.
 
 ## Layout
 

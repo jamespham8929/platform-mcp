@@ -69,11 +69,19 @@ func TestGymReplayOfTheCommittedRecordings(t *testing.T) {
 			Scenarios        int     `json:"scenarios"`
 			Errors           int     `json:"errors"`
 			CitationValidity float64 `json:"citation_validity"`
+			Top1             float64 `json:"top1"`
 		} `json:"score"`
 	}
 	b, err := os.ReadFile(results)
 	require.NoError(t, err)
 	require.NoError(t, json.Unmarshal(b, &doc))
+
+	// The README says the baseline names every cause first, since
+	// incident-cli learned to trace cascades (its ADR 0006). This holds it
+	// to that. The reason each symptom was scaled down must reach the tool
+	// output, because that is what an agent reads.
+	assert.Equal(t, 1.0, doc.Score.Top1, "the baseline no longer names every gym cause first")
+	assert.True(t, bytes.Contains(b, []byte("explained by anomalies on")), "cascade reasons must reach the MCP tool output")
 	dirs, err := os.ReadDir("../../gym/recordings")
 	require.NoError(t, err)
 	assert.Equal(t, len(dirs), doc.Score.Scenarios, "every recording was replayed")

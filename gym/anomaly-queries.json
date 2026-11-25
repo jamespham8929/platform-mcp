@@ -20,7 +20,8 @@
   {
     "name": "request_throughput",
     "query": "sum by (service) (rate(http_requests_total{route=\"/api/v1/orders\"}[2m]))",
-    "direction": "down"
+    "direction": "down",
+    "kind": "load"
   },
   {
     "name": "available_replicas",

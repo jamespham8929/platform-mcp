@@ -60,6 +60,12 @@ type Components struct {
 	Magnitude       float64 `json:"magnitude"`
 	Relevance       float64 `json:"relevance"`
 	ServiceRelation string  `json:"service_relation,omitempty"`
+	// Cascade multiplies the score. It is 1 unless incident-cli found the
+	// event explained by something else, such as a symptom of a broken
+	// dependency, and CascadeReason says what. An older incident-cli leaves
+	// both out, which reads as 0 and "".
+	Cascade       float64 `json:"cascade,omitempty"`
+	CascadeReason string  `json:"cascade_reason,omitempty"`
 }
 
 // Sources is what the server operator configured. The agent never chooses
