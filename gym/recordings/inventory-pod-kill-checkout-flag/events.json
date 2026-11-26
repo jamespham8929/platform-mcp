@@ -1,0 +1,13 @@
+[
+  {
+    "id": "flag-checkout-7074e2",
+    "source": "feature_flag",
+    "service": "checkout",
+    "title": "checkout: flag split-shipments turned on",
+    "timestamp": "2026-11-25T21:56:19Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "flag": "split-shipments"
+    }
+  }
+]

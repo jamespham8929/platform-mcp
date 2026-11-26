@@ -1,0 +1,57 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "checkout-timeout-config",
+    "description": "No chaos. A config change sets checkout's upstream timeout to 100us, a slip for 100ms, so almost all its calls to inventory time out. inventory itself stays healthy. An inventory flag was turned on two minutes before.",
+    "paged_service": "frontend",
+    "changes": [
+      {
+        "name": "inventory-flag",
+        "at_seconds": -120,
+        "kind": "feature_flag",
+        "service": "inventory",
+        "title": "inventory: flag warehouse-sync turned on",
+        "flag": "warehouse-sync"
+      },
+      {
+        "name": "timeout-config",
+        "at_seconds": 0,
+        "kind": "config_change",
+        "service": "checkout",
+        "title": "checkout: upstream timeout lowered to 100us",
+        "set_json": {
+          "env": "[{\"name\":\"UPSTREAM_URL\",\"value\":\"http://inventory\"},{\"name\":\"UPSTREAM_TIMEOUT\",\"value\":\"100us\"}]"
+        }
+      }
+    ],
+    "truth": {
+      "service": "checkout",
+      "accept": [
+        {
+          "change": "timeout-config"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-checkout-timeout-config",
+  "shop_started": "2026-11-25T22:15:09Z",
+  "detected_at": "2026-11-25T23:56:19Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T22:15:09Z",
+  "series_to": "2026-11-25T15:57:19-08:00",
+  "series": 242,
+  "samples": 70040,
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "change": "timeout-config",
+        "evidence_id": "event:config-checkout-36ae09"
+      }
+    ],
+    "distractors": [
+      "event:flag-inventory-2d74e6"
+    ]
+  }
+}

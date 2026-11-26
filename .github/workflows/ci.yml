@@ -76,6 +76,8 @@ jobs:
             go run ./cmd/platform-mcp gym replay --incident-cli "$RUNNER_TEMP/incident"
             echo
             go run ./cmd/platform-mcp gym replay --incident-cli "$RUNNER_TEMP/incident" --no-graph
+            echo
+            go run ./cmd/platform-mcp gym replay --incident-cli "$RUNNER_TEMP/incident" --graph gym/graph-missing-edge.json
             echo '```'
           } | tee -a "$GITHUB_STEP_SUMMARY"
 

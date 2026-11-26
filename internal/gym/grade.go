@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"slices"
+	"strings"
 	"text/tabwriter"
 	"time"
 
@@ -78,7 +79,7 @@ func PrintScenarios(w io.Writer, recs []Loaded, graded []eval.Graded) {
 		if rec.Definition.Fault != nil {
 			cause = rec.Definition.Fault.Type + " on " + cause
 		} else {
-			cause = "deploy on " + cause
+			cause = causeKind(rec.Definition) + " on " + cause
 		}
 		top, note := "-", ""
 		if g.Result != nil && g.Result.Answer != nil && len(g.Result.Answer.Causes) > 0 {
@@ -103,6 +104,19 @@ func PrintScenarios(w io.Writer, recs []Loaded, graded []eval.Graded) {
 		fmt.Fprintf(tw, "%s\t%s\t%s\t%s\t%s\n", g.Scenario, cause, rank, top, note)
 	}
 	_ = tw.Flush()
+}
+
+// causeKind names the kind of change that causes a scenario with no fault,
+// such as "config change".
+func causeKind(d Definition) string {
+	for _, r := range d.Truth.Accept {
+		for _, c := range d.Changes {
+			if r.Change != "" && r.Change == c.Name {
+				return strings.ReplaceAll(c.Kind, "_", " ")
+			}
+		}
+	}
+	return "change"
 }
 
 // PrintScore writes the summary line for one setup.

@@ -1,0 +1,70 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "chaos.jamespham.io/v1alpha1",
+      "kind": "ChaosExperiment",
+      "metadata": {
+        "annotations": {
+          "kopf.zalando.org/last-handled-configuration": "{\"spec\":{\"container\":\"chaos-agent\",\"networkLatency\":{\"durationSeconds\":480,\"jitterMs\":20,\"latencyMs\":400},\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"frontend\"}},\"service\":\"frontend\",\"startingDeadlineSeconds\":300,\"suspend\":false,\"type\":\"network-latency\"}}\n",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos.jamespham.io/v1alpha1\",\"kind\":\"ChaosExperiment\",\"metadata\":{\"annotations\":{},\"name\":\"fault\",\"namespace\":\"gym-frontend-latency\"},\"spec\":{\"container\":\"chaos-agent\",\"networkLatency\":{\"durationSeconds\":480,\"jitterMs\":20,\"latencyMs\":400},\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"frontend\"}},\"service\":\"frontend\",\"type\":\"network-latency\"}}\n"
+        },
+        "creationTimestamp": "2026-11-25T21:59:18Z",
+        "generation": 1,
+        "name": "fault",
+        "namespace": "gym-frontend-latency",
+        "resourceVersion": "14521",
+        "uid": "29c07ef5-9c70-4681-b8e0-61c63d622212"
+      },
+      "spec": {
+        "container": "chaos-agent",
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        },
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "frontend"
+          }
+        },
+        "service": "frontend",
+        "startingDeadlineSeconds": 300,
+        "suspend": false,
+        "type": "network-latency"
+      },
+      "status": {
+        "handle_experiment": {
+          "duration_seconds": 480,
+          "experiment": "network-latency",
+          "jitter_ms": 20,
+          "latency_ms": 400,
+          "pods_affected": 2,
+          "pods_failed": 0,
+          "status": "completed"
+        },
+        "runs": [
+          {
+            "finishedAt": "2026-11-25T22:07:18Z",
+            "id": "gym-frontend-latency/fault/20261125T215918Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "frontend"
+            },
+            "service": "frontend",
+            "startedAt": "2026-11-25T21:59:18Z",
+            "trigger": "create",
+            "type": "network-latency"
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
+

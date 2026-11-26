@@ -1,0 +1,24 @@
+[
+  {
+    "id": "flag-frontend-02d5b8",
+    "source": "feature_flag",
+    "service": "frontend",
+    "title": "frontend: flag express-checkout turned on",
+    "timestamp": "2026-11-25T21:56:17Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "flag": "express-checkout"
+    }
+  },
+  {
+    "id": "deploy-inventory-3fbfe0",
+    "source": "deploy",
+    "service": "inventory",
+    "title": "inventory v2.0.0: reserve stock per line item",
+    "timestamp": "2026-11-25T21:58:17Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "3fbfe0"
+    }
+  }
+]

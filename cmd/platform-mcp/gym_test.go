@@ -69,22 +69,55 @@ func TestGymReplayOfTheCommittedRecordings(t *testing.T) {
 			Scenarios        int     `json:"scenarios"`
 			Errors           int     `json:"errors"`
 			CitationValidity float64 `json:"citation_validity"`
-			Top1             float64 `json:"top1"`
 		} `json:"score"`
+		Graded []struct {
+			Scenario string `json:"scenario"`
+			Rank     int    `json:"rank"`
+		} `json:"graded"`
 	}
 	b, err := os.ReadFile(results)
 	require.NoError(t, err)
 	require.NoError(t, json.Unmarshal(b, &doc))
 
-	// The README says the baseline names every cause first, since
-	// incident-cli learned to trace cascades (its ADR 0006). This holds it
-	// to that. The reason each symptom was scaled down must reach the tool
-	// output, because that is what an agent reads.
-	assert.Equal(t, 1.0, doc.Score.Top1, "the baseline no longer names every gym cause first")
+	// The README scorecard and ADR 0004 report these ranks. The tuning
+	// scenarios shaped incident-cli's cascade rules (its ADR 0006), so they
+	// should stay at 1. The held-out ranks are what the rules got on
+	// incidents they were not written for. If a change to incident-cli moves
+	// any rank, update the scorecard and the ADR with it.
+	got := map[string]int{}
+	for _, g := range doc.Graded {
+		got[g.Scenario] = g.Rank
+	}
+	assert.Equal(t, gymRanks, got, "the baseline's ranks moved (0 is a miss)")
+
+	// The reason each symptom was scaled down must reach the tool output,
+	// because that is what an agent reads.
 	assert.True(t, bytes.Contains(b, []byte("explained by anomalies on")), "cascade reasons must reach the MCP tool output")
 	dirs, err := os.ReadDir("../../gym/recordings")
 	require.NoError(t, err)
 	assert.Equal(t, len(dirs), doc.Score.Scenarios, "every recording was replayed")
 	assert.Zero(t, doc.Score.Errors)
 	assert.Equal(t, 1.0, doc.Score.CitationValidity, "the baseline cites only what the tool returned")
+}
+
+// gymRanks is the rank of the planted cause in the baseline's answer for
+// each committed recording. 0 means the cause was not in the top three.
+var gymRanks = map[string]int{
+	// Tuning.
+	"checkout-bad-deploy":                1,
+	"checkout-pod-kill":                  1,
+	"inventory-latency":                  1,
+	"inventory-latency-deploy-after":     1,
+	"inventory-pod-kill-frontend-deploy": 1,
+	// Held-out.
+	"checkout-latency":                         0,
+	"checkout-latency-inventory-deploy":        0,
+	"checkout-pod-kill-inventory-deploy-after": 1,
+	"checkout-timeout-config":                  0,
+	"frontend-bad-deploy":                      1,
+	"frontend-latency":                         2,
+	"inventory-bad-deploy":                     1,
+	"inventory-latency-frontend-deploy-after":  1,
+	"inventory-latency-inventory-flag":         3,
+	"inventory-pod-kill-checkout-flag":         1,
 }

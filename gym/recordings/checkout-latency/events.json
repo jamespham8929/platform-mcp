@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-recommendations-14a595",
+    "source": "deploy",
+    "service": "recommendations",
+    "title": "recommendations v2.5.0: trim the response",
+    "timestamp": "2026-11-25T21:56:14Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "14a595"
+    }
+  }
+]

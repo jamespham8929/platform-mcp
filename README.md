@@ -152,19 +152,33 @@ loadgen -> recommendations
 chaos-operator injects the fault. The gym also makes the changes a real
 incident has around it, and Prometheus pages on frontend.
 
-| scenario | fault | distraction |
-|----------|-------|-------------|
-| inventory-latency | 400ms latency on inventory | recommendations deploys 3 minutes before |
-| inventory-latency-deploy-after | 400ms latency on inventory | checkout deploys 1 minute after the latency starts |
-| checkout-pod-kill | checkout pods killed every minute | a frontend flag turns on 2 minutes before |
-| inventory-pod-kill-frontend-deploy | inventory pods killed every minute | frontend deploys 4 minutes before |
-| checkout-bad-deploy | none | an inventory flag turns on 1 minute before |
+The first five scenarios are the tuning set. They shaped incident-cli's
+cascade rules. The other ten are held out. They were written and pushed,
+with predictions, before they were recorded or replayed.
 
-The last one is a control. A checkout deploy that fails 30% of orders is the
-cause, so an investigator that never blames a deploy gets caught.
+| scenario | group | fault | distraction |
+|----------|-------|-------|-------------|
+| inventory-latency | tuning | 400ms latency on inventory | recommendations deploys 3 minutes before |
+| inventory-latency-deploy-after | tuning | 400ms latency on inventory | checkout deploys 1 minute after the latency starts |
+| checkout-pod-kill | tuning | checkout pods killed every minute | a frontend flag turns on 2 minutes before |
+| inventory-pod-kill-frontend-deploy | tuning | inventory pods killed every minute | frontend deploys 4 minutes before |
+| checkout-bad-deploy | tuning | a checkout deploy fails 30% of orders | an inventory flag turns on 1 minute before |
+| frontend-latency | held-out | 400ms latency on frontend, the paged service | checkout deploys 3 minutes before |
+| checkout-latency | held-out | 400ms latency on checkout | recommendations deploys 2 minutes before |
+| checkout-latency-inventory-deploy | held-out | 400ms latency on checkout | inventory deploys 4 minutes before |
+| inventory-latency-inventory-flag | held-out | 400ms latency on inventory | an inventory flag turns on 1 minute before |
+| inventory-latency-frontend-deploy-after | held-out | 400ms latency on inventory | frontend deploys 1 minute after the latency starts |
+| inventory-bad-deploy | held-out | an inventory deploy fails 30% of orders | a frontend flag turns on 2 minutes before |
+| frontend-bad-deploy | held-out | a frontend deploy fails 30% of orders | inventory deploys 3 minutes before |
+| checkout-timeout-config | held-out | a config change sets checkout's upstream timeout to 100us | an inventory flag turns on 2 minutes before |
+| checkout-pod-kill-inventory-deploy-after | held-out | checkout pods killed every minute | inventory deploys after the kills start |
+| inventory-pod-kill-checkout-flag | held-out | inventory pods killed every minute | a checkout flag turns on 1 minute before |
+
+In the bad deploy and config scenarios, the change is the cause. They catch
+an investigator that learned to never blame a change.
 
 ```bash
-gym/up.sh        # kind, the stack, chaos-operator and five shops
+gym/up.sh        # kind, the stack, chaos-operator and one shop per scenario
 # let the shops warm up for about 95 minutes
 kubectl --context kind-gym -n monitoring port-forward svc/kube-prometheus-stack-prometheus 19090:9090 &
 go run ./cmd/platform-mcp gym record
@@ -183,13 +197,18 @@ or cites the change that caused it. A symptom on frontend does not count, and
 neither does a distraction.
 
 Scorecard from replaying the committed recordings, with incident-cli from
-main:
+main. The tuning scenarios shaped incident-cli's rules, so the held-out
+columns are the ones to read.
 
-| setup | top-1 | top-3 | MRR | top answer was a distraction | citations ok |
-|-------|-------|-------|-----|------------------------------|--------------|
-| baseline | 1.000 | 1.000 | 1.000 | 0.000 | 1.000 |
-| baseline, no graph | 0.000 | 0.000 | 0.000 | 0.000 | 1.000 |
-| claude-opus-5-5 | not run yet | | | | |
+| setup | tuning top-1 | held-out top-1 | held-out top-3 | held-out MRR | top answer was a distraction | citations ok |
+|-------|--------------|----------------|----------------|--------------|------------------------------|--------------|
+| baseline | 1.000 | 0.500 | 0.700 | 0.583 | 0.400 | 1.000 |
+| baseline, no graph | 0.000 | 0.100 | 0.400 | 0.217 | 0.100 | 1.000 |
+| baseline, graph missing one edge | 0.400 | 0.500 | 0.900 | 0.667 | 0.200 | 1.000 |
+| claude-opus-5-5 | not run yet | | | | | |
+
+The distraction column counts held-out scenarios only. The missing-edge
+graph leaves out checkout to inventory, to see what a wrong graph costs.
 
 ### What the gym found
 
@@ -221,14 +240,32 @@ incident-cli now traces the cascade
 It walks from the paged service through dependencies that broke no later than
 their caller. The broken service whose own dependencies are fine is where the
 failure starts, and its events get full relevance. A symptom that a broken
-dependency explains is scaled down, and the tool output says why. The test
-for the committed recordings fails if the baseline drops below 5 of 5.
+dependency explains is scaled down, and the tool output says why.
 
-Read that 5 of 5 with care. The rules were written after seeing these five
-incidents, so it shows the fix works on what the gym found, not that it
-generalizes. The next scenarios are the real test. Without the graph nothing
-changed, because the rules need edges to follow. The synthetic benchmark has
-no metric anomalies, so its numbers did not move.
+Those five incidents shaped the rules, so 5 of 5 only shows the fix works on
+what the gym found. Without the graph nothing changed, because the rules need
+edges to follow. The synthetic benchmark has no metric anomalies, so its
+numbers did not move.
+
+### The held-out test
+
+The ten held-out scenarios were written and pushed with a prediction for each
+before any of them was recorded (commit a4ef43b). With the graph, the
+baseline named the cause first in 5 of 10, and every prediction held.
+[ADR 0004](docs/adr/0004-held-out-results.md) has every scenario.
+
+- Four misses come from where a call is measured. The caller measures each
+  call's latency and errors, and the queries file them under the service
+  being called. So a delay or a short timeout at checkout makes inventory
+  look broken too, and the walk goes one service too deep. A change on that
+  service then ranks first.
+- One miss is a harmless inventory flag one minute before the fault. The rule
+  that ranks a change above the anomaly it explains put the flag first.
+- A graph without the checkout to inventory edge also got 5 of 10, but a
+  different five. Its misses are one service too shallow.
+
+The test for the committed recordings pins every scenario's rank. A change
+to incident-cli that moves one fails CI until the scorecard moves with it.
 
 ## Layout
 

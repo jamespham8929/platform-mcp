@@ -1,0 +1,70 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "chaos.jamespham.io/v1alpha1",
+      "kind": "ChaosExperiment",
+      "metadata": {
+        "annotations": {
+          "kopf.zalando.org/last-handled-configuration": "{\"spec\":{\"container\":\"chaos-agent\",\"networkLatency\":{\"durationSeconds\":480,\"jitterMs\":20,\"latencyMs\":400},\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"checkout\"}},\"service\":\"checkout\",\"startingDeadlineSeconds\":300,\"suspend\":false,\"type\":\"network-latency\"}}\n",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"chaos.jamespham.io/v1alpha1\",\"kind\":\"ChaosExperiment\",\"metadata\":{\"annotations\":{},\"name\":\"fault\",\"namespace\":\"gym-checkout-latency\"},\"spec\":{\"container\":\"chaos-agent\",\"networkLatency\":{\"durationSeconds\":480,\"jitterMs\":20,\"latencyMs\":400},\"selector\":{\"matchLabels\":{\"app.kubernetes.io/name\":\"checkout\"}},\"service\":\"checkout\",\"type\":\"network-latency\"}}\n"
+        },
+        "creationTimestamp": "2026-11-25T21:58:15Z",
+        "generation": 1,
+        "name": "fault",
+        "namespace": "gym-checkout-latency",
+        "resourceVersion": "14430",
+        "uid": "373562dc-f35a-4799-8a92-3cd06a0ca4dc"
+      },
+      "spec": {
+        "container": "chaos-agent",
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        },
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "checkout"
+          }
+        },
+        "service": "checkout",
+        "startingDeadlineSeconds": 300,
+        "suspend": false,
+        "type": "network-latency"
+      },
+      "status": {
+        "handle_experiment": {
+          "duration_seconds": 480,
+          "experiment": "network-latency",
+          "jitter_ms": 20,
+          "latency_ms": 400,
+          "pods_affected": 2,
+          "pods_failed": 0,
+          "status": "completed"
+        },
+        "runs": [
+          {
+            "finishedAt": "2026-11-25T22:06:15Z",
+            "id": "gym-checkout-latency/fault/20261125T215815Z",
+            "injected": true,
+            "outcome": "completed",
+            "podsAffected": 2,
+            "selector": {
+              "app.kubernetes.io/name": "checkout"
+            },
+            "service": "checkout",
+            "startedAt": "2026-11-25T21:58:15Z",
+            "trigger": "create",
+            "type": "network-latency"
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}
+

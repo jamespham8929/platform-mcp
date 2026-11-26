@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-inventory-2b7f87",
+    "source": "deploy",
+    "service": "inventory",
+    "title": "inventory v1.9.0: new stock cache",
+    "timestamp": "2026-11-25T21:56:14Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "2b7f87"
+    }
+  }
+]

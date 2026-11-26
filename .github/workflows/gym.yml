@@ -2,15 +2,17 @@ name: Gym
 
 # Records the incident gym from scratch on kind: the stack, chaos-operator,
 # one shop per scenario, a long warmup, then the faults and the pages. It
-# takes about two and a half hours, so it runs weekly and on demand instead
+# takes about two and a half hours, so it runs nightly and on demand instead
 # of on every push. CI replays the committed recordings on every push.
 #
+# A real fault never plays out the same way twice. The nightly scorecards
+# show how much the score moves between recordings of the same scenarios.
 # The new recordings are an artifact. Commit them when the shop, the faults
 # or the queries change, after reading the scorecard below.
 
 on:
   schedule:
-    - cron: "0 3 * * 0"
+    - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
       warmup:
@@ -95,6 +97,8 @@ jobs:
           {
             echo '```'
             "$RUNNER_TEMP/platform-mcp" gym replay --recordings "$RUNNER_TEMP/recordings" --incident-cli "$RUNNER_TEMP/incident"
+            echo
+            "$RUNNER_TEMP/platform-mcp" gym replay --recordings "$RUNNER_TEMP/recordings" --incident-cli "$RUNNER_TEMP/incident" --graph gym/graph-missing-edge.json
             echo '```'
           } | tee -a "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v7

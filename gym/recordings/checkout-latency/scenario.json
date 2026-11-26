@@ -1,0 +1,62 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "checkout-latency",
+    "description": "checkout gets 400ms of network latency, in the middle of the chain. tc on checkout also delays its own calls to inventory. An unrelated service deployed two minutes before.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "network-latency",
+      "service": "checkout",
+      "spec": {
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "recs-deploy",
+        "at_seconds": -120,
+        "kind": "deploy",
+        "service": "recommendations",
+        "title": "recommendations v2.5.0: trim the response"
+      }
+    ],
+    "truth": {
+      "service": "checkout",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "checkout"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-checkout-latency",
+  "shop_started": "2026-11-25T20:21:10Z",
+  "fault_at": "2026-11-25T21:58:15Z",
+  "detected_at": "2026-11-25T22:01:50Z",
+  "alert": "GymPageLatency",
+  "series_from": "2026-11-25T20:21:10Z",
+  "series_to": "2026-11-25T14:02:50-08:00",
+  "series": 206,
+  "samples": 70076,
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "checkout"
+      }
+    ],
+    "distractors": [
+      "event:deploy-recommendations-14a595"
+    ],
+    "chaos_runs": [
+      "gym-checkout-latency/fault/20261125T215815Z"
+    ]
+  }
+}

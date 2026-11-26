@@ -194,7 +194,10 @@ func TestGradeMatchesByWhatTheToolSaid(t *testing.T) {
 func TestPrintScenarios(t *testing.T) {
 	recs := []Loaded{
 		{Recording: Recording{Definition: Definition{Name: "a", Fault: &Fault{Type: "pod-failure", Service: "checkout"}}, Truth: Truth{Service: "checkout"}}},
-		{Recording: Recording{Definition: Definition{Name: "b"}, Truth: Truth{Service: "checkout"}}},
+		{Recording: Recording{Definition: Definition{Name: "b",
+			Changes: []Change{{Name: "timeout", Kind: KindConfigChange, Service: "checkout"}},
+			Truth:   TruthDef{Service: "checkout", Accept: []Rule{{Change: "timeout"}}},
+		}, Truth: Truth{Service: "checkout"}}},
 	}
 	graded := []eval.Graded{
 		{Scenario: "a", Rank: 0, Distracted: true, Result: &agent.Result{
@@ -209,7 +212,7 @@ func TestPrintScenarios(t *testing.T) {
 	assert.Contains(t, out, "pod-failure on checkout")
 	assert.Contains(t, out, "event:d (deploy, frontend)")
 	assert.Contains(t, out, "fell for the distraction")
-	assert.Contains(t, out, "deploy on checkout")
+	assert.Contains(t, out, "config change on checkout")
 	assert.Contains(t, out, "error: boom")
 
 	buf.Reset()

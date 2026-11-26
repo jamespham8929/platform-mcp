@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-checkout-82c407",
+    "source": "deploy",
+    "service": "checkout",
+    "title": "checkout v3.3.0: cache shipping quotes",
+    "timestamp": "2026-11-25T21:56:17Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "82c407"
+    }
+  }
+]

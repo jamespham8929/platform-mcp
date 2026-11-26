@@ -1,0 +1,24 @@
+[
+  {
+    "id": "deploy-inventory-f9000b",
+    "source": "deploy",
+    "service": "inventory",
+    "title": "inventory v1.9.1: log reservation latency",
+    "timestamp": "2026-11-25T21:56:16Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "f9000b"
+    }
+  },
+  {
+    "id": "deploy-frontend-604abc",
+    "source": "deploy",
+    "service": "frontend",
+    "title": "frontend v5.4.0: new order form",
+    "timestamp": "2026-11-25T21:59:16Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "604abc"
+    }
+  }
+]

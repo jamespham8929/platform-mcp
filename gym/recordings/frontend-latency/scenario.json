@@ -1,0 +1,62 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "frontend-latency",
+    "description": "frontend itself gets 400ms of network latency. The fault is on the paged service. checkout deployed three minutes before.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "network-latency",
+      "service": "frontend",
+      "spec": {
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "checkout-deploy",
+        "at_seconds": -180,
+        "kind": "deploy",
+        "service": "checkout",
+        "title": "checkout v3.3.0: cache shipping quotes"
+      }
+    ],
+    "truth": {
+      "service": "frontend",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "frontend"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-frontend-latency",
+  "shop_started": "2026-11-25T20:21:13Z",
+  "fault_at": "2026-11-25T21:59:18Z",
+  "detected_at": "2026-11-25T22:02:48Z",
+  "alert": "GymPageLatency",
+  "series_from": "2026-11-25T20:21:13Z",
+  "series_to": "2026-11-25T14:03:48-08:00",
+  "series": 234,
+  "samples": 69978,
+  "truth": {
+    "service": "frontend",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "frontend"
+      }
+    ],
+    "distractors": [
+      "event:deploy-checkout-82c407"
+    ],
+    "chaos_runs": [
+      "gym-frontend-latency/fault/20261125T215918Z"
+    ]
+  }
+}

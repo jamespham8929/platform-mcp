@@ -1,0 +1,68 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "checkout-pod-kill-inventory-deploy-after",
+    "description": "Every checkout pod is killed once a minute. inventory deploys after the kills have started.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "pod-failure",
+      "service": "checkout",
+      "schedule": "* * * * *",
+      "spec": {
+        "podFailure": {
+          "gracePeriodSeconds": 0,
+          "percentage": 100
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "inventory-deploy",
+        "at_seconds": 150,
+        "kind": "deploy",
+        "service": "inventory",
+        "title": "inventory v1.9.2: retry reservations"
+      }
+    ],
+    "truth": {
+      "service": "checkout",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "checkout"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-checkout-pod-kill-inventory-deploy-after",
+  "shop_started": "2026-11-25T20:21:10Z",
+  "fault_at": "2026-11-25T21:57:15Z",
+  "detected_at": "2026-11-25T22:03:40Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T20:21:10Z",
+  "series_to": "2026-11-25T14:04:40-08:00",
+  "series": 602,
+  "samples": 70764,
+  "truth": {
+    "service": "checkout",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "checkout"
+      }
+    ],
+    "distractors": [
+      "event:deploy-inventory-ac01c3"
+    ],
+    "chaos_runs": [
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T215715Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T215815Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T215915Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T220015Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T220115Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T220215Z",
+      "gym-checkout-pod-kill-inventory-deploy-after/fault/20261125T220315Z"
+    ]
+  }
+}

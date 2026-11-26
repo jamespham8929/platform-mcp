@@ -1,0 +1,69 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "inventory-pod-kill-checkout-flag",
+    "description": "Every inventory pod is killed once a minute. A checkout flag was turned on a minute before.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "pod-failure",
+      "service": "inventory",
+      "schedule": "* * * * *",
+      "spec": {
+        "podFailure": {
+          "gracePeriodSeconds": 0,
+          "percentage": 100
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "checkout-flag",
+        "at_seconds": -60,
+        "kind": "feature_flag",
+        "service": "checkout",
+        "title": "checkout: flag split-shipments turned on",
+        "flag": "split-shipments"
+      }
+    ],
+    "truth": {
+      "service": "inventory",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "inventory"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-inventory-pod-kill-checkout-flag",
+  "shop_started": "2026-11-25T20:21:15Z",
+  "fault_at": "2026-11-25T21:58:20Z",
+  "detected_at": "2026-11-25T22:04:45Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T20:21:15Z",
+  "series_to": "2026-11-25T14:05:45-08:00",
+  "series": 370,
+  "samples": 71249,
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "inventory"
+      }
+    ],
+    "distractors": [
+      "event:flag-checkout-7074e2"
+    ],
+    "chaos_runs": [
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T215820Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T215920Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T220020Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T220120Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T220220Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T220320Z",
+      "gym-inventory-pod-kill-checkout-flag/fault/20261125T220420Z"
+    ]
+  }
+}

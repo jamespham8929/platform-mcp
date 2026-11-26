@@ -1,0 +1,13 @@
+[
+  {
+    "id": "flag-inventory-4b67a5",
+    "source": "feature_flag",
+    "service": "inventory",
+    "title": "inventory: flag bulk-reservations turned on",
+    "timestamp": "2026-11-25T21:56:19Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "flag": "bulk-reservations"
+    }
+  }
+]

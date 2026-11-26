@@ -1,0 +1,13 @@
+[
+  {
+    "id": "deploy-frontend-4c7515",
+    "source": "deploy",
+    "service": "frontend",
+    "title": "frontend v5.3.0: new product grid",
+    "timestamp": "2026-11-25T21:57:18Z",
+    "magnitude": 0.6,
+    "metadata": {
+      "release": "4c7515"
+    }
+  }
+]

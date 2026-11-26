@@ -1,0 +1,63 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "inventory-latency-inventory-flag",
+    "description": "inventory gets 400ms of network latency. A flag was turned on in inventory itself a minute before, and it changed nothing.",
+    "paged_service": "frontend",
+    "fault": {
+      "type": "network-latency",
+      "service": "inventory",
+      "spec": {
+        "networkLatency": {
+          "durationSeconds": 480,
+          "jitterMs": 20,
+          "latencyMs": 400
+        }
+      }
+    },
+    "changes": [
+      {
+        "name": "inventory-flag",
+        "at_seconds": -60,
+        "kind": "feature_flag",
+        "service": "inventory",
+        "title": "inventory: flag bulk-reservations turned on",
+        "flag": "bulk-reservations"
+      }
+    ],
+    "truth": {
+      "service": "inventory",
+      "accept": [
+        {
+          "source": "metric_anomaly",
+          "service": "inventory"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-inventory-latency-inventory-flag",
+  "shop_started": "2026-11-25T20:21:15Z",
+  "fault_at": "2026-11-25T21:57:20Z",
+  "detected_at": "2026-11-25T22:00:55Z",
+  "alert": "GymPageLatency",
+  "series_from": "2026-11-25T20:21:15Z",
+  "series_to": "2026-11-25T14:01:55-08:00",
+  "series": 178,
+  "samples": 68706,
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "source": "metric_anomaly",
+        "service": "inventory"
+      }
+    ],
+    "distractors": [
+      "event:flag-inventory-4b67a5"
+    ],
+    "chaos_runs": [
+      "gym-inventory-latency-inventory-flag/fault/20261125T215720Z"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "format": "platform-mcp/gym-recording/v1",
+  "definition": {
+    "name": "inventory-bad-deploy",
+    "description": "No chaos. inventory deploys a build that fails 30% of orders, the deepest service in the chain. A frontend flag was turned on two minutes before.",
+    "paged_service": "frontend",
+    "changes": [
+      {
+        "name": "frontend-flag",
+        "at_seconds": -120,
+        "kind": "feature_flag",
+        "service": "frontend",
+        "title": "frontend: flag express-checkout turned on",
+        "flag": "express-checkout"
+      },
+      {
+        "name": "bad-deploy",
+        "at_seconds": 0,
+        "kind": "deploy",
+        "service": "inventory",
+        "title": "inventory v2.0.0: reserve stock per line item",
+        "set": {
+          "failureRate": "0.3"
+        }
+      }
+    ],
+    "truth": {
+      "service": "inventory",
+      "accept": [
+        {
+          "change": "bad-deploy"
+        }
+      ]
+    },
+    "group": "held-out"
+  },
+  "namespace": "gym-inventory-bad-deploy",
+  "shop_started": "2026-11-25T20:21:13Z",
+  "detected_at": "2026-11-25T22:03:13Z",
+  "alert": "GymPageErrors",
+  "series_from": "2026-11-25T20:21:13Z",
+  "series_to": "2026-11-25T14:04:13-08:00",
+  "series": 217,
+  "samples": 70411,
+  "truth": {
+    "service": "inventory",
+    "accept": [
+      {
+        "change": "bad-deploy",
+        "evidence_id": "event:deploy-inventory-3fbfe0"
+      }
+    ],
+    "distractors": [
+      "event:flag-frontend-02d5b8"
+    ]
+  }
+}
